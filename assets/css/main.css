@@ -1,6 +1,6 @@
 /* ==========================================================================
    G&S CONTROL INDUSTRIAL SAC - HIGH-TECH SCADA & CYBER-INDUSTRIAL UI
-   Paleta Oficial: #92D050 | #8eb81e | #05070a | #0d1117
+   Paleta Oficial: #92D050 | #8eb81e | #05070a | #0d1117 | Footer #2b2b2b
    ========================================================================== */
 
 :root {
@@ -8,13 +8,12 @@
   --gys-green-secondary: #8eb81e;
   --gys-green-dark: #81a81b;
   --gys-green-glow: rgba(146, 208, 80, 0.35);
-  --gys-green-soft: rgba(146, 208, 80, 0.1);
 
   --bg-deep: #05070a;
   --bg-panel: #0d1117;
   --bg-surface: #090d12;
-  --bg-footer: #262626;
-  --bg-footer-bar: #1f1f1f;
+  --bg-footer: #2b2b2b;
+  --bg-footer-card: #222222;
   --bg-pure-black: #000000;
 
   --border-industrial: rgba(146, 208, 80, 0.28);
@@ -25,16 +24,17 @@
   --text-muted: #94a3b8;
 
   --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --fs-h1: clamp(2.3rem, 4vw + 1rem, 3.9rem);
-  --fs-h2: clamp(1.8rem, 2.8vw + 0.8rem, 2.75rem);
-  --fs-h3: clamp(1.2rem, 1.4vw + 0.5rem, 1.55rem);
-  --fs-body: clamp(0.95rem, 0.4vw + 0.85rem, 1.05rem);
+  --fs-h1: clamp(2.2rem, 3.8vw + 1rem, 3.6rem);
+  --fs-h2: clamp(1.75rem, 2.6vw + 0.8rem, 2.65rem);
+  --fs-h3: clamp(1.2rem, 1.3vw + 0.5rem, 1.45rem);
+  --fs-body: clamp(0.95rem, 0.35vw + 0.85rem, 1.04rem);
   --fs-small: clamp(0.8rem, 0.2vw + 0.75rem, 0.88rem);
 
   --max-width: 1320px;
-  --header-height: 86px;
+  --top-bar-height: 36px;
+  --header-height: 84px;
   --radius-sm: 4px;
-  --radius-md: 8px;
+  --radius-md: 10px;
   --radius-lg: 14px;
   --transition-fast: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.38s cubic-bezier(0.16, 1, 0.3, 1);
@@ -55,15 +55,14 @@ html {
   line-height: 1.6;
 }
 
-/* Malla de Ingeniería / Telemetría en todo el fondo */
 body {
   background-color: var(--bg-deep);
-  background-image: 
-    radial-gradient(circle at 85% 15%, rgba(146, 208, 80, 0.08), transparent 40%),
-    radial-gradient(circle at 10% 75%, rgba(146, 208, 80, 0.06), transparent 45%),
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(146, 208, 80, 0.09), transparent 40%),
+    radial-gradient(circle at 12% 75%, rgba(146, 208, 80, 0.07), transparent 45%),
     linear-gradient(rgba(146, 208, 80, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(146, 208, 80, 0.03) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 42px 42px, 42px 42px;
+  background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
   overflow-x: hidden;
   min-height: 100vh;
   display: flex;
@@ -72,7 +71,6 @@ body {
 
 main {
   flex: 1;
-  padding-top: var(--header-height);
 }
 
 a {
@@ -90,7 +88,7 @@ img, video, svg {
 }
 
 /* ==========================================================================
-   ICONOS FONT AWESOME 6 FREE (PSEUDO-ELEMENTOS ::before)
+   ICONOS FONT AWESOME 6 FREE (MEDIANTE PSEUDO-ELEMENTOS ::before)
    ========================================================================== */
 [data-icon]::before {
   font-family: "Font Awesome 6 Free";
@@ -101,7 +99,7 @@ img, video, svg {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   color: var(--gys-green-primary);
-  margin-right: 0.55rem;
+  margin-right: 0.5rem;
 }
 
 [data-icon="bolt"]::before { content: "\f0e7"; }
@@ -124,148 +122,63 @@ img, video, svg {
 [data-icon="filter"]::before { content: "\f0b0"; }
 [data-icon="lock"]::before { content: "\f023"; }
 [data-icon="globe"]::before { content: "\f0ac"; }
-[data-icon="circle-arrow"]::before { content: "\f0a9"; }
 
 /* ==========================================================================
-   LAYOUT Y CONTENEDORES
+   BARRA TÉCNICA SUPERIOR Y HEADER STICKY
    ========================================================================== */
-.container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.section {
-  padding: 6rem 0;
-  position: relative;
-}
-
-.section--alt {
-  background: linear-gradient(180deg, rgba(13, 17, 23, 0.92) 0%, rgba(9, 13, 18, 0.96) 100%);
-  border-top: 1px solid var(--border-industrial);
-  border-bottom: 1px solid var(--border-industrial);
-  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
-}
-
-.section-header {
-  max-width: 780px;
-  margin-bottom: 3.5rem;
-}
-
-.section-tag {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(146, 208, 80, 0.12);
-  color: var(--gys-green-primary);
-  border: 1px solid var(--gys-green-primary);
-  box-shadow: 0 0 15px rgba(146, 208, 80, 0.2);
-  padding: 0.4rem 1rem;
-  border-radius: 2px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1.1rem;
-}
-
-.section-title {
-  font-size: var(--fs-h2);
-  color: var(--text-white);
-  font-weight: 900;
-  line-height: 1.12;
-  margin-bottom: 1rem;
-  letter-spacing: -0.5px;
-}
-
-.section-title span {
-  color: var(--gys-green-primary);
-  text-shadow: 0 0 25px rgba(146, 208, 80, 0.35);
-}
-
-.section-desc {
-  font-size: var(--fs-body);
+.top-tech-bar {
+  background-color: #020305;
+  border-bottom: 1px solid rgba(146, 208, 80, 0.2);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
   color: var(--text-muted);
+  padding: 0.45rem 0;
 }
 
-/* ==========================================================================
-   BOTONES CYBER-INDUSTRIALES
-   ========================================================================== */
-.btn {
-  display: inline-flex;
+.top-tech-inner {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  padding: 0.9rem 1.85rem;
-  font-size: 0.85rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: var(--radius-sm);
-  border: 1px solid transparent;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all var(--transition-fast);
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.btn--primary {
-  background: linear-gradient(135deg, var(--gys-green-primary) 0%, var(--gys-green-secondary) 100%);
-  color: var(--bg-pure-black);
-  box-shadow: 0 0 20px var(--gys-green-glow);
+.top-tech-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
 }
 
-.btn--primary[data-icon]::before {
-  color: var(--bg-pure-black);
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--gys-green-primary);
+  box-shadow: 0 0 8px var(--gys-green-primary);
 }
 
-.btn--primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 32px rgba(146, 208, 80, 0.65);
-  filter: brightness(1.06);
+.top-tech-right {
+  display: flex;
+  gap: 1.5rem;
 }
 
-.btn--outline {
-  background: rgba(13, 17, 23, 0.7);
-  color: var(--text-white);
-  border: 1px solid var(--gys-green-primary);
-  box-shadow: inset 0 0 12px rgba(146, 208, 80, 0.12);
+.top-tech-right a:hover {
+  color: var(--gys-green-primary);
 }
 
-.btn--outline:hover {
-  background: var(--gys-green-primary);
-  color: var(--bg-pure-black);
-  box-shadow: 0 0 22px var(--gys-green-glow);
-}
-
-.btn--outline:hover[data-icon]::before {
-  color: var(--bg-pure-black);
-}
-
-/* ==========================================================================
-   HEADER CON BARRA DE ESTADO SCADA Y GLASSMORPHISM
-   ========================================================================== */
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background: rgba(5, 7, 10, 0.88);
+  background: rgba(5, 7, 10, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-industrial);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65);
   z-index: 1000;
-}
-
-.site-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gys-green-primary), transparent);
 }
 
 .header-inner {
@@ -279,7 +192,6 @@ img, video, svg {
   height: 54px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
   transition: transform var(--transition-fast);
 }
 
@@ -298,7 +210,7 @@ img, video, svg {
   font-weight: 700;
   color: var(--text-light);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   padding: 0.45rem 0;
   position: relative;
 }
@@ -337,11 +249,117 @@ img, video, svg {
 }
 
 /* ==========================================================================
-   HERO PRINCIPAL TECNOLÓGICO (CON HUD DE TELEMETRÍA EN VIVO)
+   CONTENEDORES, SECCIONES Y BOTONES
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5.5rem 0;
+  position: relative;
+}
+
+.section--alt {
+  background: linear-gradient(180deg, rgba(13, 17, 23, 0.95) 0%, rgba(9, 13, 18, 0.98) 100%);
+  border-top: 1px solid var(--border-industrial);
+  border-bottom: 1px solid var(--border-industrial);
+}
+
+.section-header {
+  max-width: 780px;
+  margin-bottom: 3.5rem;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(146, 208, 80, 0.12);
+  color: var(--gys-green-primary);
+  border: 1px solid var(--gys-green-primary);
+  box-shadow: 0 0 15px rgba(146, 208, 80, 0.18);
+  padding: 0.38rem 0.95rem;
+  border-radius: 3px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  margin-bottom: 1.1rem;
+}
+
+.section-title {
+  font-size: var(--fs-h2);
+  color: var(--text-white);
+  font-weight: 900;
+  line-height: 1.14;
+  margin-bottom: 1rem;
+}
+
+.section-title span {
+  color: var(--gys-green-primary);
+}
+
+.section-desc {
+  font-size: var(--fs-body);
+  color: var(--text-muted);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.88rem 1.75rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--gys-green-primary) 0%, var(--gys-green-secondary) 100%);
+  color: var(--bg-pure-black);
+  box-shadow: 0 4px 20px var(--gys-green-glow);
+}
+
+.btn--primary[data-icon]::before {
+  color: var(--bg-pure-black);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(146, 208, 80, 0.6);
+  filter: brightness(1.05);
+}
+
+.btn--outline {
+  background: rgba(13, 17, 23, 0.75);
+  color: var(--text-white);
+  border: 1px solid var(--gys-green-primary);
+}
+
+.btn--outline:hover {
+  background: var(--gys-green-primary);
+  color: var(--bg-pure-black);
+  box-shadow: 0 0 20px var(--gys-green-glow);
+}
+
+.btn--outline:hover[data-icon]::before {
+  color: var(--bg-pure-black);
+}
+
+/* ==========================================================================
+   HERO PRINCIPAL CON PANEL SCADA HUD
    ========================================================================== */
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height) - var(--top-bar-height));
   display: flex;
   align-items: center;
   background-color: var(--bg-pure-black);
@@ -355,8 +373,7 @@ img, video, svg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.32;
-  filter: contrast(1.15) saturate(1.1);
+  opacity: 0.35;
   z-index: 1;
 }
 
@@ -364,8 +381,8 @@ img, video, svg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 75% 40%, rgba(146, 208, 80, 0.16), transparent 55%),
-    linear-gradient(90deg, rgba(5, 7, 10, 0.96) 0%, rgba(5, 7, 10, 0.82) 55%, rgba(5, 7, 10, 0.72) 100%);
+    radial-gradient(circle at 75% 40%, rgba(146, 208, 80, 0.18), transparent 55%),
+    linear-gradient(90deg, rgba(5, 7, 10, 0.95) 0%, rgba(5, 7, 10, 0.82) 55%, rgba(5, 7, 10, 0.72) 100%);
   z-index: 2;
 }
 
@@ -373,30 +390,30 @@ img, video, svg {
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-columns: 1.25fr 0.85fr;
+  grid-template-columns: 1.2fr 0.85fr;
   gap: 3rem;
   align-items: center;
-  padding: 4rem 0;
+  padding: 4.5rem 0;
 }
 
 .hero-title {
   font-size: var(--fs-h1);
   color: var(--text-white);
   font-weight: 900;
-  line-height: 1.06;
-  margin-bottom: 1.5rem;
-  letter-spacing: -1px;
+  line-height: 1.08;
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.8px;
 }
 
 .hero-title span {
   color: var(--gys-green-primary);
-  text-shadow: 0 0 30px rgba(146, 208, 80, 0.4);
+  text-shadow: 0 0 28px rgba(146, 208, 80, 0.35);
 }
 
 .hero-subtitle {
-  font-size: clamp(1.02rem, 1vw + 0.8rem, 1.22rem);
+  font-size: clamp(1rem, 0.9vw + 0.8rem, 1.18rem);
   color: var(--text-light);
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.2rem;
   max-width: 640px;
 }
 
@@ -404,100 +421,109 @@ img, video, svg {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.8rem;
 }
 
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 1rem;
   padding-top: 1.75rem;
   border-top: 1px solid var(--border-industrial);
 }
 
 .stat-item {
-  background: rgba(13, 17, 23, 0.65);
+  background: rgba(13, 17, 23, 0.75);
   border-left: 3px solid var(--gys-green-primary);
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.95rem;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .stat-item strong {
   display: block;
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   font-weight: 900;
   color: var(--gys-green-primary);
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .stat-item span {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   color: var(--text-light);
   text-transform: uppercase;
-  letter-spacing: 0.6px;
 }
 
-/* Panel SCADA HUD Derecho */
+/* Panel SCADA HUD */
 .scada-hud {
-  background: rgba(13, 17, 23, 0.82);
-  backdrop-filter: blur(12px);
+  background: rgba(13, 17, 23, 0.86);
+  backdrop-filter: blur(14px);
   border: 1px solid var(--border-industrial);
   border-radius: var(--radius-md);
-  padding: 1.75rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 30px rgba(146, 208, 80, 0.1);
-  position: relative;
+  padding: 1.85rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 30px rgba(146, 208, 80, 0.12);
 }
 
-.scada-hud::before {
-  content: "SCADA TELEMETRY // ONLINE";
-  position: absolute;
-  top: -11px;
-  right: 20px;
-  background: var(--bg-deep);
-  color: var(--gys-green-primary);
-  border: 1px solid var(--gys-green-primary);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  padding: 0.15rem 0.65rem;
-}
-
-.hud-row {
+.hud-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.85rem 0;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-industrial);
 }
 
-.hud-row:last-child {
-  border-bottom: none;
+.hud-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--text-white);
+}
+
+.hud-title i {
+  color: var(--gys-green-primary);
+  margin-right: 0.4rem;
+}
+
+.hud-badge {
+  background: rgba(146, 208, 80, 0.18);
+  color: var(--gys-green-primary);
+  border: 1px solid var(--gys-green-primary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.15rem 0.55rem;
+  border-radius: 3px;
+}
+
+.hud-row {
+  padding: 0.75rem 0;
+}
+
+.hud-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.45rem;
 }
 
 .hud-label {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--text-light);
   font-weight: 600;
 }
 
 .hud-value {
   font-family: monospace;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--gys-green-primary);
-  background: rgba(146, 208, 80, 0.1);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  border: 1px solid rgba(146, 208, 80, 0.3);
 }
 
 .hud-bar {
   width: 100%;
-  height: 6px;
+  height: 7px;
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
-  margin-top: 0.45rem;
 }
 
 .hud-bar-fill {
@@ -507,7 +533,7 @@ img, video, svg {
 }
 
 /* ==========================================================================
-   TARJETAS TECNOLÓGICAS CON ESQUINAS CORTADAS Y BRILLO NEÓN
+   TARJETAS INDUSTRIALES CON IMAGEN (SERVICIOS, PROYECTOS, NOTICIAS)
    ========================================================================== */
 .grid-3 {
   display: grid;
@@ -519,11 +545,12 @@ img, video, svg {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   gap: 2.5rem;
+  align-items: center;
 }
 
 .card {
-  background: linear-gradient(160deg, rgba(18, 24, 34, 0.9) 0%, rgba(10, 14, 20, 0.95) 100%);
-  border: 1px solid rgba(146, 208, 80, 0.2);
+  background: linear-gradient(160deg, rgba(18, 24, 34, 0.94) 0%, rgba(10, 14, 20, 0.98) 100%);
+  border: 1px solid rgba(146, 208, 80, 0.22);
   border-radius: var(--radius-md);
   padding: 2.25rem;
   transition: all var(--transition-smooth);
@@ -532,37 +559,70 @@ img, video, svg {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.card--media {
+  padding: 0;
+}
+
+.card-img-wrap {
+  position: relative;
+  height: 215px;
+  overflow: hidden;
+  border-bottom: 2px solid var(--gys-green-primary);
+}
+
+.card-img {
   width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gys-green-primary), transparent);
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.07);
+}
+
+.card-floating-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(5, 7, 10, 0.88);
+  color: var(--gys-green-primary);
+  border: 1px solid var(--gys-green-primary);
+  padding: 0.28rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+
+.card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .card:hover {
   transform: translateY(-6px);
   border-color: var(--gys-green-primary);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(146, 208, 80, 0.18);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.75), 0 0 25px rgba(146, 208, 80, 0.18);
 }
 
 .card-icon {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-sm);
-  background: rgba(146, 208, 80, 0.1);
-  border: 1px solid rgba(146, 208, 80, 0.35);
+  background: rgba(146, 208, 80, 0.12);
+  border: 1px solid rgba(146, 208, 80, 0.4);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 1.35rem;
-  box-shadow: 0 0 15px rgba(146, 208, 80, 0.15);
+  font-size: 1.35rem;
+  margin-bottom: 1.15rem;
 }
 
 .card-icon[data-icon]::before {
@@ -572,14 +632,14 @@ img, video, svg {
 .card-title {
   font-size: var(--fs-h3);
   color: var(--text-white);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
   font-weight: 800;
 }
 
 .card-text {
   color: var(--text-muted);
   font-size: var(--fs-body);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .card-list {
@@ -589,7 +649,7 @@ img, video, svg {
 .card-list li {
   font-size: var(--fs-small);
   color: var(--text-light);
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
 }
 
 .badge {
@@ -598,11 +658,10 @@ img, video, svg {
   font-size: 0.73rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1px;
   background: rgba(146, 208, 80, 0.14);
   color: var(--gys-green-primary);
   border: 1px solid var(--border-industrial);
-  border-radius: 2px;
+  border-radius: 3px;
   margin-bottom: 1rem;
   width: fit-content;
 }
@@ -618,11 +677,11 @@ img, video, svg {
    GRÁFICA INTERACTIVA & FORMULARIOS
    ========================================================================== */
 .chart-wrapper {
-  background: rgba(13, 17, 23, 0.9);
+  background: rgba(13, 17, 23, 0.92);
   border: 1px solid var(--border-industrial);
   border-radius: var(--radius-md);
   padding: 2rem;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55);
 }
 
 .chart-controls {
@@ -664,7 +723,7 @@ img, video, svg {
 }
 
 .contact-form, .map-panel {
-  background: rgba(13, 17, 23, 0.9);
+  background: rgba(13, 17, 23, 0.92);
   border: 1px solid var(--border-industrial);
   border-radius: var(--radius-md);
   padding: 2.5rem;
@@ -711,14 +770,13 @@ img, video, svg {
 }
 
 /* ==========================================================================
-   FOOTER CORPORATIVO OFICIAL (IDÉNTICO A LA CAPTURA CON ESTÉTICA TECH)
+   FOOTER CORPORATIVO OFICIAL (IDÉNTICO A LA CAPTURA CON mapa_gys.png)
    ========================================================================== */
 .site-footer {
   background-color: var(--bg-footer);
   border-top: 2px solid var(--gys-green-primary);
   color: var(--text-light);
   margin-top: auto;
-  position: relative;
 }
 
 .footer-main {
@@ -727,32 +785,31 @@ img, video, svg {
 
 .footer-corp-grid {
   display: grid;
-  grid-template-columns: 1fr 1.6fr 1.1fr;
+  grid-template-columns: 1fr 1.65fr 1.1fr;
   gap: 3rem;
   align-items: start;
 }
 
 .footer-heading {
-  font-size: 1.65rem;
-  font-weight: 600;
+  font-size: 1.7rem;
+  font-weight: 500;
   color: var(--text-white);
   margin-bottom: 1.5rem;
-  letter-spacing: -0.3px;
 }
 
 .footer-logo-box {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 .footer-logo-box .gys-logo-img {
-  height: 74px;
+  height: 78px;
 }
 
 /* Botones circulares verdes de Redes Sociales */
 .social-circles {
   display: flex;
   gap: 0.85rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 .social-circle-btn {
@@ -760,28 +817,27 @@ img, video, svg {
   height: 40px;
   border-radius: 50%;
   background-color: var(--gys-green-primary);
-  color: #1a1a1a;
+  color: #222222;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.05rem;
   transition: all var(--transition-fast);
-  box-shadow: 0 0 12px rgba(146, 208, 80, 0.3);
 }
 
 .social-circle-btn:hover {
-  transform: translateY(-3px) scale(1.06);
+  transform: translateY(-3px);
   background-color: #a6e265;
-  box-shadow: 0 0 20px rgba(146, 208, 80, 0.65);
+  box-shadow: 0 0 16px rgba(146, 208, 80, 0.6);
 }
 
 .footer-contact-info p {
   font-size: 0.95rem;
-  color: #b0b8c1;
+  color: #a3abb5;
   margin-bottom: 0.35rem;
 }
 
-.footer-contact-info a {
+.footer-contact-info .email-bold {
   color: var(--text-white);
   font-weight: 700;
 }
@@ -790,7 +846,7 @@ img, video, svg {
   color: var(--gys-green-primary);
 }
 
-/* Bloque Central: Mapa Mundial + Contadores de Países */
+/* Columna Central: Mapa Oficial + Lista de Países */
 .projects-world-box {
   display: grid;
   grid-template-columns: 1.45fr 0.95fr;
@@ -798,43 +854,17 @@ img, video, svg {
   align-items: center;
 }
 
-.world-map-svg-wrap {
-  background: rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: var(--radius-md);
-  padding: 0.85rem;
-  position: relative;
+.world-map-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.world-map-svg {
+.world-map-img {
   width: 100%;
+  max-width: 360px;
   height: auto;
-}
-
-.map-land-inactive {
-  fill: #5c5c5c;
-  stroke: #333333;
-  stroke-width: 0.8;
-  transition: fill 0.3s ease;
-}
-
-.map-land-active {
-  fill: var(--gys-green-primary);
-  stroke: #ffffff;
-  stroke-width: 0.8;
-  filter: drop-shadow(0 0 6px rgba(146, 208, 80, 0.65));
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.map-land-active:hover {
-  fill: #b4f073;
-}
-
-.map-pulse-dot {
-  fill: #ffffff;
-  stroke: var(--gys-green-primary);
-  stroke-width: 2;
+  object-fit: contain;
 }
 
 .country-stats-list {
@@ -846,7 +876,7 @@ img, video, svg {
 .country-stat-item {
   display: flex;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: var(--text-white);
 }
@@ -860,9 +890,8 @@ img, video, svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   margin-right: 0.65rem;
-  box-shadow: 0 0 8px rgba(146, 208, 80, 0.3);
 }
 
 /* Columna Derecha: Blog Recientes con barra verde derecha */
@@ -874,31 +903,26 @@ img, video, svg {
 
 .recent-blog-card {
   display: block;
-  background-color: #1f1f1f;
-  padding: 1rem 1.25rem;
+  background-color: var(--bg-footer-card);
+  padding: 1.05rem 1.25rem;
   border-right: 4px solid var(--gys-green-primary);
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: all var(--transition-fast);
 }
 
 .recent-blog-card span {
   display: block;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #a3abb5;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #9ca3af;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
   padding-bottom: 0.45rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: color var(--transition-fast);
 }
 
 .recent-blog-card:hover {
-  background-color: #171b22;
+  background-color: #1a1a1a;
   transform: translateX(-4px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
 .recent-blog-card:hover span {
@@ -907,9 +931,9 @@ img, video, svg {
 
 /* Barra Inferior de Copyright */
 .footer-bottom-bar {
-  background-color: var(--bg-footer-bar);
+  background-color: var(--bg-footer);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.35rem 0;
+  padding: 1.5rem 0;
 }
 
 .footer-bottom-inner {
@@ -919,7 +943,7 @@ img, video, svg {
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.85rem;
-  color: #8e96a0;
+  color: #9ca3af;
 }
 
 .footer-mini-socials {
@@ -936,19 +960,28 @@ img, video, svg {
   color: var(--gys-green-primary);
 }
 
+/* Fallback compatibility para páginas internas */
+.footer-bottom {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
 @media (max-width: 1080px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
+  .hero-grid,
   .footer-corp-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
+  .top-tech-bar { display: none; }
   .nav-toggle { display: block; }
   .nav-menu {
     position: fixed;
@@ -973,9 +1006,7 @@ img, video, svg {
   .hero-stats {
     grid-template-columns: 1fr 1fr;
   }
-  .projects-world-box {
-    grid-template-columns: 1fr;
-  }
+  .projects-world-box,
   .grid-2 {
     grid-template-columns: 1fr;
   }
