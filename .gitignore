@@ -1,0 +1,18 @@
+# Archivos de variables de entorno y credenciales sensibles
+.env
+.env.local
+.env.production
+*.pem
+*.key
+
+# Archivos del Sistema Operativo (Windows / macOS)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor Visual Studio Code y dependencias locales
+.vscode/settings.json
+node_modules/
+npm-debug.log*
+yarn-error.log*

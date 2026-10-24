@@ -1,0 +1,73 @@
+/* ==========================================================================
+   G&S CONTROL INDUSTRIAL SAC - FRONTEND SECURITY & UI HARDENING
+   ========================================================================== */
+
+/* 1. Protección de Activos Gráficos y Logotipo contra Arrastre y Recorte */
+.gys-logo-img,
+.hero-video,
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 2. Prevención de Selección en Elementos de Interfaz Críticos */
+.site-header,
+.btn,
+.filter-btn,
+.badge {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 3. Campo Honeypot Anti-Bots (Invisible para humanos, trampa para scrapers) */
+.hp-trap-field {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+/* 4. Estados de Validación Estricta y Alertas de Seguridad */
+.form-control.is-invalid {
+  border-color: #ef4444 !important;
+  background-color: rgba(239, 68, 68, 0.06);
+}
+
+.form-control.is-valid {
+  border-color: var(--gys-green-primary) !important;
+}
+
+.security-alert {
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: none;
+}
+
+.security-alert.show {
+  display: block;
+}
+
+.security-alert--error {
+  background-color: rgba(239, 68, 68, 0.15);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+}
+
+.security-alert--success {
+  background-color: rgba(146, 208, 80, 0.15);
+  border: 1px solid var(--gys-green-primary);
+  color: var(--gys-green-primary);
+}
+
+/* 5. Bloqueo Visual Anti-Clickjacking si se detecta iframe no autorizado */
+html.framed-blocked body {
+  display: none !important;
+}

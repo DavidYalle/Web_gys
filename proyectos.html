@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos Ejecutados | G&S Control Industrial SAC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/security.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+          <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="proyectos.html" class="nav-link active">Proyectos</a></li>
+          <li><a href="noticias.html" class="nav-link">Noticias</a></li>
+          <li><a href="contactanos.html" class="btn btn--primary" data-icon="bolt">Cotizar Proyecto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <span class="section-tag" data-icon="filter">Portafolio de Ingeniería</span>
+        <h1 class="section-title">Proyectos y Casos de <span>Éxito Comprobados</span></h1>
+        <p class="section-desc">Filtra nuestras implementaciones por especialidad técnica.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Controles de Filtro -->
+        <div class="chart-controls" style="margin-bottom: 2.5rem;">
+          <button class="filter-btn active" data-project-filter="all">Todos los Proyectos</button>
+          <button class="filter-btn" data-project-filter="automatizacion">Automatización & SCADA</button>
+          <button class="filter-btn" data-project-filter="electrica">Ingeniería Eléctrica</button>
+          <button class="filter-btn" data-project-filter="tableros">Tableros & CCM</button>
+          <button class="filter-btn" data-project-filter="instrumentacion">Instrumentación</button>
+        </div>
+
+        <!-- Galería de Proyectos -->
+        <div class="grid-3">
+          <article class="card" data-project-category="automatizacion">
+            <div>
+              <span class="badge">Automatización & SCADA</span>
+              <h3 class="card-title">Migración de Sistema SCADA en Planta Concentradora</h3>
+              <p class="card-text">Integración de redundancia en caliente con PLC ControlLogix y servidor SCADA para control de molienda y flotación.</p>
+              <ul class="card-list">
+                <li data-icon="check">Disponibilidad alcanzada: 99.6%</li>
+                <li data-icon="check">Ubicación: Corredor Minero Sur</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card" data-project-category="tableros">
+            <div>
+              <span class="badge">Tableros & CCM</span>
+              <h3 class="card-title">Suministro e Integración de CCM con Variadores de 250 HP</h3>
+              <p class="card-text">Fabricación de 12 columnas autosoportadas IP55 con variadores de frecuencia y comunicación PROFINET para estación de bombeo.</p>
+              <ul class="card-list">
+                <li data-icon="check">Ahorro energético: 32% anual</li>
+                <li data-icon="check">Ubicación: Agroindustria Trujillo</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card" data-project-category="electrica">
+            <div>
+              <span class="badge">Ingeniería Eléctrica</span>
+              <h3 class="card-title">Subestación Eléctrica 22.9 kV / 0.48 kV - 2500 kVA</h3>
+              <p class="card-text">Montaje electromecánico de celdas de media tensión, transformador seco encapsulado y banco automático de condensadores.</p>
+              <ul class="card-list">
+                <li data-icon="check">Cero penalidades por energía reactiva</li>
+                <li data-icon="check">Ubicación: Planta Industrial Lurín</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card" data-project-category="instrumentacion">
+            <div>
+              <span class="badge">Instrumentación</span>
+              <h3 class="card-title">Automatización de Lazos de Flujo y Presión en Calderas</h3>
+              <p class="card-text">Instalación de caudalímetros másicos Coriolis, transmisores HART y válvulas modulantes para control de vapor saturado.</p>
+              <ul class="card-list">
+                <li data-icon="check">Reducción de consumo de gas: 18%</li>
+                <li data-icon="check">Ubicación: Callao, Lima</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+        <span>© 2026 G&S Control Industrial SAC. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/security.js" defer></script>
+</body>
+</html>

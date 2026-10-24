@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contáctanos y Cotizaciones | G&S Control Industrial SAC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/security.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+          <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+          <li><a href="proyectos.html" class="nav-link">Proyectos</a></li>
+          <li><a href="noticias.html" class="nav-link">Noticias</a></li>
+          <li><a href="contactanos.html" class="btn btn--primary" data-icon="bolt">Cotizar Proyecto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <span class="section-tag" data-icon="lock">Canal Corporativo Seguro</span>
+        <h1 class="section-title">Solicita una Cotización o <span>Visita Técnica</span></h1>
+        <p class="section-desc">Formulario protegido con sanitización anti-XSS, validación de RUC peruano y control anti-spam.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <!-- FORMULARIO BLINDADO -->
+        <form id="quoteForm" class="contact-form" novalidate>
+          <!-- Campo Trampa Honeypot (Invisible para usuarios reales) -->
+          <div class="hp-trap-field" aria-hidden="true">
+            <label for="hp_website_url">No llenar este campo</label>
+            <input type="text" id="hp_website_url" name="hp_website_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="companyName">Razón Social / Empresa *</label>
+            <input type="text" id="companyName" class="form-control" placeholder="Ej. Minera Andina SAC" required maxlength="100">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="companyRuc">RUC (11 dígitos) *</label>
+            <input type="text" id="companyRuc" class="form-control" placeholder="Ej. 20123456789" required maxlength="11" inputmode="numeric">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactEmail">Correo Corporativo *</label>
+            <input type="email" id="contactEmail" class="form-control" placeholder="ingenieria@empresa.com.pe" required maxlength="120">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactPhone">Teléfono / WhatsApp Corporativo *</label>
+            <input type="tel" id="contactPhone" class="form-control" placeholder="+51 999 888 777" required maxlength="15">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="serviceType">Línea de Ingeniería Requerida *</label>
+            <select id="serviceType" class="form-control" required>
+              <option value="">-- Seleccione una especialidad --</option>
+              <option value="Automatizacion PLC SCADA">1. Automatización Industrial & SCADA</option>
+              <option value="Ingenieria Electrica MT BT">2. Ingeniería Eléctrica y Subestaciones MT/BT</option>
+              <option value="Instrumentacion Industrial">3. Instrumentación y Calibración</option>
+              <option value="Tableros Electricos IEC">4. Fabricación de Tableros Eléctricos</option>
+              <option value="Mantenimiento y Energia">5. Mantenimiento Predictivo y Calidad de Energía</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="projectDetails">Alcance Técnico del Requerimiento *</label>
+            <textarea id="projectDetails" class="form-control" rows="4" placeholder="Describa brevemente el requerimiento, potencia, ubicación de planta o alcance..." required maxlength="1000"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="width: 100%;" data-icon="shield">
+            Enviar Solicitud Protegida
+          </button>
+
+          <div id="securityAlert" class="security-alert" role="alert"></div>
+        </form>
+
+        <!-- MAPA INTERACTIVO DE SEDES Y COBERTURA -->
+        <div class="map-panel">
+          <div>
+            <span class="badge" data-icon="location">Despliegue Nacional</span>
+            <h3 class="card-title">Cobertura Operativa en Planta</h3>
+            <p class="card-text">Selecciona un corredor industrial para consultar la capacidad de respuesta de nuestras cuadrillas:</p>
+
+            <div class="chart-controls">
+              <button type="button" class="filter-btn active" data-zone="lima">Sede Central Lima</button>
+              <button type="button" class="filter-btn" data-zone="norte">Corredor Norte</button>
+              <button type="button" class="filter-btn" data-zone="sur">Corredor Minero Sur</button>
+            </div>
+
+            <div class="map-screen">
+              <h4 id="mapZoneTitle" class="card-title" style="color: var(--gys-green-primary);">
+                Sede Central & Planta de Integración - Lima
+              </h4>
+              <p id="mapZoneDesc" class="card-text">
+                Centro de ingeniería, diseño de tableros eléctricos, pruebas FAT y soporte SCADA 24/7.
+              </p>
+              <small id="mapZoneCoords" style="color: var(--text-light); font-weight: 700;">
+                Lat: -12.0464° S | Lon: -77.0428° W • Atención Inmediata
+              </small>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 1.5rem;">
+            <h4 class="footer-title" style="margin-bottom: 0.5rem;">Atención de Emergencias en Planta 24/7</h4>
+            <p class="section-desc" data-icon="phone">Central de Ingeniería: +51 999 888 777</p>
+            <p class="section-desc" data-icon="envelope">Mesa de Partes Técnica: proyectos@gyscontrol.com.pe</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+        <span>© 2026 G&S Control Industrial SAC. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/security.js" defer></script>
+</body>
+</html>
