@@ -446,3 +446,141 @@ function initProjectsInteractiveSystem() {
     if (e.key === 'Escape') closeModals();
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initNewsInteractiveSystem();
+});
+
+/**
+ * Controla: Buscador, Likes, Lightbox de imagen y Modal de Artículo Completo con Comentarios
+ */
+function initNewsInteractiveSystem() {
+  // 1. Buscador en tiempo real de noticias
+  const searchInput = document.getElementById('newsSearchInput');
+  const newsCards = document.querySelectorAll('.news-card');
+
+  if (searchInput && newsCards.length) {
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      newsCards.forEach((card) => {
+        const title = card.querySelector('.news-card-title').textContent.toLowerCase();
+        const snippet = card.querySelector('.news-card-snippet').textContent.toLowerCase();
+        const sub = card.querySelector('.news-card-subtitle').textContent.toLowerCase();
+
+        if (title.includes(term) || snippet.includes(term) || sub.includes(term)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // 2. Contador de Likes en las tarjetas
+  document.querySelectorAll('.news-like-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const countSpan = btn.querySelector('.news-like-count');
+      const icon = btn.querySelector('i');
+      let current = parseInt(countSpan.textContent || '0', 10);
+
+      if (btn.classList.contains('active-liked')) {
+        btn.classList.remove('active-liked');
+        icon.className = 'fa-regular fa-heart';
+        countSpan.textContent = current - 1;
+      } else {
+        btn.classList.add('active-liked');
+        icon.className = 'fa-solid fa-heart';
+        icon.style.color = '#92D050';
+        countSpan.textContent = current + 1;
+      }
+    });
+  });
+
+  // 3. Lightbox (Lupa) para ampliar imagen de la noticia
+  const lbModal = document.getElementById('newsLightboxModal');
+  const lbImg = document.getElementById('newsLightboxImg');
+  const lbCap = document.getElementById('newsLightboxCaption');
+
+  document.querySelectorAll('.news-btn-zoom').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.news-card');
+      const img = card.querySelector('.news-card-img');
+      const title = card.querySelector('.news-card-title').textContent;
+
+      if (lbModal && lbImg) {
+        lbImg.src = img.src;
+        if (lbCap) lbCap.textContent = title;
+        lbModal.classList.add('is-open');
+        lbModal.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  // 4. Modal de Artículo Completo (Enlace / Read More)
+  const articleModal = document.getElementById('newsArticleModal');
+  const modalTitle = document.getElementById('modalNewsTitle');
+  const modalSubtitle = document.getElementById('modalNewsSubtitle');
+  const modalDate = document.getElementById('modalNewsDate');
+  const modalImg = document.getElementById('modalNewsImg');
+  const modalFullText = document.getElementById('modalNewsFullText');
+
+  const articlesData = {
+    'trabajador-2017': {
+      title: 'DÍA DEL TRABAJADOR 2017',
+      subtitle: 'REAL CONSTRUCCIÓN CAMPEÓN',
+      date: '01 Mayo 2017',
+      text: 'Gran celebración y torneo de confraternidad en homenaje al Día del Trabajador de G&S Control Industrial. El equipo técnico de Real Construcción demostró coraje, estrategia y compañerismo en cada encuentro, logrando alzar la copa de campeón en una jornada inolvidable para toda la familia industrial.'
+    },
+    'trabajador-2019': {
+      title: 'DÍA DEL TRABAJADOR 2019',
+      subtitle: 'FBC INGENIERÍA CAMPEÓN',
+      date: '01 Mayo 2019',
+      text: 'Emocionante jornada deportiva y de confraternidad corporativa por el Día del Trabajador 2019. Tras un disputado torneo de fulbito con gran despliegue táctico, el combinado de FBC Ingeniería se consagró campeón absoluto del campeonato, reafirmando los lazos de unión y trabajo en equipo.'
+    },
+    'gys-2019': {
+      title: 'DÍA DE GYS – 2019',
+      subtitle: 'ALIANZA COMERCIAL CAMPEÓN GYS-2019 CLAUSURA',
+      date: '15 Octubre 2019',
+      text: 'Conmemoramos nuestro aniversario institucional celebrando el cierre del vibrante torneo GYS-2019 Clausura. Alianza Comercial se coronó campeón tras una final infartante, destacando el espíritu competitivo, la alegría y la integración de todos los colaboradores de G&S Control Industrial.'
+    }
+  };
+
+  document.querySelectorAll('.news-btn-info').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.news-card');
+      const newsId = card.getAttribute('data-news-id');
+      const data = articlesData[newsId];
+      const img = card.querySelector('.news-card-img');
+
+      if (articleModal && data) {
+        if (modalTitle) modalTitle.textContent = data.title;
+        if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
+        if (modalDate) modalDate.textContent = data.date;
+        if (modalFullText) modalFullText.textContent = data.text;
+        if (modalImg && img) modalImg.src = img.src;
+
+        articleModal.classList.add('is-open');
+        articleModal.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  // Cerrar Modales
+  const closeNewsModals = () => {
+    document.querySelectorAll('.gys-modal').forEach((m) => {
+      m.classList.remove('is-open');
+      m.setAttribute('aria-hidden', 'true');
+    });
+  };
+
+  document.querySelectorAll('.gys-modal-close, .gys-modal-backdrop').forEach((el) => {
+    el.addEventListener('click', closeNewsModals);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNewsModals();
+  });
+}
