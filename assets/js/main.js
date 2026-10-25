@@ -1,6 +1,6 @@
 /**
  * G&S CONTROL INDUSTRIAL SAC - CONTROLADOR GLOBAL DE INTERFAZ (ES6+)
- * Sincroniza Header, Footer, Redes Sociales Reales y el Asistente Flotante de WhatsApp.
+ * Sincroniza Header, Footer, Redes Sociales Reales y Asistente Flotante de WhatsApp.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectFilters();
   initInteractiveMap();
   initWorldMapInteraction();
+  initAboutPageInteractions();
 });
 
 /**
- * Inyecta y unifica el Header, Footer con Redes Sociales reales y el Botón Flotante de WhatsApp
+ * Inyecta y unifica el Header y Footer con Redes Sociales reales y WhatsApp
  */
 function syncUnifiedHeaderAndFooter() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
@@ -79,7 +80,7 @@ function syncUnifiedHeaderAndFooter() {
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
               <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             <div class="footer-contact-info">
@@ -175,6 +176,45 @@ function initWorldMapInteraction() {
   });
 }
 
+function initAboutPageInteractions() {
+  // 1. Interacción en la nueva Franja Bicolor (Hitos 01 - 04)
+  const arsCards = document.querySelectorAll('.ars-card');
+  arsCards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      arsCards.forEach((c) => c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+
+  // 2. Interacción en las 3 tarjetas (Historia, Misión, Visión)
+  const pillars = document.querySelectorAll('.about-pillar-card');
+  pillars.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      pillars.forEach((c) => c.classList.remove('active-pillar'));
+      card.classList.add('active-pillar');
+    });
+  });
+
+  // 3. Interacción en los 5 medallones de Nuestros Valores (Con título corto)
+  const valueCards = document.querySelectorAll('.value-circle-card');
+  const vibTitle = document.getElementById('vibTitle');
+  const vibText = document.getElementById('vibText');
+
+  valueCards.forEach((vc) => {
+    vc.addEventListener('mouseenter', () => {
+      valueCards.forEach((item) => item.classList.remove('active'));
+      vc.classList.add('active');
+
+      const shortTitle = vc.getAttribute('data-value-title');
+      const detail = vc.getAttribute('data-value-detail');
+      if (vibTitle && shortTitle && detail) {
+        vibTitle.textContent = shortTitle;
+        vibText.textContent = detail;
+      }
+    });
+  });
+}
+
 function initLogoFallback() {
   const svgLogo = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 76" width="330" height="76">
     <rect x="0" y="0" width="108" height="76" fill="#92D050"/>
@@ -259,58 +299,6 @@ function initInteractiveMap() {
         zoneDesc.textContent = info.desc;
         zoneCoords.textContent = info.coords;
       }
-    });
-  });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  initAboutPageInteractions();
-});
-
-function initAboutPageInteractions() {
-  // 1. Interacción en la nueva Franja Verde exclusiva de Nosotros (Hitos 01 - 04)
-  const agrSteps = document.querySelectorAll('.agr-step');
-  agrSteps.forEach((step) => {
-    step.addEventListener('mouseenter', () => {
-      agrSteps.forEach((s) => s.classList.remove('active'));
-      step.classList.add('active');
-    });
-  });
-
-  // 2. Interacción en las 3 tarjetas (Historia, Misión, Visión)
-  const pillars = document.querySelectorAll('.about-pillar-card');
-  pillars.forEach((card) => {
-    card.addEventListener('mouseenter', () => {
-      pillars.forEach((c) => c.classList.remove('active-pillar'));
-      card.classList.add('active-pillar');
-    });
-  });
-
-  // 3. Interacción en los 5 medallones de Nuestros Valores (Con título corto)
-  const valueCards = document.querySelectorAll('.value-circle-card');
-  const vibTitle = document.getElementById('vibTitle');
-  const vibText = document.getElementById('vibText');
-
-  valueCards.forEach((vc) => {
-    vc.addEventListener('mouseenter', () => {
-      valueCards.forEach((item) => item.classList.remove('active'));
-      vc.classList.add('active');
-
-      const shortTitle = vc.getAttribute('data-value-title');
-      const detail = vc.getAttribute('data-value-detail');
-      if (vibTitle && shortTitle && detail) {
-        vibTitle.textContent = shortTitle;
-        vibText.textContent = detail;
-      }
-    });
-  });
-
-  // 4. Interacción en las 4 tarjetas de Metodología EPC / EPCM
-  const epcCards = document.querySelectorAll('.epc-step-card');
-  epcCards.forEach((ec) => {
-    ec.addEventListener('mouseenter', () => {
-      epcCards.forEach((item) => item.classList.remove('active-epc'));
-      ec.classList.add('active-epc');
     });
   });
 }
