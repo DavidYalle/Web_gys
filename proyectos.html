@@ -53,66 +53,125 @@
   </header>
 
   <main>
-    <!-- 2. HERO PROYECTOS CON FONDO DE IMAGEN TRANSPARENTE OSCURA -->
-    <section class="projects-hero">
+    <!-- 2. HERO PANORÁMICO DE PROYECTOS -->
+    <section class="projects-hero-panoramic">
       <div class="projects-hero-bg"></div>
       <div class="projects-hero-overlay"></div>
 
-      <div class="container projects-hero-grid">
-        <div class="projects-hero-left">
+      <div class="container projects-panoramic-container">
+        <div class="projects-hero-center">
           <div class="projects-breadcrumb">
             <a href="index.html">Home</a>
             <i class="fa-solid fa-chevron-right"></i>
             <span>PROYECTOS</span>
           </div>
-          <p class="hero-kicker">PORTAFOLIO DE INGENIERÍA Y CASOS DE ÉXITO</p>
+
+          <div class="hero-live-indicator">
+            <span class="live-dot-pulse"></span>
+            <span>PORTAFOLIO DE INGENIERÍA • PROYECTOS CRÍTICOS EN PLANTA</span>
+          </div>
+
           <h1 class="hero-main-title">
             Experiencia comprobada en <span>plantas industriales</span>
           </h1>
+
           <p class="hero-lead">
-            Explora nuestras soluciones en acero, generación de energía, manufactura y minería. Pasa el cursor por cada imagen para ampliar la vista o acceder a su expediente técnico y documentación descargable.
+            Casos de éxito y soluciones llave en mano implementadas en minería, acería, generación de energía y plantas de manufactura continua con trazabilidad documental normada.
           </p>
-          <div class="hero-btns">
+
+          <div class="hero-btns hero-btns--center">
             <a href="contactanos.html" class="btn btn--green">CONSULTAR POR UN PROYECTO <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#galeria-proyectos" class="btn btn--dark-outline">VER PROYECTOS <i class="fa-solid fa-arrow-down"></i></a>
+            <a href="#galeria-proyectos" class="btn btn--dark-outline">EXPLORAR SECTORES <i class="fa-solid fa-arrow-down"></i></a>
           </div>
         </div>
 
-        <div class="projects-hero-right">
-          <div class="p-stat-card active">
-            <div class="psc-icon"><i class="fa-solid fa-circle-check"></i></div>
-            <div class="psc-info">
-              <strong>+61 Proyectos Entregados</strong>
-              <span>Confiabilidad, seguridad y cero penalidades en entrega.</span>
+        <!-- Matriz de Indicadores Horizontal -->
+        <div class="projects-telemetry-matrix">
+          <div class="ptm-card active" tabindex="0">
+            <div class="ptm-top">
+              <span class="ptm-tag">CONFIABILIDAD</span>
+              <i class="fa-solid fa-circle-check ptm-icon"></i>
             </div>
+            <strong class="ptm-number">+61</strong>
+            <span class="ptm-label">Proyectos Entregados</span>
+            <p class="ptm-sub">Cumplimiento de plazos y cero penalidades</p>
+            <div class="ptm-bar"><span style="width: 100%;"></span></div>
           </div>
-          <div class="p-stat-card">
-            <div class="psc-icon"><i class="fa-solid fa-industry"></i></div>
-            <div class="psc-info">
-              <strong>4 Sectores Industriales Clave</strong>
-              <span>Minería pesada, acería, centrales de generación y plantas fabriles.</span>
+
+          <div class="ptm-card" tabindex="0">
+            <div class="ptm-top">
+              <span class="ptm-tag">DISPONIBILIDAD</span>
+              <i class="fa-solid fa-shield-halved ptm-icon"></i>
             </div>
+            <strong class="ptm-number">99.4%</strong>
+            <span class="ptm-label">Operatividad HA</span>
+            <p class="ptm-sub">Sistemas redundantes y tolerancia a fallos</p>
+            <div class="ptm-bar"><span style="width: 94%;"></span></div>
           </div>
-          <div class="p-stat-card">
-            <div class="psc-icon"><i class="fa-solid fa-file-shield"></i></div>
-            <div class="psc-info">
-              <strong>Trazabilidad Documentaria Completa</strong>
-              <span>Dossiers de calidad, pruebas FAT/SAT y planos As-Built normados.</span>
+
+          <div class="ptm-card" tabindex="0">
+            <div class="ptm-top">
+              <span class="ptm-tag">COBERTURA</span>
+              <i class="fa-solid fa-industry ptm-icon"></i>
             </div>
+            <strong class="ptm-number">4</strong>
+            <span class="ptm-label">Sectores Clave</span>
+            <p class="ptm-sub">Acero, Generación, Manufactura y Minería</p>
+            <div class="ptm-bar"><span style="width: 85%;"></span></div>
+          </div>
+
+          <div class="ptm-card" tabindex="0">
+            <div class="ptm-top">
+              <span class="ptm-tag">NORMATIVAS</span>
+              <i class="fa-solid fa-file-contract ptm-icon"></i>
+            </div>
+            <strong class="ptm-number">100%</strong>
+            <span class="ptm-label">Dossier de Calidad</span>
+            <p class="ptm-sub">Pruebas FAT/SAT y planos As-Built normados</p>
+            <div class="ptm-bar"><span style="width: 100%;"></span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. BARRA DE FILTROS SEGÚN MAQUETA ORIGINAL -->
-    <section class="projects-filter-bar-wrap" id="galeria-proyectos">
+    <!-- 3. DOCK TECNOLÓGICO DE FILTROS -->
+    <section class="projects-filter-dock-wrap" id="galeria-proyectos">
       <div class="container">
-        <div class="projects-filter-grid">
-          <button type="button" class="pf-tab active" data-category-filter="all">All</button>
-          <button type="button" class="pf-tab" data-category-filter="acero">ACERO</button>
-          <button type="button" class="pf-tab" data-category-filter="generacion">GENERACIÓN</button>
-          <button type="button" class="pf-tab" data-category-filter="manufactura">MANUFACTURA</button>
-          <button type="button" class="pf-tab" data-category-filter="mineria">MINERÍA</button>
+        <div class="filter-dock-header">
+          <span class="fd-kicker"><i class="fa-solid fa-filter"></i> FILTRADO DINÁMICO POR SECTOR</span>
+          <span class="fd-hint">Selecciona una categoría para inspeccionar proyectos y expedientes</span>
+        </div>
+
+        <div class="projects-filter-dock">
+          <button type="button" class="pf-dock-btn active" data-category-filter="all">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Todos</span>
+            <span class="pf-dock-badge">6</span>
+          </button>
+
+          <button type="button" class="pf-dock-btn" data-category-filter="acero">
+            <i class="fa-solid fa-fire-burner"></i>
+            <span>Acero</span>
+            <span class="pf-dock-badge">1</span>
+          </button>
+
+          <button type="button" class="pf-dock-btn" data-category-filter="generacion">
+            <i class="fa-solid fa-bolt-lightning"></i>
+            <span>Generación</span>
+            <span class="pf-dock-badge">1</span>
+          </button>
+
+          <button type="button" class="pf-dock-btn" data-category-filter="manufactura">
+            <i class="fa-solid fa-gears"></i>
+            <span>Manufactura</span>
+            <span class="pf-dock-badge">3</span>
+          </button>
+
+          <button type="button" class="pf-dock-btn" data-category-filter="mineria">
+            <i class="fa-solid fa-mountain"></i>
+            <span>Minería</span>
+            <span class="pf-dock-badge">1</span>
+          </button>
         </div>
       </div>
     </section>
@@ -311,7 +370,7 @@
       </div>
     </div>
 
-    <!-- 6. MODAL 2: FICHA TÉCNICA DEL PROYECTO & SECCIÓN DE DOCUMENTOS / PDFS -->
+    <!-- 6. MODAL 2: FICHA TÉCNICA DEL PROYECTO & DOCUMENTOS DESCARGABLES (PDF) -->
     <div id="projectInfoModal" class="gys-modal" aria-hidden="true" role="dialog">
       <div class="gys-modal-backdrop"></div>
       <div class="gys-dossier-dialog">
@@ -329,7 +388,6 @@
             <p id="dossierDescription">Descripción detallada de ingeniería del proyecto...</p>
           </div>
 
-          <!-- Metadatos de Ingeniería -->
           <div class="gys-dossier-meta-grid">
             <div class="dossier-meta-item">
               <span class="dmi-label">ESTADO:</span>
@@ -349,13 +407,12 @@
             </div>
           </div>
 
-          <!-- SECCIÓN DE DOCUMENTOS TÉCNICOS & PDFS (LISTA PARA QUE ENLACES TUS ARCHIVOS) -->
+          <!-- SECCIÓN DE DOCUMENTOS TÉCNICOS & PDFS -->
           <div class="gys-dossier-docs-section">
             <h4><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Expediente Técnico y Documentos Descargables (PDF)</h4>
             <p class="docs-subtext">Descarga la documentación autorizada para este proyecto industrial:</p>
 
             <div class="dossier-pdf-list">
-              <!-- PDF 1 -->
               <a href="#" class="pdf-download-card" download>
                 <div class="pdf-icon-wrap"><i class="fa-solid fa-file-pdf"></i></div>
                 <div class="pdf-info">
@@ -365,7 +422,6 @@
                 <span class="pdf-action-tag"><i class="fa-solid fa-download"></i> Descargar</span>
               </a>
 
-              <!-- PDF 2 -->
               <a href="#" class="pdf-download-card" download>
                 <div class="pdf-icon-wrap"><i class="fa-solid fa-file-pdf"></i></div>
                 <div class="pdf-info">
@@ -375,7 +431,6 @@
                 <span class="pdf-action-tag"><i class="fa-solid fa-download"></i> Descargar</span>
               </a>
 
-              <!-- PDF 3 -->
               <a href="#" class="pdf-download-card" download>
                 <div class="pdf-icon-wrap"><i class="fa-solid fa-file-pdf"></i></div>
                 <div class="pdf-info">
@@ -396,7 +451,7 @@
     </div>
   </main>
 
-  <!-- 7. FOOTER CORPORATIVO OFICIAL UNIFICADO CON mapa_gys.png -->
+  <!-- 7. FOOTER CORPORATIVO UNIFICADO -->
   <footer class="site-footer">
     <div class="container footer-main">
       <div class="footer-corp-grid">
