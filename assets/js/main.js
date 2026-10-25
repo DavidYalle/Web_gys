@@ -268,7 +268,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initAboutPageInteractions() {
-  // Interacción en las 3 tarjetas (Historia, Misión, Visión)
+  // 1. Interacción en la nueva Franja Verde exclusiva de Nosotros (Hitos 01 - 04)
+  const agrSteps = document.querySelectorAll('.agr-step');
+  agrSteps.forEach((step) => {
+    step.addEventListener('mouseenter', () => {
+      agrSteps.forEach((s) => s.classList.remove('active'));
+      step.classList.add('active');
+    });
+  });
+
+  // 2. Interacción en las 3 tarjetas (Historia, Misión, Visión)
   const pillars = document.querySelectorAll('.about-pillar-card');
   pillars.forEach((card) => {
     card.addEventListener('mouseenter', () => {
@@ -277,7 +286,7 @@ function initAboutPageInteractions() {
     });
   });
 
-  // Interacción en los 5 medallones de Nuestros Valores
+  // 3. Interacción en los 5 medallones de Nuestros Valores (Con título corto)
   const valueCards = document.querySelectorAll('.value-circle-card');
   const vibTitle = document.getElementById('vibTitle');
   const vibText = document.getElementById('vibText');
@@ -287,12 +296,21 @@ function initAboutPageInteractions() {
       valueCards.forEach((item) => item.classList.remove('active'));
       vc.classList.add('active');
 
-      const name = vc.querySelector('h3')?.textContent || 'VALOR';
+      const shortTitle = vc.getAttribute('data-value-title');
       const detail = vc.getAttribute('data-value-detail');
-      if (vibTitle && detail) {
-        vibTitle.textContent = `ADN G&S CONTROL INDUSTRIAL — ${name}`;
+      if (vibTitle && shortTitle && detail) {
+        vibTitle.textContent = shortTitle;
         vibText.textContent = detail;
       }
+    });
+  });
+
+  // 4. Interacción en las 4 tarjetas de Metodología EPC / EPCM
+  const epcCards = document.querySelectorAll('.epc-step-card');
+  epcCards.forEach((ec) => {
+    ec.addEventListener('mouseenter', () => {
+      epcCards.forEach((item) => item.classList.remove('active-epc'));
+      ec.classList.add('active-epc');
     });
   });
 }
