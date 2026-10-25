@@ -302,3 +302,33 @@ function initInteractiveMap() {
     });
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initServiceFilters();
+});
+
+function initServiceFilters() {
+  const filterBtns = document.querySelectorAll('[data-service-filter]');
+  const serviceCards = document.querySelectorAll('.service-detail-card');
+
+  if (!filterBtns.length || !serviceCards.length) return;
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-service-filter');
+
+      serviceCards.forEach((card) => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeInCard 0.4s ease forwards';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}

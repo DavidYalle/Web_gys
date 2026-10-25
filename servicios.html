@@ -3,126 +3,472 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Servicios de Ingeniería | G&S Control Industrial SAC</title>
+  <meta name="description" content="Catálogo especializado de servicios: Ingeniería Básica y Detalle, PLC y SCADA, MES y OEE, Montaje Electromecánico, Instrumentación y Fabricación de Tableros.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/security.css">
 </head>
 <body>
 
+  <!-- 1. ENCABEZADO UNIFICADO -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand-link">
-        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
-      <nav>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" class="nav-link">Inicio</a></li>
-          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
-          <li><a href="servicios.html" class="nav-link active">Servicios</a></li>
-          <li><a href="proyectos.html" class="nav-link">Proyectos</a></li>
-          <li><a href="noticias.html" class="nav-link">Noticias</a></li>
-          <li><a href="contactanos.html" class="btn btn--primary" data-icon="bolt">Cotizar Proyecto</a></li>
-        </ul>
-      </nav>
+    <div class="container">
+      <div class="header-top-unified">
+        <div class="top-bar-info">
+          <span><i class="fa-solid fa-location-dot"></i> Lima, Perú</span>
+          <a href="tel:+51962375309"><i class="fa-solid fa-phone"></i> +51 962 375 309</a>
+          <a href="mailto:info@gyscontrol.com"><i class="fa-solid fa-envelope"></i> info@gyscontrol.com</a>
+        </div>
+        <div class="top-bar-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="header-main-unified">
+        <a href="index.html" class="brand-link" aria-label="G&S Control Industrial Inicio">
+          <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">INICIO</a></li>
+            <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
+            <li><a href="servicios.html" class="nav-link active">SERVICIOS</a></li>
+            <li><a href="proyectos.html" class="nav-link">PROYECTOS</a></li>
+            <li><a href="noticias.html" class="nav-link">NOTICIAS</a></li>
+            <li><a href="contactanos.html" class="nav-link">CONTÁCTANOS</a></li>
+            <li><a href="contactanos.html" class="btn btn--green">COTIZAR PROYECTO <i class="fa-solid fa-arrow-right"></i></a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="page-banner">
-      <div class="container">
-        <span class="section-tag" data-icon="gears">Catálogo Técnico</span>
-        <h1 class="section-title">Nuestras 5 Líneas de <span>Ingeniería Especializada</span></h1>
-        <p class="section-desc">Desarrollamos desde la ingeniería conceptual y de detalle hasta la puesta en marcha (Commissioning) y soporte post-venta.</p>
+    <!-- 2. HERO SERVICIOS CON FONDO DE IMAGEN TRANSPARENTE OSCURA -->
+    <section class="services-hero">
+      <div class="services-hero-bg"></div>
+      <div class="services-hero-overlay"></div>
+
+      <div class="container services-hero-grid">
+        <div class="services-hero-left">
+          <div class="services-breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>SERVICIOS</span>
+          </div>
+          <p class="hero-kicker">SOLUCIONES INTEGRALES LLAVE EN MANO</p>
+          <h1 class="hero-main-title">
+            Ingeniería y automatización para <span>alta exigencia</span>
+          </h1>
+          <p class="hero-lead">
+            Desarrollamos proyectos multidisciplinarios abarcando ingeniería de detalle, programación SCADA/PLC, telemetría MES/OEE, montaje electromecánico y fabricación de tableros bajo normativas internacionales.
+          </p>
+          <div class="hero-btns">
+            <a href="contactanos.html" class="btn btn--green">SOLICITAR COTIZACIÓN <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#catalogo-servicios" class="btn btn--dark-outline">VER 6 LÍNEAS TÉCNICAS <i class="fa-solid fa-arrow-down"></i></a>
+          </div>
+        </div>
+
+        <div class="services-hero-right">
+          <div class="services-stat-badge active">
+            <div class="ssb-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div>
+              <strong>Multiplataforma Industrial</strong>
+              <span>Programación en Siemens, Rockwell, Schneider, GE e Ignition.</span>
+            </div>
+          </div>
+          <div class="services-stat-badge">
+            <div class="ssb-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <strong>Certificaciones IEC / NEMA / UL</strong>
+              <span>Pruebas FAT y SAT en taller y comisionamiento en planta.</span>
+            </div>
+          </div>
+          <div class="services-stat-badge">
+            <div class="ssb-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div>
+              <strong>Optimización OEE y Eficiencia</strong>
+              <span>Reducción comprobada de paradas no programadas y consumo.</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid-3">
-        <!-- Línea 1 -->
-        <article class="card">
-          <div>
-            <span class="badge">Línea 01</span>
-            <h3 class="card-title" data-icon="microchip">Automatización Industrial & SCADA</h3>
-            <p class="card-text">Arquitecturas de control de alta disponibilidad e integración IT/OT para plantas continuas y por lotes.</p>
-            <ul class="card-list">
-              <li data-icon="check">Programación de PLC, PAC y DCS.</li>
-              <li data-icon="check">Desarrollo de sistemas SCADA y pantallas HMI.</li>
-              <li data-icon="check">Redes industriales PROFINET, EtherNet/IP, Modbus TCP.</li>
-            </ul>
+    <!-- 3. BARRA DE FILTROS INTERACTIVA RÁPIDA -->
+    <section class="services-filter-strip" id="catalogo-servicios">
+      <div class="container">
+        <div class="sfs-wrapper">
+          <span class="sfs-label"><i class="fa-solid fa-sliders"></i> FILTRAR LÍNEA:</span>
+          <div class="sfs-buttons">
+            <button type="button" class="sfs-btn active" data-service-filter="all">Todas las Líneas (6)</button>
+            <button type="button" class="sfs-btn" data-service-filter="ingenieria">Ingeniería y Detalle</button>
+            <button type="button" class="sfs-btn" data-service-filter="control">PLC y SCADA</button>
+            <button type="button" class="sfs-btn" data-service-filter="mes">MES y OEE</button>
+            <button type="button" class="sfs-btn" data-service-filter="montaje">Montaje</button>
+            <button type="button" class="sfs-btn" data-service-filter="instrumentacion">Instrumentación</button>
+            <button type="button" class="sfs-btn" data-service-filter="tableros">Tableros</button>
           </div>
-          <a href="contactanos.html" class="btn btn--primary">Solicitar Cotización</a>
-        </article>
+        </div>
+      </div>
+    </section>
 
-        <!-- Línea 2 -->
-        <article class="card">
-          <div>
-            <span class="badge">Línea 02</span>
-            <h3 class="card-title" data-icon="bolt">Ingeniería Eléctrica MT / BT</h3>
-            <p class="card-text">Infraestructura eléctrica segura y confiable para plantas industriales y centros de transformación.</p>
-            <ul class="card-list">
-              <li data-icon="check">Subestaciones eléctricas de media y baja tensión.</li>
-              <li data-icon="check">Canalizaciones, bandejas portacables y alimentadores.</li>
-              <li data-icon="check">Sistemas de puesta a tierra y pararrayos.</li>
-            </ul>
-          </div>
-          <a href="contactanos.html" class="btn btn--primary">Solicitar Cotización</a>
-        </article>
+    <!-- 4. CATÁLOGO COMPLETO DE SERVICIOS (FONDO BLANCO PURO) -->
+    <section class="light-section">
+      <div class="container">
+        <div class="corp-section-title-wrap">
+          <h2 class="corp-dual-title">NUESTROS <span>SERVICIOS</span></h2>
+          <div class="corp-title-underline"></div>
+        </div>
 
-        <!-- Línea 3 -->
-        <article class="card">
-          <div>
-            <span class="badge">Línea 03</span>
-            <h3 class="card-title" data-icon="gauge">Instrumentación Industrial</h3>
-            <p class="card-text">Medición exacta y control preciso de variables críticas de proceso en campo.</p>
-            <ul class="card-list">
-              <li data-icon="check">Sensores y transmisores de presión, flujo, nivel y pH.</li>
-              <li data-icon="check">Sintonización de lazos PID y válvulas de control.</li>
-              <li data-icon="check">Calibración y contrastación en laboratorio y planta.</li>
-            </ul>
-          </div>
-          <a href="contactanos.html" class="btn btn--primary">Solicitar Cotización</a>
-        </article>
+        <div class="detailed-services-flow">
 
-        <!-- Línea 4 -->
-        <article class="card">
-          <div>
-            <span class="badge">Línea 04</span>
-            <h3 class="card-title" data-icon="industry">Fabricación de Tableros Eléctricos</h3>
-            <p class="card-text">Integración de gabinetes autosoportados y adosados bajo normativa internacional IEC 61439.</p>
-            <ul class="card-list">
-              <li data-icon="check">Centros de Control de Motores (CCM) con VFD y arrancadores.</li>
-              <li data-icon="check">Bancos automáticos de condensadores y filtros de armónicos.</li>
-              <li data-icon="check">Tableros de transferencia automática (TTA) y PLC.</li>
-            </ul>
-          </div>
-          <a href="contactanos.html" class="btn btn--primary">Solicitar Cotización</a>
-        </article>
+          <!-- SERVICIO 1: INGENIERÍA BÁSICA Y DE DETALLE -->
+          <article class="service-detail-card" data-category="ingenieria" id="servicio-ingenieria">
+            <div class="sdc-grid">
+              <div class="sdc-visual-col">
+                <div class="sdc-img-box">
+                  <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Ingeniería Básica y de Detalle">
+                  <span class="sdc-badge">LÍNEA 01</span>
+                </div>
+                <div class="sdc-checklist-box">
+                  <h4><i class="fa-solid fa-list-check"></i> ALCANCE TÉCNICO:</h4>
+                  <ul>
+                    <li><i class="fa-solid fa-check"></i> Elaboración de Memorias Descriptivas</li>
+                    <li><i class="fa-solid fa-check"></i> Listados de Equipos y IOs</li>
+                    <li><i class="fa-solid fa-check"></i> Memorias de Cálculo</li>
+                    <li><i class="fa-solid fa-check"></i> Filosofías de Control</li>
+                    <li><i class="fa-solid fa-check"></i> Diseño de Planos Eléctricos e Instrumentación</li>
+                  </ul>
+                </div>
+              </div>
 
-        <!-- Línea 5 -->
-        <article class="card">
-          <div>
-            <span class="badge">Línea 05</span>
-            <h3 class="card-title" data-icon="wrench">Mantenimiento & Calidad de Energía</h3>
-            <p class="card-text">Continuidad operativa garantizada mediante diagnóstico predictivo y preventivo.</p>
-            <ul class="card-list">
-              <li data-icon="check">Termografía infrarroja y análisis de redes eléctricas.</li>
-              <li data-icon="check">Mantenimiento de variadores de velocidad y motores.</li>
-              <li data-icon="check">Contratos de soporte anual y atención de emergencias 24/7.</li>
-            </ul>
+              <div class="sdc-text-col">
+                <div class="sdc-header-chip">INGENIERÍA</div>
+                <h3 class="sdc-title">Ingeniería Básica y de Detalle</h3>
+                <p class="sdc-desc">
+                  Nuestra experiencia en implementación de sistemas de Control nos permite optimizar costos y reducir tiempos de ejecución, optimizando los recursos para el cliente. Nuestros servicios abarcan desde memoria descriptiva y cálculo de sistemas de control, desarrollo de esquemas unifilares en BT con normas IEC, desarrollo de diagramas de flujo de control, desarrollo de planos de montaje y cableado con norma IEC, hasta especificaciones técnicas de equipos.
+                </p>
+                <div class="sdc-meta-points">
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Planos As-Built en EPLAN &amp; AutoCAD Electrical</span>
+                  </div>
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Cumplimiento riguroso de normativas IEC y CNE</span>
+                  </div>
+                </div>
+                <a href="contactanos.html" class="btn btn--green">COTIZAR ESTA LÍNEA <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SERVICIO 2: PLC Y SCADA -->
+          <article class="service-detail-card" data-category="control" id="servicio-plc-scada">
+            <div class="sdc-grid sdc-grid--reverse">
+              <div class="sdc-visual-col">
+                <div class="sdc-img-box">
+                  <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" alt="Programación de PLCs y SCADAs">
+                  <span class="sdc-badge">LÍNEA 02</span>
+                </div>
+                <div class="sdc-checklist-box sdc-checklist-box--accent">
+                  <h4><i class="fa-solid fa-list-check"></i> ALCANCE TÉCNICO:</h4>
+                  <ul>
+                    <li><i class="fa-solid fa-check"></i> Programación de PLCs Rockwell, Siemens, Schneider, GE</li>
+                    <li><i class="fa-solid fa-check"></i> Programación de SCADAs Rockwell, Siemens, Schneider, Ignition, etc.</li>
+                    <li><i class="fa-solid fa-check"></i> Configuración de HMI táctiles de alta disponibilidad</li>
+                    <li><i class="fa-solid fa-check"></i> Redes Industriales: Profinet, EtherNet/IP, Modbus TCP</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="sdc-text-col">
+                <div class="sdc-header-chip">PLC Y SCADA</div>
+                <h3 class="sdc-title">Programación de PLCs y SCADAs</h3>
+                <p class="sdc-desc">
+                  El manejo de multiplataformas nos permite brindar una solución a medida de acuerdo a las necesidades específicas del cliente. Nuestros servicios incluyen: Procura y selección de PLC's, HMI y software especializado, programación Ladder de acuerdo a norma IEC, programación SCADA con arquitectura cliente/servidor, así como la configuración de redes de campo (DeviceNet, Ethernet, Profibus, Modbus TCP/RTU, Profinet, EtherNet/IP).
+                </p>
+                <div class="sdc-meta-points">
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Arquitecturas redundantes para cero paradas no programadas</span>
+                  </div>
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Diagnóstico de alarmas e integración de telemetría remota</span>
+                  </div>
+                </div>
+                <a href="contactanos.html" class="btn btn--green">COTIZAR ESTA LÍNEA <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SERVICIO 3: MES Y OEE -->
+          <article class="service-detail-card" data-category="mes" id="servicio-mes-oee">
+            <div class="sdc-grid">
+              <div class="sdc-visual-col">
+                <div class="sdc-img-box">
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Reportes de Producción y Eficiencia OEE">
+                  <span class="sdc-badge">LÍNEA 03</span>
+                </div>
+                <div class="sdc-checklist-box">
+                  <h4><i class="fa-solid fa-list-check"></i> ALCANCE TÉCNICO:</h4>
+                  <ul>
+                    <li><i class="fa-solid fa-check"></i> Desarrollo de reportes de producción</li>
+                    <li><i class="fa-solid fa-check"></i> Desarrollo de reportes de calidad</li>
+                    <li><i class="fa-solid fa-check"></i> Implementación de sistemas de medición de eficiencia OEE</li>
+                    <li><i class="fa-solid fa-check"></i> Integración de variables de proceso a sistemas ERPs</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="sdc-text-col">
+                <div class="sdc-header-chip">MES Y OEE</div>
+                <h3 class="sdc-title">Reportes de Producción y Eficiencia</h3>
+                <p class="sdc-desc">
+                  Mientras el cliente tenga mayor información del funcionamiento de su planta, podrá tomar mejores decisiones de inversión y productividad. Nuestra experiencia en manejo de múltiples plataformas nos permite ofrecer al cliente una solución a medida y escalable. Nuestros servicios van desde el desarrollo y reportes de producción, integración de variables de campo con ERP (SAP, Oracle) y sistemas de mantenimiento predictivo.
+                </p>
+                <div class="sdc-meta-points">
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Dashboards de rendimiento en tiempo real vía web y móvil</span>
+                  </div>
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Cálculo automático de disponibilidad, rendimiento y calidad OEE</span>
+                  </div>
+                </div>
+                <a href="contactanos.html" class="btn btn--green">COTIZAR ESTA LÍNEA <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SERVICIO 4: MONTAJE ELECTROMECÁNICO -->
+          <article class="service-detail-card" data-category="montaje" id="servicio-montaje">
+            <div class="sdc-grid sdc-grid--reverse">
+              <div class="sdc-visual-col">
+                <div class="sdc-img-box">
+                  <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=800&q=80" alt="Montaje Electromecánico para Sistemas Eléctricos">
+                  <span class="sdc-badge">LÍNEA 04</span>
+                </div>
+                <div class="sdc-checklist-box sdc-checklist-box--accent">
+                  <h4><i class="fa-solid fa-list-check"></i> ALCANCE TÉCNICO:</h4>
+                  <ul>
+                    <li><i class="fa-solid fa-check"></i> Montaje de tableros eléctricos y de control</li>
+                    <li><i class="fa-solid fa-check"></i> Tendido de canaletas y tuberías eléctricas y de control</li>
+                    <li><i class="fa-solid fa-check"></i> Tendido de cables eléctricos de fuerza y de control</li>
+                    <li><i class="fa-solid fa-check"></i> Pruebas de aislamiento, continuidad y puesta a tierra</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="sdc-text-col">
+                <div class="sdc-header-chip">MONTAJE ELECTROMECÁNICO</div>
+                <h3 class="sdc-title">Montaje Electromecánicos para Sistemas Eléctricos</h3>
+                <p class="sdc-desc">
+                  Ejecutamos el montaje integral de infraestructura eléctrica y de control con cuadrillas homologadas para operaciones en minería, refinerías y plantas industriales. Garantizamos el ruteo normado de alimentadores de potencia en media y baja tensión, instalación de bandejas portacables tipo escalera/malla, sellado cortafuego y conexionado preciso en borneras de campo.
+                </p>
+                <div class="sdc-meta-points">
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Personal certificado con SCTR y protocolos SST en planta</span>
+                  </div>
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Trazabilidad de pruebas de aislamiento con megóhmetro calibrado</span>
+                  </div>
+                </div>
+                <a href="contactanos.html" class="btn btn--green">COTIZAR ESTA LÍNEA <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SERVICIO 5: INSTRUMENTACIÓN -->
+          <article class="service-detail-card" data-category="instrumentacion" id="servicio-instrumentacion">
+            <div class="sdc-grid">
+              <div class="sdc-visual-col">
+                <div class="sdc-img-box">
+                  <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80" alt="Servicios de Instrumentación Industrial">
+                  <span class="sdc-badge">LÍNEA 05</span>
+                </div>
+                <div class="sdc-checklist-box">
+                  <h4><i class="fa-solid fa-list-check"></i> ALCANCE TÉCNICO:</h4>
+                  <ul>
+                    <li><i class="fa-solid fa-check"></i> Suministro de instrumentación industrial</li>
+                    <li><i class="fa-solid fa-check"></i> Montaje, instalación y configuración de instrumentación industrial</li>
+                    <li><i class="fa-solid fa-check"></i> Mantenimiento preventivo y calibración en campo</li>
+                    <li><i class="fa-solid fa-check"></i> Sintonización de lazos PID y válvulas modulantes</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="sdc-text-col">
+                <div class="sdc-header-chip">INSTRUMENTACIÓN</div>
+                <h3 class="sdc-title">Servicios de Instrumentación</h3>
+                <p class="sdc-desc">
+                  La experiencia con partners a nivel global y el efectivo proceso de cadena de suministros con la que ejecutamos nuestros proyectos ahorran tiempo al cliente. Entregamos los instrumentos requeridos bajo las especificaciones adecuadas en los tiempos acordados; nuestros servicios comprenden la selección, procura, montaje, comisionamiento y calibración de transmisores de presión, flujo, nivel, temperatura y analítica de proceso.
+                </p>
+                <div class="sdc-meta-points">
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Configuración de protocolos HART, Modbus y Profibus PA/DP</span>
+                  </div>
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Emisión de certificados de calibración con patrones certificados</span>
+                  </div>
+                </div>
+                <a href="contactanos.html" class="btn btn--green">COTIZAR ESTA LÍNEA <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SERVICIO 6: TABLEROS -->
+          <article class="service-detail-card" data-category="tableros" id="servicio-tableros">
+            <div class="sdc-grid sdc-grid--reverse">
+              <div class="sdc-visual-col">
+                <div class="sdc-img-box">
+                  <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80" alt="Armado de Tableros Eléctricos y de Control">
+                  <span class="sdc-badge">LÍNEA 06</span>
+                </div>
+                <div class="sdc-checklist-box sdc-checklist-box--accent">
+                  <h4><i class="fa-solid fa-list-check"></i> ALCANCE TÉCNICO:</h4>
+                  <ul>
+                    <li><i class="fa-solid fa-check"></i> Armado de tableros eléctricos y de control</li>
+                    <li><i class="fa-solid fa-check"></i> Armado de tableros neumáticos y electroválvulas</li>
+                    <li><i class="fa-solid fa-check"></i> Desarrollo de pruebas FAT (Factory Acceptance Test)</li>
+                    <li><i class="fa-solid fa-check"></i> Integración de CCMs con variadores de frecuencia</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="sdc-text-col">
+                <div class="sdc-header-chip">TABLEROS</div>
+                <h3 class="sdc-title">Armado de Tableros Eléctricos y de Control</h3>
+                <p class="sdc-desc">
+                  Como empresa especializada en Sistemas de Control y sumado a la experiencia en la procura de materiales de protección eléctrica y marshalling, suministramos el diseño y fabricación de tableros de control y fuerza en BT para diferentes aplicaciones de acuerdo a normas NEMA e IEC, garantizando calidad bajo pruebas FAT y SAT y armado bajo certificación UL.
+                </p>
+                <div class="sdc-meta-points">
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Gabinetes Rittal / Schneider IP65/IP66 y NEMA 4X</span>
+                  </div>
+                  <div class="smp-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Rotulado industrial termocontraíble y peinado normado de conductores</span>
+                  </div>
+                </div>
+                <a href="contactanos.html" class="btn btn--green">COTIZAR ESTA LÍNEA <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Banner de Cotización Rápida al pie de Servicios -->
+        <div class="service-cta-banner">
+          <div class="scb-content">
+            <span class="scb-kicker">SOLUCIONES A MEDIDA</span>
+            <h3>¿Tienes un proyecto de ingeniería en tu planta?</h3>
+            <p>Nuestros ingenieros especialistas evalúan tu requerimiento técnico y presentan una propuesta integral en menos de 24 horas.</p>
           </div>
-          <a href="contactanos.html" class="btn btn--primary">Solicitar Cotización</a>
-        </article>
+          <a href="contactanos.html" class="btn btn--green btn--lg">CONTACTAR AHORA <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- 5. FOOTER CORPORATIVO UNIFICADO (INTACTO CON mapa_gys.png) -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
-        <span>© 2026 G&S Control Industrial SAC. Todos los derechos reservados.</span>
+    <div class="container footer-main">
+      <div class="footer-corp-grid">
+
+        <div>
+          <h3 class="footer-heading">Contactamos</h3>
+          <div class="footer-logo-box">
+            <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+          </div>
+          <div class="social-circles">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <div class="footer-contact-info">
+            <p>Contactanos: <a href="tel:+51962375309">+51 962 375 309</a></p>
+            <p>Escríbenos: <a href="mailto:info@gyscontrol.com" class="email-bold">info@gyscontrol.com</a></p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Proyectos Ejecutados</h3>
+          <div class="projects-world-box">
+            <div class="world-map-img-wrap" id="worldMapWrap">
+              <img src="assets/images/mapa_gys.png" alt="Proyectos ejecutados en Perú, USA, Canadá y China" class="world-map-img" id="worldMapImg">
+            </div>
+
+            <ul class="country-stats-list">
+              <li class="country-stat-item" data-country="peru">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +50 Perú
+              </li>
+              <li class="country-stat-item" data-country="usa">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +08 USA
+              </li>
+              <li class="country-stat-item" data-country="canada">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +01 Canada
+              </li>
+              <li class="country-stat-item" data-country="china">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +02 China
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Blog Recientes</h3>
+          <div class="recent-blog-list">
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DEL TRABAJADOR 2017</span>
+            </a>
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DEL TRABAJADOR 2019</span>
+            </a>
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DE GYS – 2019</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 GYS CONTROL INDUSTRIAL. All Rights Reserved.</span>
+        <div class="footer-mini-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
       </div>
     </div>
   </footer>
