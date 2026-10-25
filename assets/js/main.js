@@ -1,6 +1,6 @@
 /**
  * G&S CONTROL INDUSTRIAL SAC - CONTROLADOR GLOBAL DE INTERFAZ (ES6+)
- * Unifica el Header (#2b2b2b) y el Footer en todas las páginas del sitio.
+ * Unifica el Header (#2b2b2b) con todas las redes y añade interactividad al mapa y países.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,16 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initProjectFilters();
   initInteractiveMap();
+  initWorldMapInteraction();
 });
 
 function syncUnifiedHeaderAndFooter() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
 
-  // Eliminar cualquier top-bar antiguo suelto si existiera en páginas secundarias
   const legacyTopBar = document.querySelector('.top-bar');
   if (legacyTopBar) legacyTopBar.remove();
 
-  // 1. Inyectar el Encabezado Unificado (#2b2b2b) en todas las páginas
+  // 1. Encabezado unificado con el ícono de Twitter incluido
   const header = document.querySelector('.site-header');
   if (header) {
     header.innerHTML = `
@@ -32,6 +32,7 @@ function syncUnifiedHeaderAndFooter() {
           <div class="top-bar-socials">
             <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
             <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -58,7 +59,7 @@ function syncUnifiedHeaderAndFooter() {
       </div>`;
   }
 
-  // 2. Unificar el Footer Corporativo con mapa_gys.png en todas las páginas
+  // 2. Footer unificado con todas las redes sociales y mapa interactivo
   const footer = document.querySelector('.site-footer');
   if (footer && !footer.querySelector('.footer-corp-grid')) {
     footer.innerHTML = `
@@ -70,12 +71,12 @@ function syncUnifiedHeaderAndFooter() {
               <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
             </div>
             <div class="social-circles">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook G&S">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Twitter G&S">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
+              <a href="#" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="#" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             <div class="footer-contact-info">
               <p>Contactanos: <a href="tel:+51962375309">+51 962 375 309</a></p>
@@ -86,14 +87,14 @@ function syncUnifiedHeaderAndFooter() {
           <div>
             <h3 class="footer-heading">Proyectos Ejecutados</h3>
             <div class="projects-world-box">
-              <div class="world-map-img-wrap">
-                <img src="assets/images/mapa_gys.png" alt="Proyectos ejecutados en Perú, USA, Canadá y China" class="world-map-img">
+              <div class="world-map-img-wrap" id="worldMapWrap">
+                <img src="assets/images/mapa_gys.png" alt="Proyectos ejecutados en Perú, USA, Canadá y China" class="world-map-img" id="worldMapImg">
               </div>
               <ul class="country-stats-list">
-                <li class="country-stat-item"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+50 Perú</li>
-                <li class="country-stat-item"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+08 USA</li>
-                <li class="country-stat-item"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+01 Canada</li>
-                <li class="country-stat-item"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+02 China</li>
+                <li class="country-stat-item" data-country="peru"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+50 Perú</li>
+                <li class="country-stat-item" data-country="usa"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+08 USA</li>
+                <li class="country-stat-item" data-country="canada"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+01 Canada</li>
+                <li class="country-stat-item" data-country="china"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+02 China</li>
               </ul>
             </div>
           </div>
@@ -112,12 +113,43 @@ function syncUnifiedHeaderAndFooter() {
         <div class="container footer-bottom-inner">
           <span>© 2026 GYS CONTROL INDUSTRIAL. All Rights Reserved.</span>
           <div class="footer-mini-socials">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
       </div>`;
+    
+    // Volver a inicializar la interacción del mapa tras inyectar el footer
+    initWorldMapInteraction();
   }
+}
+
+/**
+ * Añade interactividad al mapa y a la lista de países en el Footer
+ */
+function initWorldMapInteraction() {
+  const mapImg = document.getElementById('worldMapImg');
+  const countryItems = document.querySelectorAll('.country-stat-item');
+
+  if (!mapImg || !countryItems.length) return;
+
+  countryItems.forEach((item) => {
+    item.style.cursor = 'pointer';
+    item.addEventListener('mouseenter', () => {
+      countryItems.forEach((ci) => ci.classList.remove('active-country'));
+      item.classList.add('active-country');
+      mapImg.classList.add('map-highlight');
+    });
+
+    item.addEventListener('mouseleave', () => {
+      item.classList.remove('active-country');
+      mapImg.classList.remove('map-highlight');
+    });
+  });
 }
 
 function initLogoFallback() {
@@ -131,9 +163,7 @@ function initLogoFallback() {
     <text x="148" y="35" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="22" fill="#ffffff" letter-spacing="1.5">CONTROL</text>
     <text x="148" y="58" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="20" fill="#ffffff" letter-spacing="1.2">INDUSTRIAL</text>
   </svg>`;
-
   const encodedSvg = `data:image/svg+xml;utf8,${encodeURIComponent(svgLogo)}`;
-
   document.querySelectorAll('.gys-logo-img').forEach((img) => {
     img.addEventListener('error', () => {
       if (img.src !== encodedSvg) img.src = encodedSvg;
@@ -163,7 +193,6 @@ function initProjectFilters() {
       filterBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       const target = btn.getAttribute('data-project-filter');
-
       projectCards.forEach((card) => {
         const category = card.getAttribute('data-project-category');
         card.style.display = target === 'all' || category === target ? 'flex' : 'none';
