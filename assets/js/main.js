@@ -262,3 +262,37 @@ function initInteractiveMap() {
     });
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initAboutPageInteractions();
+});
+
+function initAboutPageInteractions() {
+  // Interacción en las 3 tarjetas (Historia, Misión, Visión)
+  const pillars = document.querySelectorAll('.about-pillar-card');
+  pillars.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      pillars.forEach((c) => c.classList.remove('active-pillar'));
+      card.classList.add('active-pillar');
+    });
+  });
+
+  // Interacción en los 5 medallones de Nuestros Valores
+  const valueCards = document.querySelectorAll('.value-circle-card');
+  const vibTitle = document.getElementById('vibTitle');
+  const vibText = document.getElementById('vibText');
+
+  valueCards.forEach((vc) => {
+    vc.addEventListener('mouseenter', () => {
+      valueCards.forEach((item) => item.classList.remove('active'));
+      vc.classList.add('active');
+
+      const name = vc.querySelector('h3')?.textContent || 'VALOR';
+      const detail = vc.getAttribute('data-value-detail');
+      if (vibTitle && detail) {
+        vibTitle.textContent = `ADN G&S CONTROL INDUSTRIAL — ${name}`;
+        vibText.textContent = detail;
+      }
+    });
+  });
+}

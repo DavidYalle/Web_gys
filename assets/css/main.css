@@ -1492,3 +1492,448 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
   .gys-wa-container { bottom: 18px; right: 18px; }
   .gys-wa-button { width: 52px; height: 52px; font-size: 1.7rem; }
 }
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS E INTERACTIVOS DEL APARTADO "NOSOTROS"
+   ========================================================================== */
+
+/* 1. Hero Nosotros con Imagen Transparente Oscura */
+.about-hero {
+  position: relative;
+  padding: 4.2rem 0 4.5rem;
+  background-color: #070a0f;
+  overflow: hidden;
+  border-bottom: 2px solid var(--gys-green-primary);
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1920&q=85');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.52;
+  filter: contrast(1.08);
+  transform: scale(1.02);
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 40%, rgba(146, 208, 80, 0.18), transparent 55%),
+    linear-gradient(90deg, rgba(7, 10, 15, 0.9) 0%, rgba(7, 10, 15, 0.68) 50%, rgba(7, 10, 15, 0.84) 100%);
+}
+
+.about-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(146, 208, 80, 0.35);
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  margin-bottom: 1.1rem;
+}
+
+.about-breadcrumb a:hover {
+  color: var(--gys-green-primary);
+}
+
+.about-breadcrumb i {
+  font-size: 0.65rem;
+  color: var(--gys-green-primary);
+}
+
+.about-breadcrumb span {
+  color: var(--gys-green-primary);
+}
+
+.about-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.about-stat-card {
+  background: rgba(14, 20, 28, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 4px solid var(--gys-green-primary);
+  border-radius: 10px;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-stat-card:hover,
+.about-stat-card.active {
+  transform: translateX(-6px);
+  border-color: var(--gys-green-primary);
+  background: rgba(18, 27, 38, 0.94);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 18px rgba(146, 208, 80, 0.22);
+}
+
+.asc-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(146, 208, 80, 0.15);
+  color: var(--gys-green-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  transition: all 0.28s ease;
+}
+
+.about-stat-card:hover .asc-icon {
+  background: var(--gys-green-primary);
+  color: #0b0f14;
+  transform: scale(1.08) rotate(5deg);
+}
+
+.asc-info strong {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.asc-info span {
+  display: block;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.35;
+}
+
+/* 2. Títulos Corporativos Centrados (ACERCA DE NOSOTROS / NUESTROS VALORES) */
+.corp-section-title-wrap {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.corp-dual-title {
+  font-size: clamp(1.75rem, 2.5vw + 0.6rem, 2.35rem);
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+
+.corp-dual-title span {
+  color: var(--gys-green-primary);
+  font-weight: 800;
+}
+
+.corp-title-underline {
+  width: 90px;
+  height: 3px;
+  background-color: var(--gys-green-primary);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* 3. Grid de 3 Tarjetas: HISTORIA, MISIÓN, VISIÓN */
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.about-pillar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.about-pillar-card:hover,
+.about-pillar-card.active-pillar {
+  transform: translateY(-8px);
+  border-color: var(--gys-green-primary);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12), 0 0 0 1px var(--gys-green-primary);
+}
+
+/* Bloque Superior con Franja Verde Lateral + Foto */
+.apc-media {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  height: 225px;
+  overflow: hidden;
+}
+
+.apc-green-strip {
+  background-color: var(--gys-green-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  transition: all 0.3s ease;
+}
+
+.about-pillar-card:hover .apc-green-strip {
+  background-color: var(--gys-green-secondary);
+}
+
+.about-pillar-card:hover .apc-green-strip i {
+  transform: scale(1.18);
+}
+
+.apc-green-strip i {
+  transition: transform 0.3s ease;
+}
+
+.apc-img-box {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.apc-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-pillar-card:hover .apc-img-box img {
+  transform: scale(1.08);
+}
+
+.apc-floating-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(11, 15, 20, 0.86);
+  color: var(--gys-green-primary);
+  border: 1px solid var(--gys-green-primary);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+  border-radius: 4px;
+}
+
+.apc-body {
+  padding: 1.65rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.apc-body h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 0.65rem;
+}
+
+.apc-body h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 42px;
+  height: 3px;
+  background-color: var(--gys-green-primary);
+  transition: width 0.3s ease;
+}
+
+.about-pillar-card:hover .apc-body h3::after {
+  width: 85px;
+}
+
+.apc-body p {
+  font-size: 0.9rem;
+  color: var(--text-dark-muted);
+  line-height: 1.68;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.apc-Interactive-footer {
+  padding-top: 0.9rem;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gys-green-dark);
+}
+
+.apc-Interactive-footer i {
+  color: var(--gys-green-primary);
+  margin-right: 0.35rem;
+}
+
+/* 4. Grid de 5 Valores Interactivos en Fondo Blanco */
+.values-5-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.35rem;
+  margin-bottom: 2.5rem;
+}
+
+.value-circle-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem 1.2rem 1.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.value-circle-card:hover,
+.value-circle-card.active {
+  transform: translateY(-7px);
+  border-color: var(--gys-green-primary);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.1);
+}
+
+.vcc-medal-outer {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.35rem;
+  transition: all 0.35s ease;
+}
+
+.vcc-medal-inner {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid var(--gys-green-primary);
+  color: var(--gys-green-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 14px rgba(146, 208, 80, 0.18);
+  transition: all 0.35s ease;
+}
+
+.value-circle-card:hover .vcc-medal-outer,
+.value-circle-card.active .vcc-medal-outer {
+  border-color: var(--gys-green-primary);
+  background: rgba(146, 208, 80, 0.12);
+  transform: scale(1.05);
+}
+
+.value-circle-card:hover .vcc-medal-inner,
+.value-circle-card.active .vcc-medal-inner {
+  background: var(--gys-green-primary);
+  color: #0b0f14;
+  transform: rotateY(180deg);
+}
+
+/* Mantener el ícono al derecho durante el giro */
+.value-circle-card:hover .vcc-medal-inner i,
+.value-circle-card.active .vcc-medal-inner i {
+  transform: rotateY(-180deg);
+}
+
+.value-circle-card h3 {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--gys-green-dark);
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.5px;
+}
+
+.value-circle-card p {
+  font-size: 0.8rem;
+  color: var(--text-dark-muted);
+  line-height: 1.55;
+}
+
+/* Barra inferior interactiva de Nuestros Valores */
+.value-interactive-banner {
+  background: linear-gradient(90deg, #f8fafc 0%, #ffffff 100%);
+  border: 1px solid #dbe3ee;
+  border-left: 5px solid var(--gys-green-primary);
+  border-radius: 10px;
+  padding: 1.35rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+}
+
+.vib-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(146, 208, 80, 0.15);
+  color: var(--gys-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.vib-content {
+  flex: 1;
+}
+
+.vib-content strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.vib-content p {
+  font-size: 0.86rem;
+  color: var(--text-dark-muted);
+}
+
+@media (max-width: 1120px) {
+  .about-hero-grid,
+  .about-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .values-5-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .value-interactive-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
