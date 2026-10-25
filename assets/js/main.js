@@ -1,10 +1,11 @@
 /**
  * G&S CONTROL INDUSTRIAL SAC - CONTROLADOR GLOBAL DE INTERFAZ (ES6+)
- * Unifica el Header (#2b2b2b) con todas las redes y añade interactividad al mapa y países.
+ * Sincroniza Header, Footer, Redes Sociales Reales y el Asistente Flotante de WhatsApp.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   syncUnifiedHeaderAndFooter();
+  injectWhatsAppWidget();
   initLogoFallback();
   initMobileNav();
   initProjectFilters();
@@ -12,13 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initWorldMapInteraction();
 });
 
+/**
+ * Inyecta y unifica el Header, Footer con Redes Sociales reales y el Botón Flotante de WhatsApp
+ */
 function syncUnifiedHeaderAndFooter() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
 
   const legacyTopBar = document.querySelector('.top-bar');
   if (legacyTopBar) legacyTopBar.remove();
 
-  // 1. Encabezado unificado con el ícono de Twitter incluido
+  // 1. Encabezado unificado con enlaces reales a Redes Sociales
   const header = document.querySelector('.site-header');
   if (header) {
     header.innerHTML = `
@@ -30,12 +34,12 @@ function syncUnifiedHeaderAndFooter() {
             <a href="mailto:info@gyscontrol.com"><i class="fa-solid fa-envelope"></i> info@gyscontrol.com</a>
           </div>
           <div class="top-bar-socials">
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
 
@@ -59,7 +63,7 @@ function syncUnifiedHeaderAndFooter() {
       </div>`;
   }
 
-  // 2. Footer unificado con todas las redes sociales y mapa interactivo
+  // 2. Footer unificado con redes sociales completas y mapa interactivo
   const footer = document.querySelector('.site-footer');
   if (footer && !footer.querySelector('.footer-corp-grid')) {
     footer.innerHTML = `
@@ -71,12 +75,12 @@ function syncUnifiedHeaderAndFooter() {
               <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
             </div>
             <div class="social-circles">
-              <a href="#" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-              <a href="#" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
             <div class="footer-contact-info">
               <p>Contactanos: <a href="tel:+51962375309">+51 962 375 309</a></p>
@@ -113,28 +117,47 @@ function syncUnifiedHeaderAndFooter() {
         <div class="container footer-bottom-inner">
           <span>© 2026 GYS CONTROL INDUSTRIAL. All Rights Reserved.</span>
           <div class="footer-mini-socials">
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
       </div>`;
     
-    // Volver a inicializar la interacción del mapa tras inyectar el footer
     initWorldMapInteraction();
   }
 }
 
 /**
- * Añade interactividad al mapa y a la lista de países en el Footer
+ * Inyecta el Botón Flotante de WhatsApp en la esquina inferior derecha
  */
+function injectWhatsAppWidget() {
+  if (document.getElementById('gysWhatsAppWidget')) return;
+
+  const waWidget = document.createElement('div');
+  waWidget.id = 'gysWhatsAppWidget';
+  waWidget.className = 'gys-wa-container';
+  waWidget.innerHTML = `
+    <div class="gys-wa-tooltip">
+      <span>¡Hola! ¿Necesitas cotizar un proyecto industrial? Hablemos</span>
+    </div>
+    <a href="https://wa.me/51962375309?text=Hola%20G%26S%20Control%20Industrial,%20deseo%20solicitar%20información%20sobre%20sus%20servicios%20de%20ingeniería." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="gys-wa-button" 
+       aria-label="Abrir chat de WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="gys-wa-pulse"></span>
+    </a>`;
+  document.body.appendChild(waWidget);
+}
+
 function initWorldMapInteraction() {
   const mapImg = document.getElementById('worldMapImg');
   const countryItems = document.querySelectorAll('.country-stat-item');
-
   if (!mapImg || !countryItems.length) return;
 
   countryItems.forEach((item) => {

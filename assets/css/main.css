@@ -1405,3 +1405,90 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   WIDGET FLOTANTE DE WHATSAPP (ESQUINA INFERIOR DERECHA)
+   ========================================================================== */
+.gys-wa-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-main);
+}
+
+.gys-wa-button {
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+}
+
+.gys-wa-button:hover {
+  transform: scale(1.1) rotate(6deg);
+  background-color: #20ba5a;
+}
+
+.gys-wa-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+  animation: waPulseAnim 2s infinite ease-out;
+  pointer-events: none;
+}
+
+@keyframes waPulseAnim {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+
+.gys-wa-tooltip {
+  background: #ffffff;
+  color: #111827;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+  border: 1px solid #e2e8f0;
+  max-width: 220px;
+  line-height: 1.35;
+  position: relative;
+  opacity: 0;
+  transform: translateX(10px);
+  animation: tooltipFadeIn 0.5s forwards 1s;
+}
+
+.gys-wa-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffffff;
+  display: block;
+}
+
+@keyframes tooltipFadeIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 768px) {
+  .gys-wa-tooltip { display: none; }
+  .gys-wa-container { bottom: 18px; right: 18px; }
+  .gys-wa-button { width: 52px; height: 52px; font-size: 1.7rem; }
+}
