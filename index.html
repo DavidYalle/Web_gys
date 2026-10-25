@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- 1. TOP BAR SUPERIOR -->
+  <!-- 1. TOP BAR SUPERIOR (UNIFICADO EN TODAS LAS PÁGINAS) -->
   <div class="top-bar">
     <div class="container top-bar-inner">
       <div class="top-bar-info">
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <!-- 2. HEADER PRINCIPAL -->
+  <!-- 2. HEADER PRINCIPAL (UNIFICADO EN TODAS LAS PÁGINAS) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-link" aria-label="G&S Control Industrial Inicio">
@@ -53,7 +53,7 @@
   </header>
 
   <main>
-    <!-- 3. HERO PRINCIPAL CON MAPA DE OPERACIONES Y DASHBOARD -->
+    <!-- 3. HERO PRINCIPAL CON DASHBOARD INTERACTIVO (SIN EL MAPA VACÍO) -->
     <section class="hero-mockup">
       <div class="hero-bg-image"></div>
       <div class="hero-bg-overlay"></div>
@@ -75,101 +75,92 @@
           </div>
         </div>
 
-        <!-- Columna Derecha: Mapa Telemetría Perú + KPIs + Gráfica -->
+        <!-- Columna Derecha: 4 KPIs Interactivos + Gráfica Avanzada de Eficiencia -->
         <div class="hero-right">
-          <!-- Tarjeta Superior: Mapa Operativo Perú -->
-          <div class="peru-map-card">
-            <svg viewBox="0 0 500 210" class="peru-telemetry-svg" xmlns="http://www.w3.org/2000/svg">
-              <!-- Retícula técnica -->
-              <line x1="0" y1="50" x2="500" y2="50" stroke="rgba(255,255,255,0.05)" />
-              <line x1="0" y1="105" x2="500" y2="105" stroke="rgba(255,255,255,0.05)" />
-              <line x1="0" y1="160" x2="500" y2="160" stroke="rgba(255,255,255,0.05)" />
-              <line x1="120" y1="0" x2="120" y2="210" stroke="rgba(255,255,255,0.05)" />
-              <line x1="260" y1="0" x2="260" y2="210" stroke="rgba(255,255,255,0.05)" />
-              <line x1="400" y1="0" x2="400" y2="210" stroke="rgba(255,255,255,0.05)" />
-
-              <!-- Silueta Estilizada Costa/Andes Perú -->
-              <path d="M70,10 L195,10 L235,65 L295,120 L355,195 L255,205 L185,155 L125,95 L85,45 Z"
-                    fill="rgba(30, 41, 59, 0.75)" stroke="rgba(146, 208, 80, 0.3)" stroke-width="1.5" />
-
-              <!-- Líneas de conexión punteadas -->
-              <path d="M148,58 Q230,90 265,155" fill="none" stroke="#92D050" stroke-width="1.5" stroke-dasharray="4,4" />
-              <path d="M265,155 L302,175" fill="none" stroke="#92D050" stroke-width="1.5" stroke-dasharray="3,3" />
-              <path d="M148,58 Q290,75 415,82" fill="none" stroke="rgba(146,208,80,0.45)" stroke-width="1.2" stroke-dasharray="4,4" />
-
-              <!-- Nodo 1: Lima -->
-              <circle cx="148" cy="58" r="13" fill="rgba(146, 208, 80, 0.22)" />
-              <circle cx="148" cy="58" r="6" fill="#92D050" />
-              <circle cx="148" cy="58" r="2.5" fill="#ffffff" />
-
-              <!-- Nodo 2: Arequipa -->
-              <circle cx="265" cy="155" r="12" fill="rgba(146, 208, 80, 0.22)" />
-              <circle cx="265" cy="155" r="5.5" fill="#92D050" />
-              <circle cx="265" cy="155" r="2.5" fill="#ffffff" />
-
-              <!-- Nodo 3: Ilo -->
-              <circle cx="302" cy="175" r="12" fill="rgba(146, 208, 80, 0.22)" />
-              <circle cx="302" cy="175" r="5.5" fill="#92D050" />
-              <circle cx="302" cy="175" r="2.5" fill="#ffffff" />
-            </svg>
-
-            <!-- Etiquetas Flotantes del Mapa -->
-            <div class="map-tag map-tag--lima">
-              <strong>Lima (Lima)</strong>
-              <span>11:00 AM (Local)</span>
+          <!-- Fila Superior: 4 Tarjetas KPI Interactivas al pasar el mouse -->
+          <div class="kpi-quad-grid">
+            <div class="kpi-box active" data-kpi-mode="proyectos">
+              <div class="kpi-top">
+                <div class="kpi-icon"><i class="fa-solid fa-gears"></i></div>
+                <span class="kpi-tag">+100% On-Time</span>
+              </div>
+              <div class="kpi-data">
+                <strong class="kpi-number" data-target="87">87</strong>
+                <span>Proyectos Ejecutados</span>
+              </div>
+              <div class="kpi-mini-bar"><span style="width: 92%"></span></div>
             </div>
-            <div class="map-tag map-tag--arequipa">
-              <strong>Arequipa (Ilo)</strong>
-              <span>12:30 PM</span>
+
+            <div class="kpi-box" data-kpi-mode="clientes">
+              <div class="kpi-top">
+                <div class="kpi-icon"><i class="fa-solid fa-user-check"></i></div>
+                <span class="kpi-tag">Fidelidad 98%</span>
+              </div>
+              <div class="kpi-data">
+                <strong class="kpi-number" data-target="25">25</strong>
+                <span>Clientes Satisfechos</span>
+              </div>
+              <div class="kpi-mini-bar"><span style="width: 88%"></span></div>
             </div>
-            <div class="map-tag map-tag--ilo">
-              <strong>Ilo</strong>
-              <span>1:00</span>
+
+            <div class="kpi-box" data-kpi-mode="oficinas">
+              <div class="kpi-top">
+                <div class="kpi-icon"><i class="fa-solid fa-building-shield"></i></div>
+                <span class="kpi-tag">Soporte 24/7</span>
+              </div>
+              <div class="kpi-data">
+                <strong class="kpi-number" data-target="3">3</strong>
+                <span>Oficinas Operativas</span>
+              </div>
+              <div class="kpi-mini-bar"><span style="width: 80%"></span></div>
             </div>
-            <div class="map-counter-badge">0+15</div>
+
+            <div class="kpi-box" data-kpi-mode="especialistas">
+              <div class="kpi-top">
+                <div class="kpi-icon"><i class="fa-solid fa-users-gear"></i></div>
+                <span class="kpi-tag">Certificados</span>
+              </div>
+              <div class="kpi-data">
+                <strong class="kpi-number" data-target="38">38</strong>
+                <span>Colaboradores Especialistas</span>
+              </div>
+              <div class="kpi-mini-bar"><span style="width: 95%"></span></div>
+            </div>
           </div>
 
-          <!-- Fila Inferior del Dashboard: 4 KPIs + Gráfica de Eficiencia -->
-          <div class="hero-dashboard-bottom">
-            <div class="kpi-quad-grid">
-              <div class="kpi-box">
-                <div class="kpi-icon"><i class="fa-solid fa-gear"></i></div>
-                <div class="kpi-data">
-                  <strong>87</strong>
-                  <span>Proyectos<br>Ejecutados</span>
+          <!-- Tarjeta Principal Expandida: Gráfica Interactiva de Eficiencia de Proyectos -->
+          <div class="hero-chart-card">
+            <div class="hero-chart-head">
+              <div>
+                <div class="chart-title-row">
+                  <span class="live-pulse"></span>
+                  <h3 id="chartDynamicTitle">Eficiencia de Proyectos</h3>
                 </div>
+                <p id="chartDynamicSub" class="chart-subtitle">Pasa el cursor sobre la gráfica o las tarjetas para inspeccionar métricas en tiempo real</p>
               </div>
-              <div class="kpi-box">
-                <div class="kpi-icon"><i class="fa-solid fa-user-check"></i></div>
-                <div class="kpi-data">
-                  <strong>25</strong>
-                  <span>Clientes<br>Satisfechos</span>
-                </div>
-              </div>
-              <div class="kpi-box">
-                <div class="kpi-icon"><i class="fa-solid fa-building-circle-check"></i></div>
-                <div class="kpi-data">
-                  <strong>3</strong>
-                  <span>Oficinas<br>Operativas</span>
-                </div>
-              </div>
-              <div class="kpi-box">
-                <div class="kpi-icon"><i class="fa-solid fa-users-gear"></i></div>
-                <div class="kpi-data">
-                  <strong>38</strong>
-                  <span>Colaboradores<br>Especialistas</span>
-                </div>
+              <div class="chart-period-tabs">
+                <button type="button" class="period-btn active" data-period="hoy">Hoy</button>
+                <button type="button" class="period-btn" data-period="mes">Mes</button>
+                <button type="button" class="period-btn" data-period="anual">Anual</button>
               </div>
             </div>
 
-            <!-- Tarjeta de Gráfica de Onda -->
-            <div class="hero-chart-card">
-              <div class="hero-chart-head">
-                <span>Eficiencia de Proyectos</span>
-                <span class="chart-pill">Hoy <i class="fa-solid fa-chevron-down"></i></span>
+            <div class="hero-canvas-wrap">
+              <canvas id="efficiencyChart"></canvas>
+            </div>
+
+            <div class="chart-footer-metrics">
+              <div class="cfm-item">
+                <span class="cfm-dot cfm-dot--green"></span>
+                <span>Rendimiento G&amp;S: <strong id="metricPeak">98.4%</strong></span>
               </div>
-              <div class="hero-canvas-wrap">
-                <canvas id="efficiencyChart"></canvas>
+              <div class="cfm-item">
+                <span class="cfm-dot cfm-dot--gray"></span>
+                <span>Línea Base Estándar: <strong>72.0%</strong></span>
+              </div>
+              <div class="cfm-item">
+                <i class="fa-solid fa-bolt" style="color: #92D050;"></i>
+                <span>Optimización OEE: <strong id="metricGain">+26.4%</strong></span>
               </div>
             </div>
           </div>
@@ -199,14 +190,13 @@
       </div>
     </section>
 
-    <!-- 5. NUESTROS SERVICIOS (5 TARJETAS VERTICALES OSCURAS) -->
+    <!-- 5. NUESTROS SERVICIOS (FONDO BLANCO) -->
     <section class="light-section">
       <div class="container">
         <p class="section-kicker">NUESTROS SERVICIOS</p>
         <h2 class="section-dark-title">Soluciones integrales para cada necesidad industrial</h2>
 
         <div class="services-5-grid">
-          <!-- Servicio 1 -->
           <article class="srv-card" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80');">
             <div class="srv-overlay"></div>
             <div class="srv-content">
@@ -217,7 +207,6 @@
             </div>
           </article>
 
-          <!-- Servicio 2 -->
           <article class="srv-card" style="background-image: url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80');">
             <div class="srv-overlay"></div>
             <div class="srv-content">
@@ -228,7 +217,6 @@
             </div>
           </article>
 
-          <!-- Servicio 3 -->
           <article class="srv-card" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80');">
             <div class="srv-overlay"></div>
             <div class="srv-content">
@@ -239,7 +227,6 @@
             </div>
           </article>
 
-          <!-- Servicio 4 -->
           <article class="srv-card" style="background-image: url('https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=600&q=80');">
             <div class="srv-overlay"></div>
             <div class="srv-content">
@@ -250,7 +237,6 @@
             </div>
           </article>
 
-          <!-- Servicio 5 -->
           <article class="srv-card" style="background-image: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80');">
             <div class="srv-overlay"></div>
             <div class="srv-content">
@@ -264,11 +250,10 @@
       </div>
     </section>
 
-    <!-- 6. PROYECTOS DESTACADOS -->
-    <section class="light-section light-section--gray">
+    <!-- 6. PROYECTOS DESTACADOS + TECNOLOGÍAS LÍDERES (MISMO FONDO BLANCO) -->
+    <section class="light-section light-section--divider">
       <div class="container">
         <div class="featured-projects-layout">
-          <!-- Columna Izquierda Descriptiva -->
           <div class="fp-intro">
             <p class="section-kicker">PROYECTOS DESTACADOS</p>
             <h2 class="section-dark-title">Experiencia que respalda nuestros resultados</h2>
@@ -278,10 +263,8 @@
             <a href="proyectos.html" class="btn btn--green">VER TODOS LOS PROYECTOS <i class="fa-solid fa-arrow-right"></i></a>
           </div>
 
-          <!-- 3 Tarjetas de Proyectos -->
           <div class="fp-cards-wrap">
             <div class="fp-cards-grid">
-              <!-- Proyecto 1 -->
               <article class="fp-card">
                 <div class="fp-img-box">
                   <img src="https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=600&q=80" alt="Automatización de Línea de Producción">
@@ -293,7 +276,6 @@
                 </div>
               </article>
 
-              <!-- Proyecto 2 -->
               <article class="fp-card">
                 <div class="fp-img-box">
                   <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Integración SCADA en Planta Industrial">
@@ -305,7 +287,6 @@
                 </div>
               </article>
 
-              <!-- Proyecto 3 -->
               <article class="fp-card">
                 <div class="fp-img-box">
                   <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Sistema de Control para Planta de Procesos">
@@ -325,20 +306,52 @@
           </div>
         </div>
 
-        <!-- 7. BARRA DE MARCAS / TECNOLOGÍAS LÍDERES -->
-        <div class="brands-strip">
-          <div class="brands-label">
-            TRABAJAMOS CON<br>TECNOLOGÍAS LÍDERES
+        <!-- 7. BARRA MEJORADA DE TECNOLOGÍAS LÍDERES -->
+        <div class="brands-showcase">
+          <div class="brands-header-box">
+            <span class="brands-kicker"><i class="fa-solid fa-microchip"></i> PARTNERS TECNOLÓGICOS</span>
+            <h4>TRABAJAMOS CON<br>TECNOLOGÍAS LÍDERES</h4>
           </div>
+
           <div class="brands-logos-grid">
-            <div class="brand-box"><span class="brand-siemens">SIEMENS</span></div>
-            <div class="brand-box"><span class="brand-schneider">Schneider<br><small>Electric</small></span></div>
-            <div class="brand-box"><span class="brand-rockwell">Rockwell<br><small>Automation</small></span></div>
-            <div class="brand-box"><span class="brand-abb">ABB</span></div>
-            <div class="brand-box"><span class="brand-omron">OMRON</span></div>
-            <div class="brand-box"><span class="brand-mitsubishi">MITSUBISHI<br><small>ELECTRIC</small></span></div>
-            <a href="servicios.html" class="brand-box brand-box--more">
-              <strong>+</strong>
+            <div class="brand-card" title="Siemens Automation & Drives">
+              <span class="brand-logo brand-siemens">SIEMENS</span>
+              <small class="brand-tech-tag">PLC • SCADA • Drives</small>
+            </div>
+
+            <div class="brand-card" title="Schneider Electric">
+              <span class="brand-logo brand-schneider">Schneider<span class="brand-sub">Electric</span></span>
+              <small class="brand-tech-tag">Energía MT/BT • Control</small>
+            </div>
+
+            <div class="brand-card" title="Rockwell Automation / Allen-Bradley">
+              <div class="brand-rockwell-wrap">
+                <span class="ra-badge">RA</span>
+                <span class="brand-logo brand-rockwell">Rockwell<span class="brand-sub">Automation</span></span>
+              </div>
+              <small class="brand-tech-tag">Allen-Bradley • PlantPAx</small>
+            </div>
+
+            <div class="brand-card" title="ABB Industrial Technology">
+              <span class="brand-logo brand-abb">ABB</span>
+              <small class="brand-tech-tag">Variadores • Potencia</small>
+            </div>
+
+            <div class="brand-card" title="Omron Industrial Automation">
+              <span class="brand-logo brand-omron">OMRON</span>
+              <small class="brand-tech-tag">Sensórica • Control</small>
+            </div>
+
+            <div class="brand-card" title="Mitsubishi Electric">
+              <div class="brand-mitsubishi-wrap">
+                <i class="fa-solid fa-caret-up mit-icon"></i>
+                <span class="brand-logo brand-mitsubishi">MITSUBISHI<span class="brand-sub">ELECTRIC</span></span>
+              </div>
+              <small class="brand-tech-tag">MELSEC • Servosistemas</small>
+            </div>
+
+            <a href="servicios.html" class="brand-card brand-card--more">
+              <div class="more-plus-circle"><i class="fa-solid fa-plus"></i></div>
               <span>Ver más</span>
             </a>
           </div>
@@ -347,7 +360,7 @@
     </section>
 
     <!-- 8. ÚLTIMAS NOTICIAS -->
-    <section class="light-section">
+    <section class="light-section light-section--divider">
       <div class="container">
         <div class="news-header-row">
           <p class="section-kicker" style="margin-bottom: 0;">ÚLTIMAS NOTICIAS</p>
@@ -358,20 +371,18 @@
         </div>
 
         <div class="news-3-grid">
-          <!-- Noticia 1 -->
           <article class="news-h-card">
             <div class="news-h-img">
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="Tendencias en Automatización Industrial">
               <span class="news-date-badge"><strong>20</strong>MAY</span>
             </div>
             <div class="news-h-body">
-              <h3>Tendencias en Automatización Industrial para 2024</h3>
+              <h3>Tendencias en Automatización Industrial para 2026</h3>
               <p>Descubre las principales tendencias que están transformando la industria.</p>
               <a href="noticias.html" class="news-read-more">LEER MÁS <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </article>
 
-          <!-- Noticia 2 -->
           <article class="news-h-card">
             <div class="news-h-img">
               <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="Importancia del Mantenimiento Preventivo">
@@ -384,7 +395,6 @@
             </div>
           </article>
 
-          <!-- Noticia 3 -->
           <article class="news-h-card">
             <div class="news-h-img">
               <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=500&q=80" alt="Proyecto Destacado Integración SCADA">
@@ -401,14 +411,11 @@
     </section>
   </main>
 
-  <!-- ========================================================================
-       9. FOOTER CORPORATIVO (CONSERVADO DE LA CAPTURA OFICIAL CON mapa_gys.png)
-       ======================================================================== -->
+  <!-- 9. FOOTER CORPORATIVO OFICIAL (CON mapa_gys.png) -->
   <footer class="site-footer">
     <div class="container footer-main">
       <div class="footer-corp-grid">
 
-        <!-- COLUMNA 1: CONTACTAMOS -->
         <div>
           <h3 class="footer-heading">Contactamos</h3>
           <div class="footer-logo-box">
@@ -428,7 +435,6 @@
           </div>
         </div>
 
-        <!-- COLUMNA 2: PROYECTOS EJECUTADOS (CON IMAGEN OFICIAL mapa_gys.png) -->
         <div>
           <h3 class="footer-heading">Proyectos Ejecutados</h3>
           <div class="projects-world-box">
@@ -457,7 +463,6 @@
           </div>
         </div>
 
-        <!-- COLUMNA 3: BLOG RECIENTES -->
         <div>
           <h3 class="footer-heading">Blog Recientes</h3>
           <div class="recent-blog-list">

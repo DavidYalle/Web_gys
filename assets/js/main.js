@@ -1,8 +1,10 @@
 /**
- * G&S CONTROL INDUSTRIAL SAC - MAIN UI CONTROLLER (ES6+)
+ * G&S CONTROL INDUSTRIAL SAC - CONTROLADOR GLOBAL DE INTERFAZ (ES6+)
+ * Unifica automáticamente el Top-Bar, Header y Footer en todas las vistas HTML.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  syncUnifiedHeaderAndFooter();
   initLogoFallback();
   initMobileNav();
   initProjectFilters();
@@ -10,9 +12,119 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Genera el logotipo exacto (logo-3.png) en SVG Data-URI si el archivo físico
- * aún no ha sido copiado a assets/images/logo-3.png
+ * Inyecta y unifica el Top Bar, el Header oficial y el Footer con mapa_gys.png
+ * en todas las páginas (Inicio, Nosotros, Servicios, Proyectos, Noticias, Contáctanos)
  */
+function syncUnifiedHeaderAndFooter() {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+
+  // 1. Asegurar que exista el Top Bar arriba del Header en todas las páginas
+  if (!document.querySelector('.top-bar')) {
+    const topBar = document.createElement('div');
+    topBar.className = 'top-bar';
+    topBar.innerHTML = `
+      <div class="container top-bar-inner">
+        <div class="top-bar-info">
+          <span><i class="fa-solid fa-location-dot"></i> Lima, Perú</span>
+          <a href="tel:+51962375309"><i class="fa-solid fa-phone"></i> +51 962 375 309</a>
+          <a href="mailto:info@gyscontrol.com"><i class="fa-solid fa-envelope"></i> info@gyscontrol.com</a>
+        </div>
+        <div class="top-bar-socials">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>`;
+    document.body.insertBefore(topBar, document.body.firstChild);
+  }
+
+  // 2. Unificar el Header Principal en todas las páginas y marcar activo el link actual
+  const header = document.querySelector('.site-header');
+  if (header) {
+    header.innerHTML = `
+      <div class="container header-inner">
+        <a href="index.html" class="brand-link" aria-label="G&S Control Industrial Inicio">
+          <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link ${path === 'index.html' || path === '' ? 'active' : ''}">INICIO</a></li>
+            <li><a href="nosotros.html" class="nav-link ${path === 'nosotros.html' ? 'active' : ''}">NOSOTROS</a></li>
+            <li><a href="servicios.html" class="nav-link ${path === 'servicios.html' ? 'active' : ''}">SERVICIOS</a></li>
+            <li><a href="proyectos.html" class="nav-link ${path === 'proyectos.html' ? 'active' : ''}">PROYECTOS</a></li>
+            <li><a href="noticias.html" class="nav-link ${path === 'noticias.html' ? 'active' : ''}">NOTICIAS</a></li>
+            <li><a href="contactanos.html" class="nav-link ${path === 'contactanos.html' ? 'active' : ''}">CONTÁCTANOS</a></li>
+            <li><a href="contactanos.html" class="btn btn--green">COTIZAR PROYECTO <i class="fa-solid fa-arrow-right"></i></a></li>
+          </ul>
+        </nav>
+      </div>`;
+  }
+
+  // 3. Unificar el Footer Corporativo con mapa_gys.png en todas las páginas
+  const footer = document.querySelector('.site-footer');
+  if (footer && !footer.querySelector('.footer-corp-grid')) {
+    footer.innerHTML = `
+      <div class="container footer-main">
+        <div class="footer-corp-grid">
+          <div>
+            <h3 class="footer-heading">Contactamos</h3>
+            <div class="footer-logo-box">
+              <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+            </div>
+            <div class="social-circles">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook G&S">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Twitter G&S">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+            <div class="footer-contact-info">
+              <p>Contactanos: <a href="tel:+51962375309">+51 962 375 309</a></p>
+              <p>Escríbenos: <a href="mailto:info@gyscontrol.com" class="email-bold">info@gyscontrol.com</a></p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="footer-heading">Proyectos Ejecutados</h3>
+            <div class="projects-world-box">
+              <div class="world-map-img-wrap">
+                <img src="assets/images/mapa_gys.png" alt="Proyectos ejecutados en Perú, USA, Canadá y China" class="world-map-img">
+              </div>
+              <ul class="country-stats-list">
+                <li class="country-stat-item"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+50 Perú</li>
+                <li class="country-stat-item"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+08 USA</li>
+                <li class="country-stat-item"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+01 Canada</li>
+                <li class="country-stat-item"><span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>+02 China</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="footer-heading">Blog Recientes</h3>
+            <div class="recent-blog-list">
+              <a href="noticias.html" class="recent-blog-card"><span>DÍA DEL TRABAJADOR 2017</span></a>
+              <a href="noticias.html" class="recent-blog-card"><span>DÍA DEL TRABAJADOR 2019</span></a>
+              <a href="noticias.html" class="recent-blog-card"><span>DÍA DE GYS – 2019</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <div class="container footer-bottom-inner">
+          <span>© 2026 GYS CONTROL INDUSTRIAL. All Rights Reserved.</span>
+          <div class="footer-mini-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>`;
+  }
+}
+
 function initLogoFallback() {
   const svgLogo = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 76" width="330" height="76">
     <rect x="0" y="0" width="108" height="76" fill="#92D050"/>
@@ -29,20 +141,14 @@ function initLogoFallback() {
 
   document.querySelectorAll('.gys-logo-img').forEach((img) => {
     img.addEventListener('error', () => {
-      if (img.src !== encodedSvg) {
-        img.src = encodedSvg;
-      }
+      if (img.src !== encodedSvg) img.src = encodedSvg;
     });
   });
 }
 
-/**
- * Controla el menú hamburguesa en dispositivos móviles
- */
 function initMobileNav() {
   const toggleBtn = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
-
   if (!toggleBtn || !navMenu) return;
 
   toggleBtn.addEventListener('click', () => {
@@ -52,43 +158,30 @@ function initMobileNav() {
   });
 }
 
-/**
- * Filtrado interactivo en la galería de proyectos (proyectos.html)
- */
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('[data-project-filter]');
   const projectCards = document.querySelectorAll('[data-project-category]');
-
   if (!filterBtns.length || !projectCards.length) return;
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       filterBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
-
       const target = btn.getAttribute('data-project-filter');
 
       projectCards.forEach((card) => {
         const category = card.getAttribute('data-project-category');
-        if (target === 'all' || category === target) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
+        card.style.display = target === 'all' || category === target ? 'flex' : 'none';
       });
     });
   });
 }
 
-/**
- * Controla los estados del mapa operativo en contactanos.html
- */
 function initInteractiveMap() {
   const zoneButtons = document.querySelectorAll('[data-zone]');
   const zoneTitle = document.getElementById('mapZoneTitle');
   const zoneDesc = document.getElementById('mapZoneDesc');
   const zoneCoords = document.getElementById('mapZoneCoords');
-
   if (!zoneButtons.length || !zoneTitle) return;
 
   const zonesData = {
@@ -103,9 +196,9 @@ function initInteractiveMap() {
       coords: 'Cobertura: La Libertad, Lambayeque, Piura • Brigada Móvil'
     },
     sur: {
-      title: 'Corredor Minero & Energético Sur (Arequipa - Moquegua)',
+      title: 'Corredor Minero & Energético Sur (Arequipa - Ilo)',
       desc: 'Instrumentación de procesos, telemetría industrial, variadores de media tensión y paradas de planta.',
-      coords: 'Cobertura: Arequipa, Moquegua, Tacna, Cusco • Homologación Minera'
+      coords: 'Cobertura: Arequipa, Moquegua (Ilo), Tacna, Cusco • Homologación Minera'
     }
   };
 
@@ -113,9 +206,7 @@ function initInteractiveMap() {
     btn.addEventListener('click', () => {
       zoneButtons.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
-
-      const key = btn.getAttribute('data-zone');
-      const info = zonesData[key];
+      const info = zonesData[btn.getAttribute('data-zone')];
       if (info) {
         zoneTitle.textContent = info.title;
         zoneDesc.textContent = info.desc;
