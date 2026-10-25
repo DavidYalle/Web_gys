@@ -3,78 +3,406 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noticias y Artículos Técnicos | G&S Control Industrial SAC</title>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Noticias y Actualidad | G&S Control Industrial SAC</title>
+  <meta name="description" content="Entérate de las últimas novedades, eventos corporativos, torneos de confraternidad y artículos técnicos de G&S Control Industrial.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/security.css">
 </head>
 <body>
 
+  <!-- 1. ENCABEZADO UNIFICADO -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand-link">
-        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
-      <nav>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" class="nav-link">Inicio</a></li>
-          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
-          <li><a href="servicios.html" class="nav-link">Servicios</a></li>
-          <li><a href="proyectos.html" class="nav-link">Proyectos</a></li>
-          <li><a href="noticias.html" class="nav-link active">Noticias</a></li>
-          <li><a href="contactanos.html" class="btn btn--primary" data-icon="bolt">Cotizar Proyecto</a></li>
-        </ul>
-      </nav>
+    <div class="container">
+      <div class="header-top-unified">
+        <div class="top-bar-info">
+          <span><i class="fa-solid fa-location-dot"></i> Lima, Perú</span>
+          <a href="tel:+51962375309"><i class="fa-solid fa-phone"></i> +51 962 375 309</a>
+          <a href="mailto:info@gyscontrol.com"><i class="fa-solid fa-envelope"></i> info@gyscontrol.com</a>
+        </div>
+        <div class="top-bar-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="header-main-unified">
+        <a href="index.html" class="brand-link" aria-label="G&S Control Industrial Inicio">
+          <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">INICIO</a></li>
+            <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
+            <li><a href="servicios.html" class="nav-link">SERVICIOS</a></li>
+            <li><a href="proyectos.html" class="nav-link">PROYECTOS</a></li>
+            <li><a href="noticias.html" class="nav-link active">NOTICIAS</a></li>
+            <li><a href="contactanos.html" class="nav-link">CONTÁCTANOS</a></li>
+            <li><a href="contactanos.html" class="btn btn--green">COTIZAR PROYECTO <i class="fa-solid fa-arrow-right"></i></a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="page-banner">
+    <!-- 2. NUEVO HERO CREATIVO DE NOTICIAS CON IMAGEN TRANSPARENTE OSCURA -->
+    <section class="news-hero-creative">
+      <div class="news-hero-bg"></div>
+      <div class="news-hero-overlay"></div>
+
+      <div class="container news-hero-grid">
+        <div class="news-hero-left">
+          <div class="news-breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>NOTICIAS</span>
+          </div>
+          <p class="hero-kicker">ACTUALIDAD INDUSTRIAL &amp; CULTURA CORPORATIVA</p>
+          <h1 class="hero-main-title">
+            Innovación, ingeniería y <span>vida en G&amp;S</span>
+          </h1>
+          <p class="hero-lead">
+            Mantente al día con nuestros artículos técnicos, artículos de automatización y los momentos de confraternidad que fortalecen a nuestro equipo de ingenieros y especialistas.
+          </p>
+          <div class="news-hero-search-box">
+            <input type="text" id="newsSearchInput" placeholder="Buscar artículos o eventos..." aria-label="Buscar noticias">
+            <button type="button" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+
+        <div class="news-hero-right">
+          <div class="news-stat-pill active">
+            <div class="nsp-icon"><i class="fa-solid fa-newspaper"></i></div>
+            <div>
+              <strong>Artículos &amp; Comunicados</strong>
+              <span>Archivo histórico de logros y eventos desde 2017.</span>
+            </div>
+          </div>
+          <div class="news-stat-pill">
+            <div class="nsp-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div>
+              <strong>Confraternidad Deportiva</strong>
+              <span>Campeonatos internos y unión del equipo técnico.</span>
+            </div>
+          </div>
+          <div class="news-stat-pill">
+            <div class="nsp-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div>
+              <strong>Tendencias Tecnológicas</strong>
+              <span>Automatización, normativas IEC y ciberseguridad industrial.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECCIÓN DE NOTICIAS OFICIALES (FONDO BLANCO PURO) -->
+    <section class="light-section">
       <div class="container">
-        <span class="section-tag" data-icon="newspaper">Actualidad Industrial</span>
-        <h1 class="section-title">Tendencias en Automatización e <span>Industria 4.0</span></h1>
-        <p class="section-desc">Publicaciones técnicas de nuestro equipo de ingeniería sobre eficiencia energética, normativas eléctricas y ciberseguridad OT.</p>
+        <div class="corp-section-title-wrap">
+          <h2 class="corp-dual-title">NOTICIAS <span>Y EVENTOS</span></h2>
+          <div class="corp-title-underline"></div>
+        </div>
+
+        <div class="official-news-grid">
+
+          <!-- NOTICIA 1: DÍA DEL TRABAJADOR 2017 -->
+          <article class="news-card" data-news-id="trabajador-2017">
+            <div class="news-card-media">
+              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=700&q=80" alt="Día del Trabajador 2017 - G&S Control Industrial" class="news-card-img">
+              <span class="news-category-badge">CONFRATERNIDAD</span>
+
+              <!-- OVERLAY INTERACTIVO: 2 OPCIONES AL PASAR EL MOUSE -->
+              <div class="news-card-hover-overlay">
+                <button type="button" class="news-hover-action-btn news-btn-zoom" title="Ver imagen ampliada" aria-label="Ampliar imagen">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="news-hover-action-btn news-btn-info" title="Leer noticia completa y comentarios" aria-label="Leer artículo">
+                  <i class="fa-solid fa-book-open"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="news-card-body">
+              <div class="news-meta-row">
+                <span class="news-date"><i class="fa-regular fa-calendar"></i> 01 Mayo 2017</span>
+                <div class="news-metrics">
+                  <button type="button" class="news-like-btn" aria-label="Me gusta">
+                    <i class="fa-regular fa-heart"></i> <span class="news-like-count">4</span>
+                  </button>
+                  <span class="news-comments"><i class="fa-regular fa-comment"></i> 0</span>
+                </div>
+              </div>
+
+              <h3 class="news-card-title">DÍA DEL TRABAJADOR 2017</h3>
+              <p class="news-card-subtitle">REAL CONSTRUCCIÓN CAMPEÓN</p>
+              <p class="news-card-snippet">
+                Gran celebración y torneo de confraternidad en homenaje al Día del Trabajador, donde el equipo de Real Construcción se alzó con la copa del campeonato.
+              </p>
+
+              <button type="button" class="news-read-more-link news-btn-info">
+                <span>Read more</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- NOTICIA 2: DÍA DEL TRABAJADOR 2019 -->
+          <article class="news-card" data-news-id="trabajador-2019">
+            <div class="news-card-media">
+              <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=700&q=80" alt="Día del Trabajador 2019 - G&S Control Industrial" class="news-card-img">
+              <span class="news-category-badge">TORNEO ANUAL</span>
+
+              <div class="news-card-hover-overlay">
+                <button type="button" class="news-hover-action-btn news-btn-zoom" title="Ver imagen ampliada" aria-label="Ampliar imagen">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="news-hover-action-btn news-btn-info" title="Leer noticia completa y comentarios" aria-label="Leer artículo">
+                  <i class="fa-solid fa-book-open"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="news-card-body">
+              <div class="news-meta-row">
+                <span class="news-date"><i class="fa-regular fa-calendar"></i> 01 Mayo 2019</span>
+                <div class="news-metrics">
+                  <button type="button" class="news-like-btn" aria-label="Me gusta">
+                    <i class="fa-regular fa-heart"></i> <span class="news-like-count">2</span>
+                  </button>
+                  <span class="news-comments"><i class="fa-regular fa-comment"></i> 0</span>
+                </div>
+              </div>
+
+              <h3 class="news-card-title">DÍA DEL TRABAJADOR 2019</h3>
+              <p class="news-card-subtitle">FBC INGENIERÍA CAMPEÓN</p>
+              <p class="news-card-snippet">
+                Emocionante jornada deportiva por el Día del Trabajador. Tras un disputado encuentro, el combinado de FBC Ingeniería se consagró campeón del torneo.
+              </p>
+
+              <button type="button" class="news-read-more-link news-btn-info">
+                <span>Read more</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- NOTICIA 3: DÍA DE GYS – 2019 -->
+          <article class="news-card" data-news-id="gys-2019">
+            <div class="news-card-media">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=80" alt="Día de GYS 2019 - G&S Control Industrial" class="news-card-img">
+              <span class="news-category-badge">ANIVERSARIO</span>
+
+              <div class="news-card-hover-overlay">
+                <button type="button" class="news-hover-action-btn news-btn-zoom" title="Ver imagen ampliada" aria-label="Ampliar imagen">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="news-hover-action-btn news-btn-info" title="Leer noticia completa y comentarios" aria-label="Leer artículo">
+                  <i class="fa-solid fa-book-open"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="news-card-body">
+              <div class="news-meta-row">
+                <span class="news-date"><i class="fa-regular fa-calendar"></i> 15 Octubre 2019</span>
+                <div class="news-metrics">
+                  <button type="button" class="news-like-btn" aria-label="Me gusta">
+                    <i class="fa-regular fa-heart"></i> <span class="news-like-count">2</span>
+                  </button>
+                  <span class="news-comments"><i class="fa-regular fa-comment"></i> 0</span>
+                </div>
+              </div>
+
+              <h3 class="news-card-title">DÍA DE GYS – 2019</h3>
+              <p class="news-card-subtitle">ALIANZA COMERCIAL CAMPEÓN GYS-2019 CLAUSURA</p>
+              <p class="news-card-snippet">
+                Conmemoramos nuestro aniversario institucional celebrando el cierre del torneo GYS-2019 Clausura, donde Alianza Comercial se coronó campeón absoluto.
+              </p>
+
+              <button type="button" class="news-read-more-link news-btn-info">
+                <span>Read more</span> <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid-3">
-        <article class="card">
-          <div>
-            <span class="badge" data-icon="clock">Octubre 2026 • Ciberseguridad OT</span>
-            <h3 class="card-title">Segmentación de Redes Industriales bajo IEC 62443</h3>
-            <p class="card-text">Cómo proteger tus controladores PLC y servidores SCADA frente a amenazas cibernéticas mediante firewalls industriales y zonas DMZ.</p>
-          </div>
-          <a href="contactanos.html" class="btn btn--outline" data-icon="arrow-right">Consultar con un Especialista</a>
-        </article>
-
-        <article class="card">
-          <div>
-            <span class="badge" data-icon="clock">Septiembre 2026 • Calidad de Energía</span>
-            <h3 class="card-title">Mitigación de Armónicos en Plantas con Alta Densidad de Variadores</h3>
-            <p class="card-text">Comparativa técnica entre filtros activos de armónicos (AHF) y reactancias de línea para cumplir con el estándar IEEE 519.</p>
-          </div>
-          <a href="contactanos.html" class="btn btn--outline" data-icon="arrow-right">Solicitar Estudio de Red</a>
-        </article>
-
-        <article class="card">
-          <div>
-            <span class="badge" data-icon="clock">Agosto 2026 • IIoT & Telemetría</span>
-            <h3 class="card-title">Mantenimiento Predictivo con Sensores Vibracionales e IA</h3>
-            <p class="card-text">Implementación de gateways MQTT y OPC-UA para anticipar fallas de rodamientos y sobrecalentamiento en motores críticos.</p>
-          </div>
-          <a href="contactanos.html" class="btn btn--outline" data-icon="arrow-right">Implementar en mi Planta</a>
-        </article>
+    <!-- 4. MODAL 1: LIGHTBOX DE IMAGEN DE NOTICIA -->
+    <div id="newsLightboxModal" class="gys-modal" aria-hidden="true" role="dialog">
+      <div class="gys-modal-backdrop"></div>
+      <div class="gys-lightbox-content">
+        <button type="button" class="gys-modal-close" aria-label="Cerrar vista">&times;</button>
+        <img id="newsLightboxImg" src="" alt="Vista de noticia ampliada" class="gys-lightbox-img">
+        <p id="newsLightboxCaption" class="gys-lightbox-caption"></p>
       </div>
-    </section>
+    </div>
+
+    <!-- 5. MODAL 2: ARTÍCULO COMPLETO CON COMENTARIOS (IDÉNTICO A TU CAPTURA DE ANTERIOR WEB) -->
+    <div id="newsArticleModal" class="gys-modal" aria-hidden="true" role="dialog">
+      <div class="gys-modal-backdrop"></div>
+      <div class="gys-dossier-dialog news-full-article-box">
+        <button type="button" class="gys-modal-close" aria-label="Cerrar artículo">&times;</button>
+        
+        <div class="gys-dossier-header" style="background: var(--gys-green-primary); color: #0b0f14; border-bottom: none;">
+          <div>
+            <span id="modalNewsDate" class="p-sector-badge" style="background: #0b0f14; color: #ffffff; border-color: #0b0f14;">FECHA</span>
+            <h3 id="modalNewsTitle" class="gys-dossier-title" style="color: #0b0f14;">Título de la Noticia</h3>
+          </div>
+        </div>
+
+        <div class="gys-dossier-body">
+          <div class="full-article-meta-row">
+            <span><i class="fa-solid fa-user-pen"></i> Autor: <strong>BigControl / G&amp;S Admin</strong></span>
+            <span><i class="fa-solid fa-folder-open"></i> Categoría: <strong>Confraternidad Industrial</strong></span>
+          </div>
+
+          <div class="full-article-img-box">
+            <img id="modalNewsImg" src="" alt="Imagen principal del artículo" class="fa-main-img">
+          </div>
+
+          <div class="gys-dossier-overview">
+            <h4 id="modalNewsSubtitle" style="color: var(--gys-green-dark); margin-bottom: 0.75rem;">Subtítulo o Campeón</h4>
+            <p id="modalNewsFullText">Contenido completo del artículo corporativo...</p>
+          </div>
+
+          <!-- SECCIÓN DE COMENTARIOS (ESTILO BLOG CLÁSICO) -->
+          <div class="news-comments-section">
+            <h4><i class="fa-solid fa-comments"></i> Comentarios (0)</h4>
+            <div class="comment-author-box">
+              <div class="cab-avatar"><i class="fa-solid fa-user"></i></div>
+              <div class="cab-input-wrap">
+                <strong>bigcontrol</strong>
+                <p>Publicación oficial registrada en el portal de G&amp;S Control Industrial.</p>
+              </div>
+            </div>
+
+            <!-- Formulario de dejar respuesta -->
+            <div class="news-reply-form">
+              <h5>Deja una respuesta</h5>
+              <p class="reply-note">Tu dirección de correo electrónico no será publicada. Los campos obligatorios están marcados con *</p>
+              
+              <form id="commentForm" onsubmit="event.preventDefault(); alert('¡Comentario enviado con éxito! Gracias por participar.');">
+                <div class="form-group">
+                  <label class="form-label" for="commentText">Comentario *</label>
+                  <textarea id="commentText" class="form-control" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+                <div class="form-row-3">
+                  <div class="form-group">
+                    <label class="form-label" for="commentName">Nombre *</label>
+                    <input type="text" id="commentName" class="form-control" required placeholder="Tu nombre">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="commentEmail">Correo electrónico *</label>
+                    <input type="email" id="commentEmail" class="form-control" required placeholder="tucorreo@empresa.com">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="commentWeb">Web</label>
+                    <input type="url" id="commentWeb" class="form-control" placeholder="https://tuweb.com">
+                  </div>
+                </div>
+                <div class="form-check-group">
+                  <input type="checkbox" id="saveInfoCheck">
+                  <label for="saveInfoCheck">Guarda mi nombre, correo electrónico y web en este navegador para la próxima vez que haga un comentario.</label>
+                </div>
+                <button type="submit" class="btn btn--green" style="margin-top: 1rem;">Publicar el comentario</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
+  <!-- 6. FOOTER CORPORATIVO UNIFICADO -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
-        <span>© 2026 G&S Control Industrial SAC. Todos los derechos reservados.</span>
+    <div class="container footer-main">
+      <div class="footer-corp-grid">
+
+        <div>
+          <h3 class="footer-heading">Contactamos</h3>
+          <div class="footer-logo-box">
+            <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+          </div>
+          <div class="social-circles">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <div class="footer-contact-info">
+            <p>Contactanos: <a href="tel:+51962375309">+51 962 375 309</a></p>
+            <p>Escríbenos: <a href="mailto:info@gyscontrol.com" class="email-bold">info@gyscontrol.com</a></p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Proyectos Ejecutados</h3>
+          <div class="projects-world-box">
+            <div class="world-map-img-wrap" id="worldMapWrap">
+              <img src="assets/images/mapa_gys.png" alt="Proyectos ejecutados en Perú, USA, Canadá y China" class="world-map-img" id="worldMapImg">
+            </div>
+
+            <ul class="country-stats-list">
+              <li class="country-stat-item" data-country="peru">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +50 Perú
+              </li>
+              <li class="country-stat-item" data-country="usa">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +08 USA
+              </li>
+              <li class="country-stat-item" data-country="canada">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +01 Canada
+              </li>
+              <li class="country-stat-item" data-country="china">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +02 China
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Blog Recientes</h3>
+          <div class="recent-blog-list">
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DEL TRABAJADOR 2017</span>
+            </a>
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DEL TRABAJADOR 2019</span>
+            </a>
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DE GYS – 2019</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 GYS CONTROL INDUSTRIAL. All Rights Reserved.</span>
+        <div class="footer-mini-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
       </div>
     </div>
   </footer>
