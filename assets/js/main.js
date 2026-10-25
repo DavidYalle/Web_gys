@@ -332,3 +332,117 @@ function initServiceFilters() {
     });
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  initProjectsInteractiveSystem();
+});
+
+/**
+ * Controla: Filtros por categoría, Lightbox de imagen, Ficha Dossier con PDFs y Likes
+ */
+function initProjectsInteractiveSystem() {
+  // 1. Filtrado de Categorías (All, Acero, Generación, Manufactura, Minería)
+  const tabs = document.querySelectorAll('[data-category-filter]');
+  const cards = document.querySelectorAll('.p-card');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filter = tab.getAttribute('data-category-filter');
+
+      cards.forEach((card) => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          card.style.animation = 'modalScaleUp 0.3s ease forwards';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // 2. Contador interactivo de Likes en las tarjetas
+  document.querySelectorAll('.p-like-btn').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const counter = btn.querySelector('.like-counter');
+      const icon = btn.querySelector('i');
+      let current = parseInt(counter.textContent || '0', 10);
+
+      if (btn.classList.contains('active-liked')) {
+        btn.classList.remove('active-liked');
+        icon.className = 'fa-regular fa-heart';
+        counter.textContent = current - 1;
+      } else {
+        btn.classList.add('active-liked');
+        icon.className = 'fa-solid fa-heart';
+        icon.style.color = '#92D050';
+        counter.textContent = current + 1;
+      }
+    });
+  });
+
+  // 3. Lightbox (Lupa) para ampliar la imagen
+  const lightboxModal = document.getElementById('imageLightboxModal');
+  const lightboxImg = document.getElementById('lightboxTargetImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+
+  document.querySelectorAll('.p-btn-zoom').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.p-card');
+      const img = card.querySelector('.p-card-img');
+      const title = card.querySelector('.p-card-title').textContent;
+
+      if (lightboxModal && lightboxImg) {
+        lightboxImg.src = img.src;
+        if (lightboxCaption) lightboxCaption.textContent = title;
+        lightboxModal.classList.add('is-open');
+        lightboxModal.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  // 4. Modal de Ficha Técnica / Dossier y Documentos (PDF)
+  const infoModal = document.getElementById('projectInfoModal');
+  const dossierTitle = document.getElementById('dossierTitle');
+  const dossierSector = document.getElementById('dossierSector');
+  const dossierDescription = document.getElementById('dossierDescription');
+
+  document.querySelectorAll('.p-btn-info').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const card = btn.closest('.p-card');
+      const title = card.querySelector('.p-card-title').textContent;
+      const desc = card.querySelector('.p-card-desc').textContent;
+      const sector = card.querySelector('.p-sector-badge').textContent;
+
+      if (infoModal && dossierTitle && dossierDescription) {
+        dossierTitle.textContent = title;
+        dossierDescription.textContent = desc;
+        if (dossierSector) dossierSector.textContent = sector;
+        infoModal.classList.add('is-open');
+        infoModal.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  // 5. Cerrar Modales (Clic en fondo, cruz o tecla ESC)
+  const closeModals = () => {
+    document.querySelectorAll('.gys-modal').forEach((modal) => {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+    });
+  };
+
+  document.querySelectorAll('.gys-modal-close, .gys-modal-backdrop').forEach((el) => {
+    el.addEventListener('click', closeModals);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModals();
+  });
+}

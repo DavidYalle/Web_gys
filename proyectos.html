@@ -3,111 +3,480 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Proyectos Ejecutados | G&S Control Industrial SAC</title>
+  <meta name="description" content="Casos de éxito y proyectos ejecutados en automatización, minería, acero, manufactura y generación eléctrica por G&S Control Industrial.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/security.css">
 </head>
 <body>
 
+  <!-- 1. ENCABEZADO UNIFICADO -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand-link">
-        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
-      <nav>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" class="nav-link">Inicio</a></li>
-          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
-          <li><a href="servicios.html" class="nav-link">Servicios</a></li>
-          <li><a href="proyectos.html" class="nav-link active">Proyectos</a></li>
-          <li><a href="noticias.html" class="nav-link">Noticias</a></li>
-          <li><a href="contactanos.html" class="btn btn--primary" data-icon="bolt">Cotizar Proyecto</a></li>
-        </ul>
-      </nav>
+    <div class="container">
+      <div class="header-top-unified">
+        <div class="top-bar-info">
+          <span><i class="fa-solid fa-location-dot"></i> Lima, Perú</span>
+          <a href="tel:+51962375309"><i class="fa-solid fa-phone"></i> +51 962 375 309</a>
+          <a href="mailto:info@gyscontrol.com"><i class="fa-solid fa-envelope"></i> info@gyscontrol.com</a>
+        </div>
+        <div class="top-bar-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="header-main-unified">
+        <a href="index.html" class="brand-link" aria-label="G&S Control Industrial Inicio">
+          <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">INICIO</a></li>
+            <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
+            <li><a href="servicios.html" class="nav-link">SERVICIOS</a></li>
+            <li><a href="proyectos.html" class="nav-link active">PROYECTOS</a></li>
+            <li><a href="noticias.html" class="nav-link">NOTICIAS</a></li>
+            <li><a href="contactanos.html" class="nav-link">CONTÁCTANOS</a></li>
+            <li><a href="contactanos.html" class="btn btn--green">COTIZAR PROYECTO <i class="fa-solid fa-arrow-right"></i></a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="page-banner">
-      <div class="container">
-        <span class="section-tag" data-icon="filter">Portafolio de Ingeniería</span>
-        <h1 class="section-title">Proyectos y Casos de <span>Éxito Comprobados</span></h1>
-        <p class="section-desc">Filtra nuestras implementaciones por especialidad técnica.</p>
-      </div>
-    </section>
+    <!-- 2. HERO PROYECTOS CON FONDO DE IMAGEN TRANSPARENTE OSCURA -->
+    <section class="projects-hero">
+      <div class="projects-hero-bg"></div>
+      <div class="projects-hero-overlay"></div>
 
-    <section class="section">
-      <div class="container">
-        <!-- Controles de Filtro -->
-        <div class="chart-controls" style="margin-bottom: 2.5rem;">
-          <button class="filter-btn active" data-project-filter="all">Todos los Proyectos</button>
-          <button class="filter-btn" data-project-filter="automatizacion">Automatización & SCADA</button>
-          <button class="filter-btn" data-project-filter="electrica">Ingeniería Eléctrica</button>
-          <button class="filter-btn" data-project-filter="tableros">Tableros & CCM</button>
-          <button class="filter-btn" data-project-filter="instrumentacion">Instrumentación</button>
+      <div class="container projects-hero-grid">
+        <div class="projects-hero-left">
+          <div class="projects-breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>PROYECTOS</span>
+          </div>
+          <p class="hero-kicker">PORTAFOLIO DE INGENIERÍA Y CASOS DE ÉXITO</p>
+          <h1 class="hero-main-title">
+            Experiencia comprobada en <span>plantas industriales</span>
+          </h1>
+          <p class="hero-lead">
+            Explora nuestras soluciones en acero, generación de energía, manufactura y minería. Pasa el cursor por cada imagen para ampliar la vista o acceder a su expediente técnico y documentación descargable.
+          </p>
+          <div class="hero-btns">
+            <a href="contactanos.html" class="btn btn--green">CONSULTAR POR UN PROYECTO <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#galeria-proyectos" class="btn btn--dark-outline">VER PROYECTOS <i class="fa-solid fa-arrow-down"></i></a>
+          </div>
         </div>
 
-        <!-- Galería de Proyectos -->
-        <div class="grid-3">
-          <article class="card" data-project-category="automatizacion">
-            <div>
-              <span class="badge">Automatización & SCADA</span>
-              <h3 class="card-title">Migración de Sistema SCADA en Planta Concentradora</h3>
-              <p class="card-text">Integración de redundancia en caliente con PLC ControlLogix y servidor SCADA para control de molienda y flotación.</p>
-              <ul class="card-list">
-                <li data-icon="check">Disponibilidad alcanzada: 99.6%</li>
-                <li data-icon="check">Ubicación: Corredor Minero Sur</li>
-              </ul>
+        <div class="projects-hero-right">
+          <div class="p-stat-card active">
+            <div class="psc-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="psc-info">
+              <strong>+61 Proyectos Entregados</strong>
+              <span>Confiabilidad, seguridad y cero penalidades en entrega.</span>
             </div>
-          </article>
-
-          <article class="card" data-project-category="tableros">
-            <div>
-              <span class="badge">Tableros & CCM</span>
-              <h3 class="card-title">Suministro e Integración de CCM con Variadores de 250 HP</h3>
-              <p class="card-text">Fabricación de 12 columnas autosoportadas IP55 con variadores de frecuencia y comunicación PROFINET para estación de bombeo.</p>
-              <ul class="card-list">
-                <li data-icon="check">Ahorro energético: 32% anual</li>
-                <li data-icon="check">Ubicación: Agroindustria Trujillo</li>
-              </ul>
+          </div>
+          <div class="p-stat-card">
+            <div class="psc-icon"><i class="fa-solid fa-industry"></i></div>
+            <div class="psc-info">
+              <strong>4 Sectores Industriales Clave</strong>
+              <span>Minería pesada, acería, centrales de generación y plantas fabriles.</span>
             </div>
-          </article>
-
-          <article class="card" data-project-category="electrica">
-            <div>
-              <span class="badge">Ingeniería Eléctrica</span>
-              <h3 class="card-title">Subestación Eléctrica 22.9 kV / 0.48 kV - 2500 kVA</h3>
-              <p class="card-text">Montaje electromecánico de celdas de media tensión, transformador seco encapsulado y banco automático de condensadores.</p>
-              <ul class="card-list">
-                <li data-icon="check">Cero penalidades por energía reactiva</li>
-                <li data-icon="check">Ubicación: Planta Industrial Lurín</li>
-              </ul>
+          </div>
+          <div class="p-stat-card">
+            <div class="psc-icon"><i class="fa-solid fa-file-shield"></i></div>
+            <div class="psc-info">
+              <strong>Trazabilidad Documentaria Completa</strong>
+              <span>Dossiers de calidad, pruebas FAT/SAT y planos As-Built normados.</span>
             </div>
-          </article>
-
-          <article class="card" data-project-category="instrumentacion">
-            <div>
-              <span class="badge">Instrumentación</span>
-              <h3 class="card-title">Automatización de Lazos de Flujo y Presión en Calderas</h3>
-              <p class="card-text">Instalación de caudalímetros másicos Coriolis, transmisores HART y válvulas modulantes para control de vapor saturado.</p>
-              <ul class="card-list">
-                <li data-icon="check">Reducción de consumo de gas: 18%</li>
-                <li data-icon="check">Ubicación: Callao, Lima</li>
-              </ul>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- 3. BARRA DE FILTROS SEGÚN MAQUETA ORIGINAL -->
+    <section class="projects-filter-bar-wrap" id="galeria-proyectos">
+      <div class="container">
+        <div class="projects-filter-grid">
+          <button type="button" class="pf-tab active" data-category-filter="all">All</button>
+          <button type="button" class="pf-tab" data-category-filter="acero">ACERO</button>
+          <button type="button" class="pf-tab" data-category-filter="generacion">GENERACIÓN</button>
+          <button type="button" class="pf-tab" data-category-filter="manufactura">MANUFACTURA</button>
+          <button type="button" class="pf-tab" data-category-filter="mineria">MINERÍA</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. GALERÍA DE LOS 6 PROYECTOS (FONDO BLANCO PURO) -->
+    <section class="light-section">
+      <div class="container">
+        <div class="official-projects-grid">
+
+          <!-- PROYECTO 1: ACH02 (MANUFACTURA) -->
+          <article class="p-card" data-category="manufactura" data-project-id="ach02">
+            <div class="p-card-media">
+              <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=700&q=80" alt="ACH02 – Automatización de Almacenamiento y Despacho de Bolas" class="p-card-img">
+              
+              <!-- OVERLAY INTERACTIVO: 2 OPCIONES AL PASAR EL MOUSE -->
+              <div class="p-card-hover-overlay">
+                <button type="button" class="p-hover-action-btn p-btn-zoom" title="Ver mejor imagen (Ampliar)" aria-label="Ver mejor imagen">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="p-hover-action-btn p-btn-info" title="Ver información del proyecto y documentos" aria-label="Ver ficha del proyecto">
+                  <i class="fa-solid fa-link"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-card-body">
+              <div class="p-card-header-row">
+                <span class="p-sector-badge">MANUFACTURA</span>
+                <button type="button" class="p-like-btn" aria-label="Me gusta">
+                  <i class="fa-regular fa-heart"></i> <span class="like-counter">5</span>
+                </button>
+              </div>
+              <h3 class="p-card-title">ACH02 – AUTOMATIZACIÓN DE ALMACENAMIENTO Y DESPACHO DE BOLAS</h3>
+              <p class="p-card-desc">
+                El presente tiene como alcance el control de almacenamiento y despacho de bolas. Para ello se requiere un sistema de servidores virtualizados con alta disponibilidad HA.
+              </p>
+            </div>
+          </article>
+
+          <!-- PROYECTO 2: EXA04 (MANUFACTURA) -->
+          <article class="p-card" data-category="manufactura" data-project-id="exa04">
+            <div class="p-card-media">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=700&q=80" alt="EXA04 – Sistema de Control, Monitoreo y Reporte de Silos" class="p-card-img">
+              
+              <div class="p-card-hover-overlay">
+                <button type="button" class="p-hover-action-btn p-btn-zoom" title="Ver mejor imagen (Ampliar)" aria-label="Ver mejor imagen">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="p-hover-action-btn p-btn-info" title="Ver información del proyecto y documentos" aria-label="Ver ficha del proyecto">
+                  <i class="fa-solid fa-link"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-card-body">
+              <div class="p-card-header-row">
+                <span class="p-sector-badge">MANUFACTURA</span>
+                <button type="button" class="p-like-btn" aria-label="Me gusta">
+                  <i class="fa-regular fa-heart"></i> <span class="like-counter">6</span>
+                </button>
+              </div>
+              <h3 class="p-card-title">EXA04 – SISTEMA DE CONTROL, MONITOREO Y REPORTE DE SILOS</h3>
+              <p class="p-card-desc">
+                El presente tiene como alcance controlar, monitorear y realizar reportes desde la planta de Lurín hacia la planta de Tacna con una conexión VPN GPRS, ya [...]
+              </p>
+            </div>
+          </article>
+
+          <!-- PROYECTO 3: EXA12 (MANUFACTURA) -->
+          <article class="p-card" data-category="manufactura" data-project-id="exa12">
+            <div class="p-card-media">
+              <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=700&q=80" alt="EXA12 – Migración Sistema Eléctrico de Control Módulo de Emulsiones" class="p-card-img">
+              
+              <div class="p-card-hover-overlay">
+                <button type="button" class="p-hover-action-btn p-btn-zoom" title="Ver mejor imagen (Ampliar)" aria-label="Ver mejor imagen">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="p-hover-action-btn p-btn-info" title="Ver información del proyecto y documentos" aria-label="Ver ficha del proyecto">
+                  <i class="fa-solid fa-link"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-card-body">
+              <div class="p-card-header-row">
+                <span class="p-sector-badge">MANUFACTURA</span>
+                <button type="button" class="p-like-btn active-liked" aria-label="Me gusta">
+                  <i class="fa-solid fa-heart" style="color: #92D050;"></i> <span class="like-counter">5</span>
+                </button>
+              </div>
+              <h3 class="p-card-title">EXA12 – MIGRACIÓN SISTEMA ELÉCTRICO DE CONTROL MODULO DE EMULSIONES</h3>
+              <p class="p-card-desc">
+                El presente tiene como alcance el control para la Automatización de su proceso de Emulsiones EXSA Tacna. Para ello se requiere de la migración del sistema [...]
+              </p>
+            </div>
+          </article>
+
+          <!-- PROYECTO 4: DEN06 (ACERO) -->
+          <article class="p-card" data-category="acero" data-project-id="den06">
+            <div class="p-card-media">
+              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=700&q=80" alt="DEN06 – Heat Treat Control Integration" class="p-card-img">
+              
+              <div class="p-card-hover-overlay">
+                <button type="button" class="p-hover-action-btn p-btn-zoom" title="Ver mejor imagen (Ampliar)" aria-label="Ver mejor imagen">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="p-hover-action-btn p-btn-info" title="Ver información del proyecto y documentos" aria-label="Ver ficha del proyecto">
+                  <i class="fa-solid fa-link"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-card-body">
+              <div class="p-card-header-row">
+                <span class="p-sector-badge">ACERO</span>
+                <button type="button" class="p-like-btn" aria-label="Me gusta">
+                  <i class="fa-regular fa-heart"></i> <span class="like-counter">3</span>
+                </button>
+              </div>
+              <h3 class="p-card-title">DEN06 – HEAT TREAT CONTROL INTEGRATION</h3>
+              <p class="p-card-desc">
+                En el presente proyecto, Deneen Engineering requiere comisionar y poner en marcha la nueva planta de Tratamiento de Calor, Inspección y Enhebrado de Tubos de Acero [...]
+              </p>
+            </div>
+          </article>
+
+          <!-- PROYECTO 5: RAU02 (MINERÍA) -->
+          <article class="p-card" data-category="mineria" data-project-id="rau02">
+            <div class="p-card-media">
+              <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=700&q=80" alt="RAU02 – Sistema de Monitoreo de Gases y Control de Ventiladores" class="p-card-img">
+              
+              <div class="p-card-hover-overlay">
+                <button type="button" class="p-hover-action-btn p-btn-zoom" title="Ver mejor imagen (Ampliar)" aria-label="Ver mejor imagen">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="p-hover-action-btn p-btn-info" title="Ver información del proyecto y documentos" aria-label="Ver ficha del proyecto">
+                  <i class="fa-solid fa-link"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-card-body">
+              <div class="p-card-header-row">
+                <span class="p-sector-badge">MINERÍA</span>
+                <button type="button" class="p-like-btn" aria-label="Me gusta">
+                  <i class="fa-regular fa-heart"></i> <span class="like-counter">4</span>
+                </button>
+              </div>
+              <h3 class="p-card-title">RAU02 – SISTEMA DE MONITOREO DE GASES Y CONTROL DE VENTILADORES</h3>
+              <p class="p-card-desc">
+                En el presente proyecto, CIA. Minera Raura S.A. requiere monitorear Gases NO2, CO, O2, CO2 y Caudal de Aire, provenientes de sus galerías, túneles, pozos, chimeneas, [...]
+              </p>
+            </div>
+          </article>
+
+          <!-- PROYECTO 6: STK01 (GENERACIÓN) -->
+          <article class="p-card" data-category="generacion" data-project-id="stk01">
+            <div class="p-card-media">
+              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80" alt="STK01 – Sistema de Control para la CH de Misapuquio" class="p-card-img">
+              
+              <div class="p-card-hover-overlay">
+                <button type="button" class="p-hover-action-btn p-btn-zoom" title="Ver mejor imagen (Ampliar)" aria-label="Ver mejor imagen">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button type="button" class="p-hover-action-btn p-btn-info" title="Ver información del proyecto y documentos" aria-label="Ver ficha del proyecto">
+                  <i class="fa-solid fa-link"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-card-body">
+              <div class="p-card-header-row">
+                <span class="p-sector-badge">GENERACIÓN</span>
+                <button type="button" class="p-like-btn" aria-label="Me gusta">
+                  <i class="fa-regular fa-heart"></i> <span class="like-counter">2</span>
+                </button>
+              </div>
+              <h3 class="p-card-title">STK01 – SISTEMA DE CONTROL PARA LA CH DE MISAPUQUIO</h3>
+              <p class="p-card-desc">
+                El presente tiene como alcance el control para la Semi-Automatizacion de la Central Hidroeléctrica Misapuquio. Para ello se requiere de la instalación de un tablero de [...]
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. MODAL 1: LIGHTBOX DE IMAGEN AMPLIADA -->
+    <div id="imageLightboxModal" class="gys-modal" aria-hidden="true" role="dialog">
+      <div class="gys-modal-backdrop"></div>
+      <div class="gys-lightbox-content">
+        <button type="button" class="gys-modal-close" aria-label="Cerrar vista">&times;</button>
+        <img id="lightboxTargetImg" src="" alt="Vista previa de alta resolución" class="gys-lightbox-img">
+        <p id="lightboxCaption" class="gys-lightbox-caption"></p>
+      </div>
+    </div>
+
+    <!-- 6. MODAL 2: FICHA TÉCNICA DEL PROYECTO & SECCIÓN DE DOCUMENTOS / PDFS -->
+    <div id="projectInfoModal" class="gys-modal" aria-hidden="true" role="dialog">
+      <div class="gys-modal-backdrop"></div>
+      <div class="gys-dossier-dialog">
+        <div class="gys-dossier-header">
+          <div>
+            <span id="dossierSector" class="p-sector-badge">SECTOR</span>
+            <h3 id="dossierTitle" class="gys-dossier-title">Título del Proyecto</h3>
+          </div>
+          <button type="button" class="gys-modal-close" aria-label="Cerrar ficha">&times;</button>
+        </div>
+
+        <div class="gys-dossier-body">
+          <div class="gys-dossier-overview">
+            <h4><i class="fa-solid fa-circle-info"></i> Resumen Ejecutivo y Alcance</h4>
+            <p id="dossierDescription">Descripción detallada de ingeniería del proyecto...</p>
+          </div>
+
+          <!-- Metadatos de Ingeniería -->
+          <div class="gys-dossier-meta-grid">
+            <div class="dossier-meta-item">
+              <span class="dmi-label">ESTADO:</span>
+              <strong class="dmi-val"><i class="fa-solid fa-circle-check" style="color: #92D050;"></i> Ejecutado / SAT Conforme</strong>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="dmi-label">NORMATIVAS:</span>
+              <strong class="dmi-val">IEC 61439 • IEEE • NFPA 70E</strong>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="dmi-label">SERVICIOS INVOLUCRADOS:</span>
+              <strong class="dmi-val">Control PLC/SCADA • Tableros BT</strong>
+            </div>
+            <div class="dossier-meta-item">
+              <span class="dmi-label">DISPONIBILIDAD:</span>
+              <strong class="dmi-val" style="color: #92D050;">Alta Confiabilidad HA</strong>
+            </div>
+          </div>
+
+          <!-- SECCIÓN DE DOCUMENTOS TÉCNICOS & PDFS (LISTA PARA QUE ENLACES TUS ARCHIVOS) -->
+          <div class="gys-dossier-docs-section">
+            <h4><i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Expediente Técnico y Documentos Descargables (PDF)</h4>
+            <p class="docs-subtext">Descarga la documentación autorizada para este proyecto industrial:</p>
+
+            <div class="dossier-pdf-list">
+              <!-- PDF 1 -->
+              <a href="#" class="pdf-download-card" download>
+                <div class="pdf-icon-wrap"><i class="fa-solid fa-file-pdf"></i></div>
+                <div class="pdf-info">
+                  <strong>Memoria Descriptiva &amp; Filosofía de Control</strong>
+                  <span>Formato PDF • Documento de Ingeniería</span>
+                </div>
+                <span class="pdf-action-tag"><i class="fa-solid fa-download"></i> Descargar</span>
+              </a>
+
+              <!-- PDF 2 -->
+              <a href="#" class="pdf-download-card" download>
+                <div class="pdf-icon-wrap"><i class="fa-solid fa-file-pdf"></i></div>
+                <div class="pdf-info">
+                  <strong>Planos Eléctricos y Diagramas de Arquitectura</strong>
+                  <span>Formato PDF • Planos As-Built</span>
+                </div>
+                <span class="pdf-action-tag"><i class="fa-solid fa-download"></i> Descargar</span>
+              </a>
+
+              <!-- PDF 3 -->
+              <a href="#" class="pdf-download-card" download>
+                <div class="pdf-icon-wrap"><i class="fa-solid fa-file-pdf"></i></div>
+                <div class="pdf-info">
+                  <strong>Protocolo de Pruebas FAT / SAT y Dossier de Calidad</strong>
+                  <span>Formato PDF • Certificado de Comisionamiento</span>
+                </div>
+                <span class="pdf-action-tag"><i class="fa-solid fa-download"></i> Descargar</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="gys-dossier-footer">
+          <span>¿Deseas solicitar una solución similar para tu planta?</span>
+          <a href="contactanos.html" class="btn btn--green">COTIZAR PROYECTO SIMILAR <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
   </main>
 
+  <!-- 7. FOOTER CORPORATIVO OFICIAL UNIFICADO CON mapa_gys.png -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
-        <span>© 2026 G&S Control Industrial SAC. Todos los derechos reservados.</span>
+    <div class="container footer-main">
+      <div class="footer-corp-grid">
+
+        <div>
+          <h3 class="footer-heading">Contactamos</h3>
+          <div class="footer-logo-box">
+            <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+          </div>
+          <div class="social-circles">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <div class="footer-contact-info">
+            <p>Contactanos: <a href="tel:+51962375309">+51 962 375 309</a></p>
+            <p>Escríbenos: <a href="mailto:info@gyscontrol.com" class="email-bold">info@gyscontrol.com</a></p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Proyectos Ejecutados</h3>
+          <div class="projects-world-box">
+            <div class="world-map-img-wrap" id="worldMapWrap">
+              <img src="assets/images/mapa_gys.png" alt="Proyectos ejecutados en Perú, USA, Canadá y China" class="world-map-img" id="worldMapImg">
+            </div>
+
+            <ul class="country-stats-list">
+              <li class="country-stat-item" data-country="peru">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +50 Perú
+              </li>
+              <li class="country-stat-item" data-country="usa">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +08 USA
+              </li>
+              <li class="country-stat-item" data-country="canada">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +01 Canada
+              </li>
+              <li class="country-stat-item" data-country="china">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +02 China
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Blog Recientes</h3>
+          <div class="recent-blog-list">
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DEL TRABAJADOR 2017</span>
+            </a>
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DEL TRABAJADOR 2019</span>
+            </a>
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DE GYS – 2019</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 GYS CONTROL INDUSTRIAL. All Rights Reserved.</span>
+        <div class="footer-mini-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
       </div>
     </div>
   </footer>
