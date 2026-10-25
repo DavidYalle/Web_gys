@@ -1,6 +1,6 @@
 /**
  * G&S CONTROL INDUSTRIAL SAC - CONTROLADOR GLOBAL DE INTERFAZ (ES6+)
- * Unifica automáticamente el Top-Bar, Header y Footer en todas las vistas HTML.
+ * Unifica el Header (#2b2b2b) y el Footer en todas las páginas del sitio.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,59 +11,54 @@ document.addEventListener('DOMContentLoaded', () => {
   initInteractiveMap();
 });
 
-/**
- * Inyecta y unifica el Top Bar, el Header oficial y el Footer con mapa_gys.png
- * en todas las páginas (Inicio, Nosotros, Servicios, Proyectos, Noticias, Contáctanos)
- */
 function syncUnifiedHeaderAndFooter() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
 
-  // 1. Asegurar que exista el Top Bar arriba del Header en todas las páginas
-  if (!document.querySelector('.top-bar')) {
-    const topBar = document.createElement('div');
-    topBar.className = 'top-bar';
-    topBar.innerHTML = `
-      <div class="container top-bar-inner">
-        <div class="top-bar-info">
-          <span><i class="fa-solid fa-location-dot"></i> Lima, Perú</span>
-          <a href="tel:+51962375309"><i class="fa-solid fa-phone"></i> +51 962 375 309</a>
-          <a href="mailto:info@gyscontrol.com"><i class="fa-solid fa-envelope"></i> info@gyscontrol.com</a>
-        </div>
-        <div class="top-bar-socials">
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-      </div>`;
-    document.body.insertBefore(topBar, document.body.firstChild);
-  }
+  // Eliminar cualquier top-bar antiguo suelto si existiera en páginas secundarias
+  const legacyTopBar = document.querySelector('.top-bar');
+  if (legacyTopBar) legacyTopBar.remove();
 
-  // 2. Unificar el Header Principal en todas las páginas y marcar activo el link actual
+  // 1. Inyectar el Encabezado Unificado (#2b2b2b) en todas las páginas
   const header = document.querySelector('.site-header');
   if (header) {
     header.innerHTML = `
-      <div class="container header-inner">
-        <a href="index.html" class="brand-link" aria-label="G&S Control Industrial Inicio">
-          <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
-        </a>
-        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
-        <nav>
-          <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html" class="nav-link ${path === 'index.html' || path === '' ? 'active' : ''}">INICIO</a></li>
-            <li><a href="nosotros.html" class="nav-link ${path === 'nosotros.html' ? 'active' : ''}">NOSOTROS</a></li>
-            <li><a href="servicios.html" class="nav-link ${path === 'servicios.html' ? 'active' : ''}">SERVICIOS</a></li>
-            <li><a href="proyectos.html" class="nav-link ${path === 'proyectos.html' ? 'active' : ''}">PROYECTOS</a></li>
-            <li><a href="noticias.html" class="nav-link ${path === 'noticias.html' ? 'active' : ''}">NOTICIAS</a></li>
-            <li><a href="contactanos.html" class="nav-link ${path === 'contactanos.html' ? 'active' : ''}">CONTÁCTANOS</a></li>
-            <li><a href="contactanos.html" class="btn btn--green">COTIZAR PROYECTO <i class="fa-solid fa-arrow-right"></i></a></li>
-          </ul>
-        </nav>
+      <div class="container">
+        <div class="header-top-unified">
+          <div class="top-bar-info">
+            <span><i class="fa-solid fa-location-dot"></i> Lima, Perú</span>
+            <a href="tel:+51962375309"><i class="fa-solid fa-phone"></i> +51 962 375 309</a>
+            <a href="mailto:info@gyscontrol.com"><i class="fa-solid fa-envelope"></i> info@gyscontrol.com</a>
+          </div>
+          <div class="top-bar-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="header-main-unified">
+          <a href="index.html" class="brand-link" aria-label="G&S Control Industrial Inicio">
+            <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+          <nav>
+            <ul class="nav-menu" id="navMenu">
+              <li><a href="index.html" class="nav-link ${path === 'index.html' || path === '' ? 'active' : ''}">INICIO</a></li>
+              <li><a href="nosotros.html" class="nav-link ${path === 'nosotros.html' ? 'active' : ''}">NOSOTROS</a></li>
+              <li><a href="servicios.html" class="nav-link ${path === 'servicios.html' ? 'active' : ''}">SERVICIOS</a></li>
+              <li><a href="proyectos.html" class="nav-link ${path === 'proyectos.html' ? 'active' : ''}">PROYECTOS</a></li>
+              <li><a href="noticias.html" class="nav-link ${path === 'noticias.html' ? 'active' : ''}">NOTICIAS</a></li>
+              <li><a href="contactanos.html" class="nav-link ${path === 'contactanos.html' ? 'active' : ''}">CONTÁCTANOS</a></li>
+              <li><a href="contactanos.html" class="btn btn--green">COTIZAR PROYECTO <i class="fa-solid fa-arrow-right"></i></a></li>
+            </ul>
+          </nav>
+        </div>
       </div>`;
   }
 
-  // 3. Unificar el Footer Corporativo con mapa_gys.png en todas las páginas
+  // 2. Unificar el Footer Corporativo con mapa_gys.png en todas las páginas
   const footer = document.querySelector('.site-footer');
   if (footer && !footer.querySelector('.footer-corp-grid')) {
     footer.innerHTML = `
