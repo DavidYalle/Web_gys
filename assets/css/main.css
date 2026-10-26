@@ -2389,185 +2389,418 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
   line-height: 1.35;
 }
 
-/* 2. Cuadrícula Principal sobre Fondo Blanco */
-.contact-main-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 2.5rem;
-  align-items: start;
+/* 2. Sección Central Equilibrada (Oficina Lima + Formulario de Ingeniería) */
+.contact-workbench-section {
+  padding: 4.8rem 0 5rem;
 }
 
-.office-card {
+.contact-main-grid--balanced {
+  display: grid;
+  grid-template-columns: 0.95fr 1.35fr;
+  gap: 2.25rem;
+  align-items: stretch;
+}
+
+/* Panel Tecnológico Oficina Lima */
+.office-tech-panel {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 2.25rem;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-  margin-bottom: 1.75rem;
-  transition: transform 0.3s ease;
-}
-
-.office-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--gys-green-primary);
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
-}
-
-.office-header {
-  margin-bottom: 1.5rem;
-}
-
-.office-tag {
-  display: inline-block;
-  background: rgba(146, 208, 80, 0.15);
-  color: var(--gys-green-dark);
-  border: 1px solid var(--gys-green-primary);
-  font-size: 0.68rem;
-  font-weight: 800;
-  padding: 0.2rem 0.65rem;
-  border-radius: 4px;
-  letter-spacing: 0.8px;
-  margin-bottom: 0.4rem;
-}
-
-.office-header h3 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--text-dark);
-}
-
-.office-details-list {
+  border-radius: 14px;
+  padding: 2.25rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: space-between;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.office-tech-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gys-green-secondary), var(--gys-green-primary));
+}
+
+.office-tech-panel:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.09), 0 0 0 1px var(--gys-green-primary);
+}
+
+.otp-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.otp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(146, 208, 80, 0.14);
+  color: var(--gys-green-dark);
+  border: 1px solid var(--gys-green-primary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  letter-spacing: 0.8px;
+}
+
+.otp-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gys-green-primary);
+  box-shadow: 0 0 8px var(--gys-green-primary);
+  animation: pulseDot 1.8s infinite ease-in-out;
+}
+
+.otp-code {
+  font-family: monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+.otp-heading h3 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.otp-heading p {
+  font-size: 0.84rem;
+  color: var(--text-dark-muted);
+  margin-top: 0.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.otp-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
   margin-bottom: 1.75rem;
 }
 
-.office-details-list li {
+.otp-meta-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.85rem;
-  font-size: 0.9rem;
-  color: var(--text-dark-muted);
-  line-height: 1.5;
+  gap: 1rem;
+  padding: 0.75rem 0.9rem;
+  background: #f8fafc;
+  border: 1px solid #edf2f7;
+  border-radius: 10px;
+  transition: all 0.25s ease;
 }
 
-.office-details-list li i {
-  color: var(--gys-green-primary);
-  margin-top: 0.2rem;
-  font-size: 1rem;
+.otp-meta-item:hover {
+  background: #ffffff;
+  border-color: var(--gys-green-primary);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  transform: translateX(3px);
 }
 
-.office-details-list a:hover {
+.otp-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(146, 208, 80, 0.16);
+  color: var(--gys-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.otp-meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.otp-meta-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.otp-meta-text strong,
+.otp-meta-text a {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.otp-meta-text a:hover {
   color: var(--gys-green-dark);
   text-decoration: underline;
 }
 
-.office-badge-footer {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 0.85rem 1rem;
+.otp-cert-strip {
+  background: #f1f8ea;
+  border: 1px dashed var(--gys-green-secondary);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--text-dark);
+  gap: 0.9rem;
+  margin-top: auto;
 }
 
-.office-badge-footer i {
-  color: var(--gys-green-primary);
-  font-size: 1.2rem;
-}
-
-.contact-whatsapp-promo {
-  background: linear-gradient(135deg, #0b0f14 0%, #17212e 100%);
-  border: 1px solid rgba(37, 211, 102, 0.4);
-  border-radius: 12px;
-  padding: 1.75rem;
+.otp-cert-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--gys-green-primary);
+  color: #0b0f14;
   display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  color: #ffffff;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
 }
 
-.cwp-icon {
-  font-size: 2.2rem;
-  color: #25d366;
-}
-
-.cwp-text strong {
+.otp-cert-desc strong {
   display: block;
-  font-size: 1.05rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  margin-bottom: 0.25rem;
+  color: var(--text-dark);
+  line-height: 1.25;
 }
 
-.cwp-text p {
-  font-size: 0.84rem;
-  color: #cbd5e1;
-  line-height: 1.4;
+.otp-cert-desc span {
+  display: block;
+  font-size: 0.74rem;
+  color: #4b5563;
+  margin-top: 0.15rem;
+  line-height: 1.35;
 }
 
-/* Caja de Formulario Moderna */
-.contact-form-box {
+/* Panel Tecnológico Formulario */
+.quote-tech-panel {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 2.5rem;
+  border-radius: 14px;
+  padding: 2.25rem 2.4rem;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.contact-form-box h3 {
-  font-size: 1.5rem;
+.quote-tech-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #111827, var(--gys-green-primary));
+}
+
+.quote-tech-panel:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.09);
+}
+
+.qtp-header {
+  margin-bottom: 1.6rem;
+}
+
+.qtp-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--gys-green-dark);
+  letter-spacing: 0.9px;
+  margin-bottom: 0.35rem;
+}
+
+.qtp-header h3 {
+  font-size: 1.65rem;
   font-weight: 800;
   color: var(--text-dark);
-  margin-bottom: 0.4rem;
+  line-height: 1.2;
 }
 
-.form-subtext {
+.qtp-lead {
   font-size: 0.88rem;
   color: var(--text-dark-muted);
-  margin-bottom: 1.75rem;
+  margin-top: 0.35rem;
+  line-height: 1.5;
 }
 
-.form-row-2 {
+.qtp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.qtp-grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.15rem;
 }
 
-.btn--full {
-  width: 100%;
-  justify-content: center;
-  padding: 0.95rem;
-  margin-top: 0.5rem;
+.qtp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
 
-/* 3. Mapa Estilizado Ultra Limpio */
+.qtp-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.qtp-label i {
+  color: var(--gys-green-dark);
+  font-size: 0.85rem;
+}
+
+.qtp-input,
+.qtp-select,
+.qtp-textarea {
+  width: 100%;
+  background: #f8fafc;
+  border: 1.5px solid #dbe3ee;
+  border-radius: 8px;
+  padding: 0.78rem 1rem;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.qtp-input::placeholder,
+.qtp-textarea::placeholder {
+  color: #94a3b8;
+  font-size: 0.84rem;
+}
+
+.qtp-input:focus,
+.qtp-select:focus,
+.qtp-textarea:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--gys-green-primary);
+  box-shadow: 0 0 0 3px rgba(146, 208, 80, 0.25);
+}
+
+.qtp-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.qtp-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.qtp-select-arrow {
+  position: absolute;
+  right: 1.1rem;
+  pointer-events: none;
+  font-size: 0.75rem;
+  color: #64748b;
+  transition: transform 0.2s ease;
+}
+
+.qtp-select-wrap:focus-within .qtp-select-arrow {
+  color: var(--gys-green-dark);
+  transform: rotate(180deg);
+}
+
+.qtp-textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.5;
+}
+
+.qtp-submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn--submit-qtp {
+  padding: 0.95rem 1.85rem;
+  font-size: 0.82rem;
+  flex: 1;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(146, 208, 80, 0.35);
+}
+
+.qtp-security-notice {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.qtp-security-notice i {
+  color: var(--gys-green-dark);
+}
+
+/* 3. Mapa de Google Maps Estilizado Ultra Limpio */
 .map-showcase-section {
-  background: var(--bg-white);
-  padding: 2rem 0 5rem;
+  background: #f8fafc;
+  padding: 2.5rem 0 5rem;
+  border-top: 1px solid #e2e8f0;
 }
 
 .map-card-wrapper {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.06);
 }
 
 .map-header-info {
-  padding: 1.75rem 2.25rem;
+  padding: 1.6rem 2.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
   border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
 }
 
 .mhi-tag {
@@ -2580,7 +2813,7 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
 }
 
 .map-header-info h3 {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
   font-weight: 800;
   color: var(--text-dark);
 }
@@ -2588,16 +2821,32 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
 .map-iframe-container {
   width: 100%;
   line-height: 0;
+  background: #e2e8f0;
 }
 
+/* Responsividad de Contáctanos */
 @media (max-width: 1120px) {
   .contact-hero-grid,
-  .contact-main-grid {
+  .contact-main-grid--balanced {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .form-row-2 { grid-template-columns: 1fr; }
-  .map-header-info { flex-direction: column; text-align: center; }
+  .qtp-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .quote-tech-panel,
+  .office-tech-panel {
+    padding: 1.75rem 1.5rem;
+  }
+  .qtp-submit-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .map-header-info {
+    flex-direction: column;
+    text-align: center;
+  }
 }

@@ -94,109 +94,151 @@
     </section>
 
     <!-- 3. APARTADO CENTRAL: OFICINAS Y COTIZACIÓN (FONDO BLANCO PURO) -->
-    <section class="light-section">
+    <section class="light-section contact-workbench-section">
       <div class="container">
         <div class="corp-section-title-wrap">
           <h2 class="corp-dual-title">NUESTRAS <span>OFICINAS Y COTIZACIÓN</span></h2>
           <div class="corp-title-underline"></div>
         </div>
 
-        <div class="contact-main-grid">
-          <!-- Columna Izquierda: Oficina y WhatsApp -->
+        <div class="contact-main-grid contact-main-grid--balanced">
+          <!-- Columna Izquierda: Información de Sede Central -->
           <div class="contact-left-col">
-            <div class="office-card">
-              <div class="office-header">
-                <span class="office-tag">SEDE CENTRAL</span>
-                <h3>Oficina Lima</h3>
+            <div class="office-tech-panel">
+              <div class="otp-status-bar">
+                <span class="otp-pill"><span class="otp-pulse-dot"></span> SEDE CENTRAL</span>
+                <span class="otp-code">OF-LIMA-01</span>
               </div>
-              <ul class="office-details-list">
-                <li>
-                  <i class="fa-solid fa-location-dot"></i>
-                  <span>Av. Aurelio García y García 1178, Lima 15081, Perú</span>
-                </li>
-                <li>
-                  <i class="fa-solid fa-phone"></i>
-                  <a href="tel:+51987567918">+51 987 567 918</a>
-                </li>
-                <li>
-                  <i class="fa-solid fa-envelope"></i>
-                  <a href="mailto:ventas@gyscontrol.com">ventas@gyscontrol.com</a>
-                </li>
-                <li>
-                  <i class="fa-solid fa-clock"></i>
-                  <span>Lunes a Viernes: 8:00 AM – 6:00 PM / Sábados: 9:00 AM – 1:00 PM</span>
-                </li>
-              </ul>
-              <div class="office-badge-footer">
-                <i class="fa-solid fa-shield-halved"></i>
-                <span>Centro de Integración y Pruebas FAT Certificado</span>
-              </div>
-            </div>
 
-            <div class="contact-whatsapp-promo">
-              <div class="cwp-icon"><i class="fa-brands fa-whatsapp"></i></div>
-              <div class="cwp-text">
-                <strong>¿Requieres respuesta inmediata?</strong>
-                <p>Nuestros ingenieros comerciales atienden consultas urgentes por WhatsApp.</p>
+              <div class="otp-heading">
+                <h3>Oficina Lima</h3>
+                <p>Centro de Operaciones &amp; Integración de Tableros</p>
               </div>
-              <a href="https://wa.me/51962375309?text=Hola%20G%26S%20Control%20Industrial,%20deseo%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="btn btn--green">CHATEAR AHORA</a>
+
+              <div class="otp-meta-list">
+                <div class="otp-meta-item">
+                  <div class="otp-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+                  <div class="otp-meta-text">
+                    <span class="otp-meta-label">Dirección Fiscal</span>
+                    <strong>Av. Aurelio García y García 1178, Lima 15081, Perú</strong>
+                  </div>
+                </div>
+
+                <div class="otp-meta-item">
+                  <div class="otp-icon-wrap"><i class="fa-solid fa-phone"></i></div>
+                  <div class="otp-meta-text">
+                    <span class="otp-meta-label">Central Telefónica</span>
+                    <a href="tel:+51987567918">+51 987 567 918</a>
+                  </div>
+                </div>
+
+                <div class="otp-meta-item">
+                  <div class="otp-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="otp-meta-text">
+                    <span class="otp-meta-label">Área Comercial</span>
+                    <a href="mailto:ventas@gyscontrol.com">ventas@gyscontrol.com</a>
+                  </div>
+                </div>
+
+                <div class="otp-meta-item">
+                  <div class="otp-icon-wrap"><i class="fa-solid fa-clock"></i></div>
+                  <div class="otp-meta-text">
+                    <span class="otp-meta-label">Horario de Ingeniería</span>
+                    <strong>Lun – Vie: 8:00 AM – 6:00 PM<br>Sáb: 9:00 AM – 1:00 PM</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="otp-cert-strip">
+                <div class="otp-cert-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div class="otp-cert-desc">
+                  <strong>Centro de Integración y Pruebas FAT Certificado</strong>
+                  <span>Garantía de calidad bajo normativas IEC, NEMA y protocolos SST en planta.</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Columna Derecha: Formulario Ultra Moderno -->
+          <!-- Columna Derecha: Formulario Tecnológico de Cotización -->
           <div class="contact-right-col">
-            <div class="contact-form-box">
-              <h3>Envíanos tu Requerimiento</h3>
-              <p class="form-subtext">Completa los datos de tu empresa y nos pondremos en contacto contigo en menos de 24 horas.</p>
+            <div class="quote-tech-panel">
+              <div class="qtp-header">
+                <div class="qtp-title-box">
+                  <span class="qtp-kicker"><i class="fa-solid fa-bolt"></i> RESPUESTA EN MENOS DE 24 HORAS</span>
+                  <h3>Envíanos tu Requerimiento</h3>
+                </div>
+                <p class="qtp-lead">Completa los datos técnicos de tu empresa para asignarte un ingeniero especialista según tu sector industrial.</p>
+              </div>
 
-              <form id="quoteForm" novalidate>
-                <!-- Honeypot Anti-Spam -->
+              <form id="quoteForm" class="qtp-form" novalidate>
+                <!-- Trampa Honeypot anti-bots (oculta para usuarios) -->
                 <div class="hp-trap-field">
                   <label for="hp_website_url">Website URL</label>
                   <input type="text" id="hp_website_url" name="hp_website_url" autocomplete="off" tabindex="-1">
                 </div>
 
-                <div class="form-row-2">
-                  <div class="form-group">
-                    <label class="form-label" for="companyName">Razón Social o Empresa *</label>
-                    <input type="text" id="companyName" class="form-control" required placeholder="Ej. Minera S.A.C.">
+                <div class="qtp-grid-2">
+                  <div class="qtp-field">
+                    <label class="qtp-label" for="companyName">
+                      <i class="fa-solid fa-building"></i> Razón Social o Empresa *
+                    </label>
+                    <input type="text" id="companyName" class="qtp-input" required placeholder="Ej. Minera S.A.C.">
                   </div>
-                  <div class="form-group">
-                    <label class="form-label" for="companyRuc">RUC de la Empresa *</label>
-                    <input type="text" id="companyRuc" class="form-control" maxlength="11" required placeholder="Ej. 20123456789">
-                  </div>
-                </div>
-
-                <div class="form-row-2">
-                  <div class="form-group">
-                    <label class="form-label" for="contactEmail">Correo Corporativo *</label>
-                    <input type="email" id="contactEmail" class="form-control" required placeholder="contacto@empresa.com">
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="contactPhone">Teléfono / Celular *</label>
-                    <input type="tel" id="contactPhone" class="form-control" required placeholder="+51 900 000 000">
+                  <div class="qtp-field">
+                    <label class="qtp-label" for="companyRuc">
+                      <i class="fa-solid fa-id-card"></i> RUC de la Empresa *
+                    </label>
+                    <input type="text" id="companyRuc" class="qtp-input" maxlength="11" required placeholder="Ej. 20123456789">
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <label class="form-label" for="serviceType">Línea de Ingeniería / Servicio *</label>
-                  <select id="serviceType" class="form-control" required>
-                    <option value="" disabled selected>Selecciona una opción...</option>
-                    <option value="ingenieria">Ingeniería Básica y de Detalle</option>
-                    <option value="plc_scada">Programación de PLCs y SCADA</option>
-                    <option value="mes_oee">Reportes MES y Eficiencia OEE</option>
-                    <option value="montaje">Montaje Electromecánico</option>
-                    <option value="instrumentacion">Instrumentación Industrial</option>
-                    <option value="tableros">Armado de Tableros Eléctricos y de Control</option>
-                  </select>
+                <div class="qtp-grid-2">
+                  <div class="qtp-field">
+                    <label class="qtp-label" for="contactEmail">
+                      <i class="fa-solid fa-envelope"></i> Correo Corporativo *
+                    </label>
+                    <input type="email" id="contactEmail" class="qtp-input" required placeholder="contacto@empresa.com">
+                  </div>
+                  <div class="qtp-field">
+                    <label class="qtp-label" for="contactPhone">
+                      <i class="fa-solid fa-phone"></i> Teléfono / Celular *
+                    </label>
+                    <input type="tel" id="contactPhone" class="qtp-input" required placeholder="+51 900 000 000">
+                  </div>
                 </div>
 
-                <div class="form-group">
-                  <label class="form-label" for="projectDetails">Detalle del Proyecto o Requerimiento * (Mín. 15 caracteres)</label>
-                  <textarea id="projectDetails" class="form-control" rows="5" required placeholder="Describa brevemente los equipos, alcances o urgencia de su proyecto..."></textarea>
+                <div class="qtp-field">
+                  <label class="qtp-label" for="serviceType">
+                    <i class="fa-solid fa-gears"></i> Línea de Ingeniería / Servicio *
+                  </label>
+                  <div class="qtp-select-wrap">
+                    <select id="serviceType" class="qtp-select" required>
+                      <option value="" disabled selected>Selecciona una línea de ingeniería...</option>
+                      <option value="ingenieria">Ingeniería Básica y de Detalle</option>
+                      <option value="plc_scada">Programación de PLCs y SCADA</option>
+                      <option value="mes_oee">Reportes MES y Eficiencia OEE</option>
+                      <option value="montaje">Montaje Electromecánico</option>
+                      <option value="instrumentacion">Instrumentación Industrial</option>
+                      <option value="tableros">Armado de Tableros Eléctricos y de Control</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down qtp-select-arrow"></i>
+                  </div>
                 </div>
 
-                <button type="submit" class="btn btn--green btn--full">ENVIAR SOLICITUD DE COTIZACIÓN <i class="fa-solid fa-arrow-right"></i></button>
+                <div class="qtp-field">
+                  <label class="qtp-label" for="projectDetails">
+                    <i class="fa-solid fa-pen-to-square"></i> Detalle del Requerimiento * (Mín. 15 caracteres)
+                  </label>
+                  <textarea id="projectDetails" class="qtp-textarea" rows="4" required placeholder="Describe brevemente alcances del proyecto, marcas de PLC/instrumentación requeridas, parada de planta o fecha límite..."></textarea>
+                </div>
+
+                <div class="qtp-submit-row">
+                  <button type="submit" class="btn btn--green btn--submit-qtp">
+                    <span>ENVIAR SOLICITUD DE COTIZACIÓN</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                  <span class="qtp-security-notice"><i class="fa-solid fa-lock"></i> Datos cifrados y protegidos</span>
+                </div>
 
                 <div id="securityAlert" class="security-alert" role="alert"></div>
               </form>
@@ -316,7 +358,7 @@
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
           <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
