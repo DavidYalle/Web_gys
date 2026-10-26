@@ -3,136 +3,323 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contáctanos y Cotizaciones | G&S Control Industrial SAC</title>
+  <meta name="description" content="Ponte en contacto con nuestro equipo de ingeniería. Solicita cotizaciones para automatización, tableros eléctricos y proyectos industriales en Lima y todo el Perú.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/security.css">
 </head>
 <body>
 
+  <!-- 1. ENCABEZADO UNIFICADO -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand-link">
-        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
-      <nav>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" class="nav-link">Inicio</a></li>
-          <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
-          <li><a href="servicios.html" class="nav-link">Servicios</a></li>
-          <li><a href="proyectos.html" class="nav-link">Proyectos</a></li>
-          <li><a href="noticias.html" class="nav-link">Noticias</a></li>
-          <li><a href="contactanos.html" class="btn btn--primary" data-icon="bolt">Cotizar Proyecto</a></li>
-        </ul>
-      </nav>
+    <div class="container">
+      <div class="header-top-unified">
+        <div class="top-bar-info">
+          <span><i class="fa-solid fa-location-dot"></i> Lima, Perú</span>
+          <a href="tel:+51962375309"><i class="fa-solid fa-phone"></i> +51 962 375 309</a>
+          <a href="mailto:info@gyscontrol.com"><i class="fa-solid fa-envelope"></i> info@gyscontrol.com</a>
+        </div>
+        <div class="top-bar-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="header-main-unified">
+        <a href="index.html" class="brand-link" aria-label="G&S Control Industrial Inicio">
+          <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Abrir menú">☰</button>
+        <nav>
+          <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="nav-link">INICIO</a></li>
+            <li><a href="nosotros.html" class="nav-link">NOSOTROS</a></li>
+            <li><a href="servicios.html" class="nav-link">SERVICIOS</a></li>
+            <li><a href="proyectos.html" class="nav-link">PROYECTOS</a></li>
+            <li><a href="noticias.html" class="nav-link">NOTICIAS</a></li>
+            <li><a href="contactanos.html" class="nav-link active">CONTÁCTANOS</a></li>
+            <li><a href="contactanos.html" class="btn btn--green">COTIZAR PROYECTO <i class="fa-solid fa-arrow-right"></i></a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="page-banner">
-      <div class="container">
-        <span class="section-tag" data-icon="lock">Canal Corporativo Seguro</span>
-        <h1 class="section-title">Solicita una Cotización o <span>Visita Técnica</span></h1>
-        <p class="section-desc">Formulario protegido con sanitización anti-XSS, validación de RUC peruano y control anti-spam.</p>
+    <!-- 2. HERO CONTÁCTANOS CON IMAGEN TRANSPARENTE OSCURA -->
+    <section class="contact-hero">
+      <div class="contact-hero-bg"></div>
+      <div class="contact-hero-overlay"></div>
+
+      <div class="container contact-hero-grid">
+        <div class="contact-hero-left">
+          <div class="contact-breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>CONTÁCTANOS</span>
+          </div>
+          <p class="hero-kicker">ATENCIÓN COMERCIAL &amp; SOPORTE TÉCNICO 24/7</p>
+          <h1 class="hero-main-title">
+            Hablemos de tu próximo <span>proyecto industrial</span>
+          </h1>
+          <p class="hero-lead">
+            Estamos listos para atender tus requerimientos en automatización, tableros eléctricos y paradas de planta. Visítanos en nuestra oficina principal en Lima o envíanos tus especificaciones técnicas.
+          </p>
+        </div>
+
+        <div class="contact-hero-right">
+          <div class="contact-info-card">
+            <div class="cic-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <div>
+              <strong>Línea Directa de Atención</strong>
+              <span>+51 962 375 309 / +51 987 567 918</span>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="cic-icon"><i class="fa-solid fa-envelope-circle-check"></i></div>
+            <div>
+              <strong>Correo Corporativo</strong>
+              <span>info@gyscontrol.com / ventas@gyscontrol.com</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid-2">
-        <!-- FORMULARIO BLINDADO -->
-        <form id="quoteForm" class="contact-form" novalidate>
-          <!-- Campo Trampa Honeypot (Invisible para usuarios reales) -->
-          <div class="hp-trap-field" aria-hidden="true">
-            <label for="hp_website_url">No llenar este campo</label>
-            <input type="text" id="hp_website_url" name="hp_website_url" tabindex="-1" autocomplete="off">
-          </div>
+    <!-- 3. APARTADO CENTRAL DE OFICINAS Y FORMULARIO (FONDO BLANCO PURO) -->
+    <section class="light-section">
+      <div class="container">
+        <div class="corp-section-title-wrap">
+          <h2 class="corp-dual-title">NUESTRAS <span>OFICINAS Y COTIZACIÓN</span></h2>
+          <div class="corp-title-underline"></div>
+        </div>
 
-          <div class="form-group">
-            <label class="form-label" for="companyName">Razón Social / Empresa *</label>
-            <input type="text" id="companyName" class="form-control" placeholder="Ej. Minera Andina SAC" required maxlength="100">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="companyRuc">RUC (11 dígitos) *</label>
-            <input type="text" id="companyRuc" class="form-control" placeholder="Ej. 20123456789" required maxlength="11" inputmode="numeric">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="contactEmail">Correo Corporativo *</label>
-            <input type="email" id="contactEmail" class="form-control" placeholder="ingenieria@empresa.com.pe" required maxlength="120">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="contactPhone">Teléfono / WhatsApp Corporativo *</label>
-            <input type="tel" id="contactPhone" class="form-control" placeholder="+51 999 888 777" required maxlength="15">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="serviceType">Línea de Ingeniería Requerida *</label>
-            <select id="serviceType" class="form-control" required>
-              <option value="">-- Seleccione una especialidad --</option>
-              <option value="Automatizacion PLC SCADA">1. Automatización Industrial & SCADA</option>
-              <option value="Ingenieria Electrica MT BT">2. Ingeniería Eléctrica y Subestaciones MT/BT</option>
-              <option value="Instrumentacion Industrial">3. Instrumentación y Calibración</option>
-              <option value="Tableros Electricos IEC">4. Fabricación de Tableros Eléctricos</option>
-              <option value="Mantenimiento y Energia">5. Mantenimiento Predictivo y Calidad de Energía</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="projectDetails">Alcance Técnico del Requerimiento *</label>
-            <textarea id="projectDetails" class="form-control" rows="4" placeholder="Describa brevemente el requerimiento, potencia, ubicación de planta o alcance..." required maxlength="1000"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn--primary" style="width: 100%;" data-icon="shield">
-            Enviar Solicitud Protegida
-          </button>
-
-          <div id="securityAlert" class="security-alert" role="alert"></div>
-        </form>
-
-        <!-- MAPA INTERACTIVO DE SEDES Y COBERTURA -->
-        <div class="map-panel">
-          <div>
-            <span class="badge" data-icon="location">Despliegue Nacional</span>
-            <h3 class="card-title">Cobertura Operativa en Planta</h3>
-            <p class="card-text">Selecciona un corredor industrial para consultar la capacidad de respuesta de nuestras cuadrillas:</p>
-
-            <div class="chart-controls">
-              <button type="button" class="filter-btn active" data-zone="lima">Sede Central Lima</button>
-              <button type="button" class="filter-btn" data-zone="norte">Corredor Norte</button>
-              <button type="button" class="filter-btn" data-zone="sur">Corredor Minero Sur</button>
+        <div class="contact-main-grid">
+          <!-- Columna Izquierda: Información de Oficina -->
+          <div class="contact-left-col">
+            <div class="office-card">
+              <div class="office-header">
+                <span class="office-tag">SEDE CENTRAL</span>
+                <h3>Oficina Lima</h3>
+              </div>
+              <ul class="office-details-list">
+                <li>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Av. Aurelio García y García 1178, Lima 15081, Perú[cite: 25]</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-phone"></i>
+                  <a href="tel:+51987567918">+51 987 567 918</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-envelope"></i>
+                  <a href="mailto:ventas@gyscontrol.com">ventas@gyscontrol.com</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-clock"></i>
+                  <span>Lunes a Viernes: 8:00 AM – 6:00 PM / Sábados: 9:00 AM – 1:00 PM</span>
+                </li>
+              </ul>
+              <div class="office-badge-footer">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Centro de Integración y Pruebas FAT Certificado</span>
+              </div>
             </div>
 
-            <div class="map-screen">
-              <h4 id="mapZoneTitle" class="card-title" style="color: var(--gys-green-primary);">
-                Sede Central & Planta de Integración - Lima
-              </h4>
-              <p id="mapZoneDesc" class="card-text">
-                Centro de ingeniería, diseño de tableros eléctricos, pruebas FAT y soporte SCADA 24/7.
-              </p>
-              <small id="mapZoneCoords" style="color: var(--text-light); font-weight: 700;">
-                Lat: -12.0464° S | Lon: -77.0428° W • Atención Inmediata
-              </small>
+            <!-- Acceso Rápido a WhatsApp -->
+            <div class="contact-whatsapp-promo">
+              <div class="cwp-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="cwp-text">
+                <strong>¿Requieres respuesta inmediata?</strong>
+                <p>Nuestros ingenieros comerciales atienden consultas urgentes por WhatsApp.</p>
+              </div>
+              <a href="https://wa.me/51962375309?text=Hola%20G%26S%20Control%20Industrial,%20deseo%20cotizar%20un%20proyecto." target="_blank" rel="noopener noreferrer" class="btn btn--green">CHATEAR AHORA</a>
             </div>
           </div>
 
-          <div class="card" style="padding: 1.5rem;">
-            <h4 class="footer-title" style="margin-bottom: 0.5rem;">Atención de Emergencias en Planta 24/7</h4>
-            <p class="section-desc" data-icon="phone">Central de Ingeniería: +51 999 888 777</p>
-            <p class="section-desc" data-icon="envelope">Mesa de Partes Técnica: proyectos@gyscontrol.com.pe</p>
+          <!-- Columna Derecha: Formulario de Contacto Seguro -->
+          <div class="contact-right-col">
+            <div class="contact-form-box">
+              <h3>Envíanos tu Requerimiento</h3>
+              <p class="form-subtext">Completa los datos de tu empresa y nos pondremos en contacto contigo en menos de 24 horas.</p>
+
+              <form id="quoteForm" novalidate>
+                <!-- Trampa Honeypot contra Bots -->
+                <div class="hp-trap-field">
+                  <label for="hp_website_url">Website URL</label>
+                  <input type="text" id="hp_website_url" name="hp_website_url" autocomplete="off" tabindex="-1">
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="companyName">Razón Social o Empresa *</label>
+                    <input type="text" id="companyName" class="form-control" required placeholder="Ej. Minera S.A.C.">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="companyRuc">RUC de la Empresa *</label>
+                    <input type="text" id="companyRuc" class="form-control" maxlength="11" required placeholder="Ej. 20123456789">
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="contactEmail">Correo Corporativo *</label>
+                    <input type="email" id="contactEmail" class="form-control" required placeholder="contacto@empresa.com">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contactPhone">Teléfono / Celular *</label>
+                    <input type="tel" id="contactPhone" class="form-control" required placeholder="+51 900 000 000">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="serviceType">Línea de Ingeniería / Servicio *</label>
+                  <select id="serviceType" class="form-control" required>
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="ingenieria">Ingeniería Básica y de Detalle</option>
+                    <option value="plc_scada">Programación de PLCs y SCADA</option>
+                    <option value="mes_oee">Reportes MES y Eficiencia OEE</option>
+                    <option value="montaje">Montaje Electromecánico</option>
+                    <option value="instrumentacion">Instrumentación Industrial</option>
+                    <option value="tableros">Armado de Tableros Eléctricos y de Control</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="projectDetails">Detalle del Proyecto o Requerimiento * (Mín. 15 caracteres)</label>
+                  <textarea id="projectDetails" class="form-control" rows="5" required placeholder="Describa brevemente los equipos, alcances o urgencia de su proyecto..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--green btn--full">ENVIAR SOLICITUD DE COTIZACIÓN <i class="fa-solid fa-arrow-right"></i></button>
+
+                <div id="securityAlert" class="security-alert" role="alert"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. MAPA DE GOOGLE MAPS ESTILIZADO E INTERACTIVO -->
+    <section class="map-showcase-section">
+      <div class="container">
+        <div class="map-card-wrapper">
+          <div class="map-header-info">
+            <div>
+              <span class="mhi-tag"><i class="fa-solid fa-map-location-dot"></i> UBICACIÓN ESTRATÉGICA</span>
+              <h3>Visita nuestra Planta de Integración en Lima</h3>
+            </div>
+            <a href="https://maps.google.com/?q=Av.+Aurelio+Garcia+y+Garcia+1178+Lima+15081" target="_blank" rel="noopener noreferrer" class="btn btn--dark-outline">
+              ABRIR EN GOOGLE MAPS <i class="fa-solid fa-external-link"></i>[cite: 25]
+            </a>
+          </div>
+
+          <div class="map-iframe-container">
+            <!-- Mapa interactivo estilizado con Iframe de Google Maps corporativo -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.898863677273!2d-77.05452!3d-12.05835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c93a02c3886f%3A0x6b1076f82b814675!2sAv.%20Aurelio%20Garc%C3%ada%20y%20Garc%C3%ada%201178%2C%20Lima%2015081!5e0!3m2!1ses-419!2spe!4v1680000000000!5m2!1ses-419!2spe" 
+              width="100%" 
+              height="420" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Ubicación G&S Control Industrial Lima">
+            </iframe>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- 5. FOOTER CORPORATIVO UNIFICADO -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
-        <span>© 2026 G&S Control Industrial SAC. Todos los derechos reservados.</span>
+    <div class="container footer-main">
+      <div class="footer-corp-grid">
+
+        <div>
+          <h3 class="footer-heading">Contactamos</h3>
+          <div class="footer-logo-box">
+            <img src="assets/images/logo-3.png" alt="G&S Control Industrial Logo" class="gys-logo-img">
+          </div>
+          <div class="social-circles">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+          <div class="footer-contact-info">
+            <p>Contactanos: <a href="tel:+51962375309">+51 962 375 309</a></p>
+            <p>Escríbenos: <a href="mailto:info@gyscontrol.com" class="email-bold">info@gyscontrol.com</a></p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Proyectos Ejecutados</h3>
+          <div class="projects-world-box">
+            <div class="world-map-img-wrap" id="worldMapWrap">
+              <img src="assets/images/mapa_gys.png" alt="Proyectos ejecutados en Perú, USA, Canadá y China" class="world-map-img" id="worldMapImg">
+            </div>
+
+            <ul class="country-stats-list">
+              <li class="country-stat-item" data-country="peru">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +50 Perú
+              </li>
+              <li class="country-stat-item" data-country="usa">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +08 USA
+              </li>
+              <li class="country-stat-item" data-country="canada">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +01 Canada
+              </li>
+              <li class="country-stat-item" data-country="china">
+                <span class="country-stat-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                +02 China
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Blog Recientes</h3>
+          <div class="recent-blog-list">
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DEL TRABAJADOR 2017</span>
+            </a>
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DEL TRABAJADOR 2019</span>
+            </a>
+            <a href="noticias.html" class="recent-blog-card">
+              <span>DÍA DE GYS – 2019</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <span>© 2026 GYS CONTROL INDUSTRIAL. All Rights Reserved.</span>
+        <div class="footer-mini-socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/51962375309" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
       </div>
     </div>
   </footer>

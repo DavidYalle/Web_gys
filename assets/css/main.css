@@ -2267,3 +2267,332 @@ img, svg, video { max-width: 100%; height: auto; display: block; }
   .form-row-3 { grid-template-columns: 1fr; }
   .full-article-img-box { height: 220px; }
 }
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS E INTERACTIVOS DE "CONTÁCTANOS"
+   ========================================================================== */
+
+/* 1. Hero Contáctanos con Imagen Transparente Oscura */
+.contact-hero {
+  position: relative;
+  padding: 4.2rem 0 4.5rem;
+  background-color: #070a0f;
+  overflow: hidden;
+  border-bottom: 2px solid var(--gys-green-primary);
+}
+
+.contact-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1920&q=85');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.52;
+  filter: contrast(1.08);
+  transform: scale(1.02);
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 40%, rgba(146, 208, 80, 0.18), transparent 55%),
+    linear-gradient(90deg, rgba(7, 10, 15, 0.9) 0%, rgba(7, 10, 15, 0.68) 50%, rgba(7, 10, 15, 0.84) 100%);
+}
+
+.contact-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.contact-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(146, 208, 80, 0.35);
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  margin-bottom: 1.1rem;
+}
+
+.contact-breadcrumb a:hover { color: var(--gys-green-primary); }
+.contact-breadcrumb i { font-size: 0.65rem; color: var(--gys-green-primary); }
+.contact-breadcrumb span { color: var(--gys-green-primary); }
+
+.contact-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.contact-info-card {
+  background: rgba(14, 20, 28, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 4px solid var(--gys-green-primary);
+  border-radius: 10px;
+  padding: 1.15rem 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-info-card:hover {
+  transform: translateX(-6px);
+  border-color: var(--gys-green-primary);
+  background: rgba(18, 27, 38, 0.94);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 18px rgba(146, 208, 80, 0.22);
+}
+
+.cic-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(146, 208, 80, 0.15);
+  color: var(--gys-green-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  transition: all 0.28s ease;
+}
+
+.contact-info-card:hover .cic-icon {
+  background: var(--gys-green-primary);
+  color: #0b0f14;
+  transform: scale(1.08) rotate(5deg);
+}
+
+.contact-info-card strong {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.contact-info-card span {
+  display: block;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.35;
+}
+
+/* 2. Cuadrícula Principal (Oficina + Formulario Seguro) */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.office-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2.25rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  margin-bottom: 1.75rem;
+}
+
+.office-header {
+  margin-bottom: 1.5rem;
+}
+
+.office-tag {
+  display: inline-block;
+  background: rgba(146, 208, 80, 0.15);
+  color: var(--gys-green-dark);
+  border: 1px solid var(--gys-green-primary);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.4rem;
+}
+
+.office-header h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.office-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.office-details-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--text-dark-muted);
+  line-height: 1.5;
+}
+
+.office-details-list li i {
+  color: var(--gys-green-primary);
+  margin-top: 0.2rem;
+  font-size: 1rem;
+}
+
+.office-details-list a:hover {
+  color: var(--gys-green-dark);
+  text-decoration: underline;
+}
+
+.office-badge-footer {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.office-badge-footer i {
+  color: var(--gys-green-primary);
+  font-size: 1.2rem;
+}
+
+.contact-whatsapp-promo {
+  background: linear-gradient(135deg, #0b0f14 0%, #17212e 100%);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  border-radius: 12px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cwp-icon {
+  font-size: 2.2rem;
+  color: #25d366;
+}
+
+.cwp-text strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.cwp-text p {
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+/* Caja de Formulario */
+.contact-form-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.contact-form-box h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+
+.form-subtext {
+  font-size: 0.88rem;
+  color: var(--text-dark-muted);
+  margin-bottom: 1.75rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.15rem;
+}
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+  padding: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* 3. Mapa Estilizado */
+.map-showcase-section {
+  background: #f8fafc;
+  padding: 4rem 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.map-card-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+}
+
+.map-header-info {
+  padding: 1.75rem 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mhi-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--gys-green-dark);
+  letter-spacing: 0.8px;
+  margin-bottom: 0.25rem;
+}
+
+.map-header-info h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.map-iframe-container {
+  width: 100%;
+  line-height: 0;
+}
+
+/* Responsive */
+@media (max-width: 1120px) {
+  .contact-hero-grid,
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row-2 { grid-template-columns: 1fr; }
+  .map-header-info { flex-direction: column; text-align: center; }
+}
